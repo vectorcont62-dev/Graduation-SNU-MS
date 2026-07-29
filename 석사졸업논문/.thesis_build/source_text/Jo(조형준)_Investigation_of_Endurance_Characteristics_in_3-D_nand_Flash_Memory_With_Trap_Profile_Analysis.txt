@@ -1,0 +1,393 @@
+
+===== PAGE 1 =====
+This article has been accepted for inclusion in a future issue of this journal. Content is final as presented, with the exception of pagination.
+IEEE TRANSACTIONS ON ELECTRON DEVICES 1
+Investigation of Endurance Characteristics in
+3-D Flash Memory With Trap
+NAND
+Profile Analysis
+Hyungjun Jo , Jongwoo Kim , Yonggyu Cho, Hyunyoung Shim, Jaesung Sim,
+and Hyungcheol Shin, Senior Member, IEEE
+Abstract—In this article, the endurance characteristic of Three-dimensional NAND Flash memory consists of a poly-Si
+3-D NAND Flash memory is investigated. The bitline (BL) channel, a charge trap layer (CTL) as a storage layer, and
+current and the word-line (WL) current are measured for
+a bandgap-engineered tunneling oxide (BE-TOX) layer to
+erase/write (EW) cycling up to 50k. Then, the trap pro-
+enhance erase performance [5]. Additionally, the use of
+files in the bandgap-engineered tunneling oxide (BE-TOX)
+layer are extracted through trap spectroscopy by charge multilevel cell (MLC) technology has become essential in
+injection and sensing (TSCIS) technique and technology order to reduce bit costs. One of the key challenges in
+computer-aided design (TCAD) simulation. The trap profiles the development of 3-D NAND flash memory is achieving
+show that the traps in the BE-TOX layer are generated
+high endurance and reliability, which is critical for the
+toward the charge trap layer (CTL) side to the poly-Si
+data errors and cell characteristics. Endurance refers to the
+channel side as EW cycling increases. Also, it shows that
+the deep traps below 2.0 eV start to be generated after 10k ability of a memory cell to withstand repeated erase/write
+EW cycling and a double Gaussian distribution is fit well. (EW) cycling without degradation. During EW cycling,
+Through the trap profile results, the degradation of both the Fowler–Nordheim (FN) tunneling current is dominant and
+BL current and the WL current according to EW cycling is
+can lead to degradation by the anode hole injection (AHI),
+completely explained.
+resulting in the generation of bulk traps in the BE-TOX layer
+Index Terms—3-D NAND flash memory, bandgap- and interface traps in poly-Si channel/BE-TOX interface [6],
+engineered tunneling oxide (BE-TOX) degradation,
+[7], [8], [9]. This degradation can cause significant problems,
+endurance, erase/write (EW) cycling, technology computer-
+such as a shift in the mid-gap voltage (V ), representing
+aided design (TCAD) simulation, trap profiles, trap MG
+spectroscopy by charge injection and sensing (TSCIS). the voltage that is not affected by the interface traps in
+poly-Si channel/BE-TOX interface, subthreshold swing (S.S.)
+I. INTRODUCTION increase, and transconductance (g m ) decrease [10], [11].
+NAND flash memory is a popular type of non-volatile Previous studies have extensively investigated the endurance
+memory that is widely used in various electronic characteristics of 2-D and 3-D NAND flash memory [9], [10],
+[11], [12], [13], [14], [15], [16], [17]. However, there is a
+devices, such as smartphones, digital cameras, and solid-state
+lack of analysis of cell characteristics such as bitline (BL)
+drives (SSDs). Due to the scaling limits and reliability issues
+and word-line (WL) current in memory cells subjected to high
+in 2-D planar NAND flash memory, a 3-D structure has
+EW cycling above 10k. In this article, I –V and I –V
+become mainstream in NAND flash memory [1], [2], [3], [4]. BL WL WL WL
+curves are measured and analyzed during the EW cycling
+Manuscript received 28 November 2023; revised 26 December 2023; stress. The trap profiles in the BE-TOX layer are quantita-
+accepted 2 January 2024. This work was supported by SK Hynix Inc. tively extracted through the technology computer-aided design
+The review of this article was arranged by Editor P.-Y. Du. (Correspond-
+(TCAD) simulation and trap spectroscopy by charge injection
+ing author: Hyungcheol Shin.)
+Hyungjun Jo is with the Inter-University Semiconductor Research Cen- and sensing (TSCIS) technique [18], [19]. Using the trap pro-
+ter, Department of Electrical and Computer Engineering, Seoul National files, TCAD simulation, and energy band diagrams, the V in
+University, Seoul 08826, South Korea (e-mail: robotjo@snu.ac.kr). MG
+the BL current and fully trapped voltage (V ), representing
+Jongwoo Kim is with NAND Design Team, SK Hynix Inc., Icheon-si FT
+17336, South Korea. the voltage at which the dielectric layers above the poly-Si
+Yonggyu Cho, Hyunyoung Shim, and Jaesung Sim are with NAND channel are fully trapped, as well as the tunneling current in
+Tech. Development Division Team, SK Hynix Inc., Icheon-si 17336,
+the WL current is demonstrated intuitively. In addition, the trap
+South Korea.
+Hyungcheol Shin is with the Inter-University Semiconductor Research generation as a function of the trap energy level is investigated
+Center, Department of Electrical and Computer Engineering, Seoul during EW cycling.
+National University, Seoul 08826, South Korea, and also with Inte-
+gra Semiconductor Ltd., Seoul 06970, South Korea (e-mail: hcshin@
+snu.ac.kr). II. EXPERIMENT SETUP
+Color versions of one or more figures in this article are available at
+https://doi.org/10.1109/TED.2024.3350565. Fig. 1(a) shows the 3-D CTL NAND flash memory test
+Digital Object Identifier 10.1109/TED.2024.3350565 element group (TEG) structure, where around 100 000 strings
+0018-9383 © 2024 IEEE. Personal use is permitted, but republication/redistribution requires IEEE permission.
+See https://www.ieee.org/publications/rights/index.html for more information.
+Authorized licensed use limited to: Seoul National University. Downloaded on February 07,2024 at 12:44:16 UTC from IEEE Xplore. Restrictions apply.
+
+===== PAGE 2 =====
+This article has been accepted for inclusion in a future issue of this journal. Content is final as presented, with the exception of pagination.
+2 IEEE TRANSACTIONS ON ELECTRON DEVICES
+current. In Fig. 2(d), region D is when the low negative voltage
+is applied where the TAT is dominant. Region E is when the
+middle negative voltage is applied where the modified FN
+tunneling is dominant and holes are tunneled and trapped in
+the BE-TOX and CTL layers. The hole tunneling current is
+saturated for the same reason as the electron tunneling current
+in region B. Region F is when the high negative voltage is
+applied where the electron back tunneling from the WL side
+is dominant.
+In Fig. 2(a), V shifts positively during EW cycling due to
+MG
+the bulk trap generation caused by the BE-TOX degradation.
+Fig. 1. (a) TEG of 3-D CTL NAND flash memory measured in the
+experiment. (b) Waveforms for EW cycling stress. Similarly, in Fig. 2(c), V FT shifts positively due to bulk trap
+generation caused by the BE-TOX degradation during EW
+are connected in parallel. The string in TEG consists of BL, cycling. However, in Fig. 2(c), the V saturates after 10k EW
+FT
+drain select line (DSL), WLs, dummy WLs, source select line cycling. In addition, unlike the V , the TAT current in region
+FT
+(SSL), and source-line (SL). To measure the very small WL A in Fig. 2(c) does not increase before 10k EW cycling and
+current, four WLs are connected to one pad as a selected WL. then increase after 10k EW cycling. Also, the negative sweep
+The endurance test is conducted in the middle of the string at of WL voltage in Fig. 2(d) shows a different trend than in
+room temperature (25◦). EW cycling is run up to 50k and I – Fig. 2(c). These special trends of the WL currents should be
+BL
+V and I –V curves are measured in fresh, 0.5k, 1k, 2k, analyzed not only with the trap density in the BE-TOX layer,
+WL WL WL
+3k, 5k, 10k, 20k, 30k, 40k, and 50k EW cycling. The threshold but also with accurate trap profiles with the trap distance and
+voltage (V ) is extracted by the constant current method. trap level extracted through the TSCIS technique.
+th
+Fig. 1(b) shows the waveforms used in the EW cycling test.
+The gate-induced drain leakage (GIDL) erase operation and B. TCAD Simulation and TSCIS Measurement Results
+one pulse program operation are adjusted. During the erase Fig. 3(a) shows a schematic cross section of the 3-D
+operation, a small amount of positive voltage is applied to NAND flash memory used in the TCAD simulation. The
+unselected and dummy WLs to prevent erase stress during the device parameters of the structure are the same as the
+EW cycling. TEG illustrated in Fig. 1(a). The BE-TOX layer consists of
+an oxide/nitride/oxide (O1/N1/O2) layer, CTL consists of
+a nitride layer, and BOX consists of oxide/high-K layers.
+III. I–V CURVE AND TSCIS MEASUREMENT
+In the poly-Si channel, grain boundaries (GBs) are assumed
+A. BL and WL Current Measurement Results
+positioning under the center of each WL and spacer. As shown
+Fig. 2 shows the measurement results of BL current and in Fig. 3(b), the U-shaped trap distribution is applied at
+WL current during 50k EW cycling. Fig. 2(a) and (b) show the each GB and uniform trap distribution is applied at poly-
+I –V curve of the erase state and program state. It shows Si/BE-TOX and poly-Si/Filler oxide interfaces to calibrate
+BL WL
+the same results as our group’s previous research that the V measurement and TCAD simulation data [22]. Fig. 3(c) shows
+MG
+is constant in the program state but shifts positively in the erase the fitting result of the virgin I –V curve has been carried
+BL WL
+state due to the bulk trap generation in the BE-TOX layer out successfully. Through the TCAD simulation, the energy
+during EW cycling [20]. Fig. 2(c) and (d) show the I –V band and electron density are obtained to calculate trap profiles
+WL WL
+curve of the positive and negative sweep of the WL voltage from the TSCIS data.
+during 50k EW cycling. The positive sweep of the WL current The trap profiles in the BE-TOX layer during EW cycling
+is measured at the erase state after each EW cycling, and are extracted through the TSCIS technique [18]. The trap
+the negative sweep of the WL current is measured after the energy level from the conduction band edge of each layer and
+positive sweep. The WL current shows the tunneling current trap distance from the poly-Si channel are extracted by varying
+following the WL bias. In Fig. 2(c), region A is when the low the charge voltage (V ) and the charge time (t ).
+CHRG CHRG
+positive voltage is applied where the trap-assisted-tunneling During the TSCIS charging time, the electrons are tunneled
+(TAT) is dominant. Region B is when the middle positive through direct tunneling and trapped in the BE-TOX layer.
+voltage is applied where the modified FN tunneling [21] is The trapped electrons change the energy band of the BE-TOX
+dominant. The tunneling electrons are trapped in the BE-TOX layer and tunneling probability. Therefore, to determine the
+layer, CTL, and blocking oxide (BOX) layer, leading to a trap position corresponding to the next t , the trap position
+CHRG
+saturation of electron tunneling current due to the saturation and trap density obtained from the previous t are applied
+CHRG
+of the vertical field, even with an increase in WL voltage. as unit interface trap density to reextract the energy band of
+Region C is when the high positive voltage is applied where the BE-TOX layer in the TCAD simulation.
+the BE-TOX and CTL layers are fully trapped by the tunneling The charging condition during the TSCIS should be selected
+electrons. Since the dielectric layers above the poly-Si channel to prevent trap generation in the BE-TOX layer. In this device,
+are fully trapped, the vertical field increases when the WL there are negligible differences in the discharge V and S.S.
+th
+voltage increases, resulting in the electron tunneling current with initial V and S.S. even when V is raised up
+th CHRG
+increases. The V in region C is defined at a constant WL to 7.0 V and t is extended up to 2000 s for poly-Si
+FT CHRG
+Authorized licensed use limited to: Seoul National University. Downloaded on February 07,2024 at 12:44:16 UTC from IEEE Xplore. Restrictions apply.
+
+===== PAGE 3 =====
+This article has been accepted for inclusion in a future issue of this journal. Content is final as presented, with the exception of pagination.
+JO et al.: INVESTIGATION OF ENDURANCE CHARACTERISTICS IN 3-D NAND FLASH MEMORY 3
+Fig. 2. Measurement results during 50k EW cycling. (a) IBL–VWL curve of the erase state. (b) IBL–VWL curve of the program state. (c) IWL–VWL
+curve during the positive sweep of the WL voltage. (d) IWL–VWL curve during the negative sweep of the WL voltage, respectively.
+TABLE I
+PARAMETERS USED FOR TSCIS CALCULATION
+Fig. 5 shows the trap profiles for fresh, 1k, 3k, 5k, 10k,
+30k, and 50k calculated from Fig. 4, respectively. The energy
+level of the traps is extracted from the conduction band
+edge of each layer, trap distance from the poly-Si channel
+is extracted through the filling factor ( f ) [19], and trap
+Fig. 3. (a) Schematic cross section of the 3-D CTL NAND flash memory density is extracted from the (cid:49)V at each T trap position. The
+used in the TCAD simulation. (b) U-shaped trap distribution of grain th
+boundary in the poly-Si channel and interface traps of poly-Si/filler parameters used for the TSCIS calculation are listed in Table I.
+oxide and poly-Si/BE-TOX. (c) Fitting results of virgin BL current with As shown in Fig. 5(b) and (c), the shallow traps with the trap
+experiment and TCAD simulation.
+energy levels of 0.9–1.5 eV start to be generated at the CTL
+side in the N1 layer during the low EW cycling. As shown in
+Fig. 5(d) and (e), the shallow traps and the deep traps below
+channel side TCSIS. There are negligible differences in the 2.0 eV are generated in the N1 layer from the CTL side to
+BL current before and after programming to 7.0 V. This the poly-Si channel side when the EW cycling increase until
+indicates that there is negligible trap generation in both the the 10k. As shown in Fig. 5(f) and (g), the traps start to be
+BE-TOX layer and at the poly-Si/BE-TOX interface during generated in the O1/N1 interface when EW cycling increase
+the charging period. However, when the 7 V charging lasts after 10k.
+2000 s, soft programming-induced read disturbance occurs and
+causes a large V shift ((cid:49)V ). Therefore, the (cid:49)V may not
+th th th IV. RESULTS AND DISCUSSION
+be measured when the V is large or t is long.
+CHRG CHRG
+Fig. 4 shows the measurement results of the (cid:49)V as a A. Average Trap Density in BE-TOX Layer
+th
+function of V and t for fresh, 1k, 3k, 5k, 10k, 30k, Fig. 6 shows the average trap density of the BE-TOX layer
+CHRG CHRG
+and 50k EW cycling, respectively. These results show the (N BE−TOXt,AVG ) extracted from the trap profiles in Fig. 5.
+tendency of the bulk trap generation in the BE-TOX layer Fig. 6(a) shows the trap distance from the poly-Si channel and
+during EW cycling. In the fresh device, the initial I BL –V WL N BE−TOXt,AVG as a function of EW cycling extracted by moving
+current is set near the virgin state to neglect the electron and average with 0.1 nm step. It intuitively shows that the traps
+hole trapping in the BE-TOX layer and CTL during the TSICS. in the BE-TOX layer are generated from the CTL side to the
+Then the V is applied to the WL during the 0.01 s–2000 s. poly-Si channel side when EW cycling increases and the traps
+CHRG
+At the end of each t , the sense voltage (V < V ) in the O1 layer start to be generated after the 10k EW cycling.
+CHRG sense th
+is applied to measure the BL current. Through the measured Through these results, the TAT current in region A of Fig. 2(c)
+BL current, (cid:49)V is calculated based on the initial I –V and region D of Fig. 2(d) can be demonstrated. Since the TAT
+th BL WL
+curve. In the cycled device, the V in the I –V curve current mechanism of region A and region D is the same, only
+MG BL WL
+shifts positively. Therefore, in order to set consistent initial the TAT current in region A is demonstrated in this section.
+conditions for both the fresh and cycled devices during TSCIS, Fig. 7 illustrates the TAT current flow in region A through
+it is necessary to align the V of the cycled device with that the energy band diagram before and after 10k EW cycling.
+MG
+of the fresh device. After that, the same procedure is conducted Since the positive sweep of the WL current is measured at
+for the cycled device. the erase state after EW cycling, holes are trapped in the CTL
+Authorized licensed use limited to: Seoul National University. Downloaded on February 07,2024 at 12:44:16 UTC from IEEE Xplore. Restrictions apply.
+
+===== PAGE 4 =====
+This article has been accepted for inclusion in a future issue of this journal. Content is final as presented, with the exception of pagination.
+4 IEEE TRANSACTIONS ON ELECTRON DEVICES
+Fig. 4. Measurement results of ∆Vth as a function of V
+CHRG
+and t
+CHRG
+. (a) Fresh, (b) 1k, (c) 3k, (d) 5k, (e) 10k, (f) 30k, and (g) 50k EW cycling,
+respectively. The ∆Vth-axis scale is the same.
+Fig. 5. Trap profiles of the BE-TOX layer. (a) Fresh, (b) 1k, (c) 3k, (d) 5k, (e) 10k, (f) 30k, and (g) 50k EW cycling, respectively.
+Fig. 6. (a) Average trap density as a function of trap distance from the
+poly-Si channel. (b) Average trap density as a function of the conduction Fig. 7. Energy band diagram of 3-D NAND flash memory cell in region A
+band edge of each layer in the BE-TOX. (a) before and (b) after 10k EW cycling.
+layer. For a more comprehensive understanding of the TAT
+current quantitatively, the number of traps and electrons has to the increase in the TAT current in region A after 10k EW
+been presented as an arbitrary example. Due to the thickness of cycling.
+the dielectric layer stack in 3-D NAND Flash memory, electrons Fig. 6(b) shows N BE−TOXt,AVG as a function of the energy
+tunnel to the CTL layer rather than the WL, and then trapped level from the conduction band edge of each layer extracted by
+in the CTL layer. Since a small WL voltage is applied in region moving average with 0.2 eV step. As illustrated in Fig. 6(b),
+A, the quantity of trapped electrons in the CTL layer due to a Gaussian distribution is fit well at each EW cycling before
+TAT is very small and negligible. In Fig. 7(a), the TAT current 10k EW cycling. Before 10k EW cycling, the peak trap density
+is small and does not increase before 10k EW cycling because increases and energy level of the peak trap density shifts to
+there is no trap generation near the O1/N1 interface which the deep trap energy level. After 10k EW cycling, the peak
+contribute most to the TAT current [24]. However, as shown trap density still increases and a double Gaussian distribution
+in Fig. 7(b), the trap generation in the O1/N1 interface leads emerges at the deep trap energy level. This shows a significant
+Authorized licensed use limited to: Seoul National University. Downloaded on February 07,2024 at 12:44:16 UTC from IEEE Xplore. Restrictions apply.
+
+===== PAGE 5 =====
+This article has been accepted for inclusion in a future issue of this journal. Content is final as presented, with the exception of pagination.
+JO et al.: INVESTIGATION OF ENDURANCE CHARACTERISTICS IN 3-D NAND FLASH MEMORY 5
+Fig. 9. TCAD simulation results of electron trapping in the BE-TOX O1
+layer depending on the trap energy level in region C.
+Fig. 10. (a) Measurement results of ∆Vth as a function of V
+CHRG
+and t
+CHRG
+in 50k EW cycling device. ∆Vth-axis scale is the same in
+Fig. 4. (b) Trap profiles of the BE-TOX layer in 50k EW cycling extracted
+Fig. 8. Energy band diagram of 3-D NAND flash memory cell assuming
+from (a). The increment of the x-axis is the same in Fig. 5.
+after 10k EW cycling. (a) Region A. (b) Region B. (c) Region C.
+(d) Region D. (e) Region E. (f) Region F in Fig. 2, respectively.
+in region C compared to region A, TAT current increases, and
+increase in deep traps with energy levels below 2.0 eV after
+electron trapping cannot be neglected. Consequently, electrons
+10k EW cycling.
+are trapped in the O1 layer due to TAT, even though the O1
+layer is positioned along the FN tunneling path. The electron
+B. BL and WL Current Analysis With Energy
+trapping due to TAT significantly depends on the trap level
+Band Diagram
+and position within the O1 layer. Fig. 10 shows the short
+Fig. 8 depicts the energy band diagram of the 3-D NAND term TSCIS measurement results with the range of t CHRG
+flash memory cell in each region of Fig. 2(c) and (d) assuming is 10 µs to 0.1 s and the trap profile in BE-TOX layer in
+after 10k EW cycling. The traps in the BE-TOX layer start to 50k EW cycling device. Since the t is short, trap profile
+CHRG
+be generated on the CTL side, and as EW cycling increases, of BE-TOX layer closer to the poly-Si channel side can be
+they are generated toward the poly-Si channel side. Same as in obtained. As shown in Fig. 10(b), even though EW cycling
+Fig. 7, the number of traps and electrons/holes are presented increases to 50k, trap generation occurs at the O1/N1 interface,
+as an arbitrary unit. Fig. 8(a) shows the energy band diagram while trap generation in the BE-TOX layer near the poly-Si
+of region A where the low positive voltage is applied. The channel side remains negligible. Also, as shown in Fig. 9,
+TAT current in region A is demonstrated in Fig. 7. Fig. 8(b) tunneling electrons through TAT are predominantly trapped in
+shows the energy band diagram of region B where the middle the BE-TOX layer near the poly-Si channel side. Therefore,
+positive voltage is applied. In the BE-TOX layer, the modified after 10k EW cycling, bulk traps are generated at the O1/N1
+FN tunneling current flows and electrons recombine with holes interface where electrons cannot be trapped. This leads to a
+and are trapped in the BE-TOX layer and CTL. Fig. 8(c) constant density of fully trapped electrons and V saturation.
+FT
+shows the energy band diagram of region C where the high As previously mentioned, the negative sweep is measured
+positive voltage is applied. The traps generated in the CTL after the positive sweep. Therefore, the initial condition of
+side BE-TOX layer can trap electrons. However, as shown in the traps in the negative sweep is the same as in Fig. 8(c).
+Fig. 8(b) and (c), the traps generated near the O1/N1 layer Fig. 8(d) shows the energy band diagram of region D where
+cannot trap electrons. This result is demonstrated by TCAD the low negative voltage is applied. When the low negative
+simulation and short-term TSCIS measurement. Fig. 9 shows voltage is applied, it is similar to when the GIDL pulse is
+the TCAD simulation results of electron trapping in the BE- applied in the GIDL erase operation, and the TAT flows. At this
+TOX O1 layer depending on the trap energy level in region C. time, the electrons are trapped in the empty traps in the O1/N1
+The nonlocal tunneling model [25] is considered and the trap interface. Therefore, the total electrons trapped in the BE-TOX
+density of the O1 layer is assumed as 1 × 1018 cm−3. The layer during the GIDL erase operation increase as EW cycling
+effective mass and capture cross section are listed in Table I, increases up to 50k. Fig. 8(e) shows the energy band diagram
+Huang–Rhys factor is 60, and phonon energy is 20 meV [24]. when the middle negative bias is applied, similar to when the
+As shown in Fig. 9, since a higher WL voltage is applied erase pulse is applied in the GIDL erase operation. The holes
+Authorized licensed use limited to: Seoul National University. Downloaded on February 07,2024 at 12:44:16 UTC from IEEE Xplore. Restrictions apply.
+
+===== PAGE 6 =====
+This article has been accepted for inclusion in a future issue of this journal. Content is final as presented, with the exception of pagination.
+6 IEEE TRANSACTIONS ON ELECTRON DEVICES
+are tunneled through the modified FN tunneling current and [6] M. -S. Liang and C. Hu, “Electron trapping in very thin ther-
+recombine with the trapped electrons in the CTL and BE-TOX mal silicon dioxides,” in IEDM Tech. Dig. 1981, pp. 396–399, doi:
+10.1109/IEDM.1981.190097.
+layer, and trapped in the CTL. Since the trapped electrons
+[7] S. K. Lai and D. R. Young, “Effects of avalanche injection of
+in the BE-TOX layer increase, the recombined holes in the electrons into silicon dioxide—Generation of fast and slow interface
+BE-TOX layer increase, and the total trapped holes in the CTL states,” J. Appl. Phys., vol. 52, no. 10, pp. 6231–6240, Oct. 1981, doi:
+10.1063/1.328565.
+layer decrease when EW cycling increases. Therefore, unlike
+[8] Y.-B. Park and D. K. Schroder, “Degradation of thin tunnel gate oxide
+the V FT , the V MG shifts positively both before and after 10k under constant Fowler–Nordheim current stress for a flash EEPROM,”
+EW cycling. Fig. 8(f) shows the energy band diagram when IEEE Trans. Electron Devices, vol. 45, no. 6, pp. 1361–1368, Jun. 1998,
+doi: 10.1109/16.678579.
+the high negative voltage is applied. The holes are tunneled
+[9] H. Park et al., “Tunnel oxide degradation in TANOS devices and its
+from the poly-Si channel through the modified FN tunneling origin,” in Proc. Int. Symp. VLSI Technol., Syst. Appl., Apr. 2010,
+current and electrons are tunneled from the WL through the FN pp. 50–51.
+[10] W.-C. Chen et al., “First theoretical modeling of the bandgap-engineered
+tunneling (back tunneling) and electrons/holes are recombined
+oxynitride tunneling dielectric for 3D flash memory devices starting
+in the CTL layer. Since the degradation in the BOX layer is from the ab initio calculation of the band diagram to understand the
+negligible during EW cycling [17], the tunneling currents in programming, erasing and reliability,” in IEDM Tech. Dig., Dec. 2021,
+pp. 1–4, doi: 10.1109/IEDM19574.2021.9720585.
+region F are almost constant.
+[11] Y.-Y. Chiu et al., “Transconductance distribution in program/erase
+cycling of NAND flash memory devices: A statistical investigation,”
+V. CONCLUSION IEEE Trans. Electron Devices, vol. 66, no. 3, pp. 1255–1261, Mar. 2019,
+doi: 10.1109/TED.2019.2892794.
+In this article, the impact of the BE-TOX layer degradation
+[12] J.-D. Lee, J.-H. Choi, D. Park, and K. Kim, “Degradation of tunnel oxide
+on the BL and WL current behavior of 3-D NAND flash by FN current stress and its effects on data retention characteristics
+memory cells during the endurance cycling was investigated. of 90 nm NAND flash memory cells,” in Proc. IEEE Int. Rel. Phys.
+Symp., Jun. 2003, pp. 497–501, doi: 10.1109/RELPHY.2003.1197798.
+The I –V and I –V curves were measured, and the
+BL WL WL WL [13] J.-D. Lee, J.-H. Choi, D. Park, and K. Kim, “Effects of interface
+trap profiles were extracted through the TCAD simulation and trap generation and annihilation on the data retention characteristics of
+TSCIS technique. The BL current showed that the V shifted flash memory cells,” IEEE Trans. Device Mater. Rel., vol. 4, no. 1,
+MG pp. 110–117, Mar. 2004, doi: 10.1109/TDMR.2004.824360.
+positively in the erase state due to the bulk trap generation
+[14] R. Shirota et al., “New method to analyze the shift of floating gate
+in the BE-TOX layer during EW cycling. The WL current charge and generated tunnel oxide trapped charge profile in NAND flash
+was dominated by the TAT, FN, and modified FN tunneling. memory by program/erase endurance,” IEEE Trans. Electron Devices,
+vol. 62, no. 1, pp. 114–120, Jan. 2015, doi: 10.1109/TED.2014.2366116.
+In the WL current, the TAT current increased after 10k EW
+[15] D. Resnati, G. Nicosia, G. M. Paolucci, A. Visconti, and
+cycling. The V FT shifted positively during EW cycling and then C. M. Compagnoni, “Cycling-induced charge trapping/detrapping in
+saturated after 10k EW cycling. These particular phenomena flash memories—Part I: Experimental evidence,” IEEE Trans. Elec-
+tron Devices, vol. 63, no. 12, pp. 4753–4760, Dec. 2016, doi:
+of the WL current were due to the fact that the trap generation
+10.1109/TED.2016.2617888.
+in the BE-TOX layer occurs on the CTL side toward the [16] M. Kang, J.-S. Yang, and I.-J. Chang, “Studying trapped tunneling-
+poly-Si channel side during EW cycling demonstrated by the electron migration due to program and erase cycles in NAND flash,”
+IEEE Electron Device Lett., vol. 37, no. 3, pp. 284–286, Mar. 2016,
+trap profiles and TCAD simulation. The different trends in
+doi: 10.1109/LED.2016.2527919.
+the BL and WL currents were comprehensively explained [17] G. Yoon, D. Ko, J. Park, D. Kim, J. Kim, and J.-S. Lee, “Impact of
+through the energy band diagram. Also, trap profiles showed P/E stress on trap profiles in bandgap-engineered tunneling oxide of 3D
+NAND flash memory,” IEEE Access, vol. 10, pp. 62423–62428, 2022,
+that the deep traps below 2.0 eV energy level were generated
+doi: 10.1109/ACCESS.2022.3182397.
+and a double Gaussian distribution emerged after 10k EW [18] R. Degraeve et al., “Trap spectroscopy by charge injection and
+cycling. Additionally, since the TSCIS technique assumes SRH sensing (TSCIS): A quantitative electrical technique for studying
+defects in dielectric stacks,” in IEDM Tech. Dig., 2008, pp. 1–4, doi:
+statistics and has limitations in extracting traps near the poly-
+10.1109/IEDM.2008.4796812.
+Si channel/BE-TOX interface, ongoing research is required for [19] M. Cho et al., “A consistent model for oxide trap profiling with the
+a more accurate understanding of the trap profile. trap spectroscopy by charge injection and sensing (TSCIS) technique,”
+Solid-State Electron., vol. 54, no. 11, pp. 1384–1391, Nov. 2010.
+[20] J. Kim, H. Jo, Y. Cho, H. Shim, J. Sim, and H. Shin, “Investigation of
+ACKNOWLEDGMENT endurance degradation for 3-D charge trap NAND flash memory with
+The authors would like to express our sincere gratitude to bandgap-engineered tunneling oxide,” IEICE Electron. Exp., vol. 19,
+no. 24, Dec. 2022, Art. no. 20220465, doi: 10.1587/elex.19.20220465.
+all members of the NAND flash reliability team. [21] H. Bachhofer, H. Reisinger, E. Bertagnolli, and H. von Philips-
+born, “Transient conduction in multidielectric silicon-oxide-nitride-oxide
+REFERENCES semiconductor structures,” J. Appl. Phys., vol. 89, no. 5, pp. 2791–2800,
+Mar. 2001, doi: 10.1063/1.1343892.
+[1] H. Aochi, “BiCS flash as a future 3D non-volatile memory technology [22] H. Jo, J. Kim, M. Kim, and H. Shin, “Extraction of mobility in 3-D
+for ultra high density storage devices,” in Proc. IEEE Int. Memory NAND flash memory with poly-Si based macaroni structure,” in Proc.
+Workshop, May 2009, pp. 1–2, doi: 10.1109/IMW.2009.5090581. 4th IEEE Electron Devices Technol. Manuf. Conf. (EDTM), Apr. 2020,
+[2] J. Jang et al., “Vertical cell array using TCAT technology for ultra high pp. 1–4, doi: 10.1109/EDTM47692.2020.9117961.
+density NAND flash memory,” in Proc. IEEE Symp. VLSI Technol., [23] S. Fleischer, P. T. Lai, and Y. C. Cheng, “Effects of nitridation
+Jun. 2009, pp. 192–193. temperature on the electron trap characteristics of nitrided-oxide
+[3] H. Kim, S.-J. Ahn, Y. G. Shin, K. Lee, and E. Jung, “Evolution of metal-oxide-semiconductor capacitors,” J. Appl. Phys., vol. 74, no. 1,
+NAND flash memory: From 2D to 3D as a storage market leader,” in pp. 740–742, Jul. 1993, doi: 10.1063/1.355243.
+Proc. IEEE Int. Memory Workshop (IMW), May 2017, pp. 1–4. [24] F. Jiménez-Molinos, A. Palma, F. Gámiz, J. Banqueri, and J. A. López-
+[4] K. Parat and A. Goda, “Scaling trends in NAND flash,” in IEDM Tech. Villanueva, “Physical model for trap-assisted inelastic tunneling in
+Dig., Dec. 2018, pp. 1–4, doi: 10.1109/IEDM.2018.8614694. metal-oxide-semiconductor structures,” J. Appl. Phys., vol. 90, no. 7,
+[5] H.-T. Lue et al., “BE-SONOS: A bandgap engineered SONOS with pp. 3396–3404, Oct. 2001, doi: 10.1063/1.1398603.
+excellent performance and reliability,” in IEDM Tech. Dig., 2005, [25] TCAD Sentaurus Device User Guide, Version 2015, Synopsys, Mountain
+pp. 547–550, doi: 10.1109/IEDM.2005.1609404. View, CA, USA, Jun. 2015.
+Authorized licensed use limited to: Seoul National University. Downloaded on February 07,2024 at 12:44:16 UTC from IEEE Xplore. Restrictions apply.

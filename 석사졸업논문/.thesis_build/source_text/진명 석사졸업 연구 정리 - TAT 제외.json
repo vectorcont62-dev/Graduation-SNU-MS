@@ -1,0 +1,646 @@
+{
+  "path": "C:\\Users\\joshs\\Desktop\\local-laptop\\Graduation-SNU-MS\\석사졸업논문\\진명 석사졸업 연구 정리 - TAT 제외.pptx",
+  "sha256": "fb8ba7ebdb261958849d519ae8a98395e8c624e2dcaf2f92ba5d4f5aedd70fd3",
+  "slide_count": 22,
+  "media_count": 54,
+  "slides": [
+    {
+      "slide": 1,
+      "text": "Time-Step-Free Physics-based\nModeling of Retention Loss in\nCryogenic 3-D NAND Flash\n2026. 07. 29\n석사과정\n진 명\nDepartment of Electrical and Computer Engineering\nSeoul National University",
+      "relationships": [
+        {
+          "id": "rId1",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/slideLayout",
+          "target": "../slideLayouts/slideLayout1.xml"
+        }
+      ]
+    },
+    {
+      "slide": 2,
+      "text": "Content\nIntroduction: 3-D NAND Flash\n의\nRetention Loss\nBETOX\nTrapped Electron\nDetrapping\n모델링\nCTN discretization\n분석 및\nQ-\nΔV\nth\n계산\nTime-Step-Free Physics-Based Retention\n모델링\nCryogenic-like TCAD\n검증 및 계산 효율 분석\nDetrap\nmodeling\n에서\nTAT\n를 제외한 이유\nSummary and Future Works",
+      "relationships": [
+        {
+          "id": "rId1",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/slideLayout",
+          "target": "../slideLayouts/slideLayout2.xml"
+        }
+      ]
+    },
+    {
+      "slide": 3,
+      "text": "Introduction\n3-D NAND Flash memory\n는\ncharge-trap stack\n내부에 저장된\ntrapped electron\n을 통해 정보를 저장함\nRetention\n시간이 증가하면\ntrapped electron\n의\ndetrapping\n으로 인해\nV\nth\n감소 발생\nCylindrical\n구조와\nCTN\n내부\narbitrary trapped electron distribution\n을 고려하기 위한\nphysics-based modeling\n필요\nJin, TED 2025\nTrapped\nElectrons\nfiller\nchannel\nBETOX\nCTN\nBOX\nWL",
+      "relationships": [
+        {
+          "id": "rId2",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image",
+          "target": "../media/image2.png"
+        },
+        {
+          "id": "rId1",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/slideLayout",
+          "target": "../slideLayouts/slideLayout2.xml"
+        }
+      ]
+    },
+    {
+      "slide": 4,
+      "text": "BETOX Trapped Electron\nDetrapping\nModeling\nBETOX Region\n(ONO)\nTrap-to-Band Tunneling Emission\nCTN\nRegion\nn1\nSi-Channel\nBETOX\no1\nE\nF\nProgram\n(V\nG\n=\nV\npgm\n)\nJ\nFN\nSi-Channel\nn1\no1\nBETOX\nE\nF\nRetention\n(V\nG\n= 0 V)\ne\nTBT\ne\nDT\nProgram\n동작에서는 강한 전기장에 의해\nFN tunneling\n이 발생함\n하지만\n, Retention\n상태에서는\nV\nG\n= 0V\n이므로\n충분한 전자가\nconduction band\n에 축적되지 않아\ndirect tunneling\n의 영향이 감소함\nJin, TED 2025\nBETOX\n내부에\ntrapped\n된\nelectron\n은\nchannel conduction band\n으로\ntrap-to-band tunneling  emission\n될 수 있음",
+      "relationships": [
+        {
+          "id": "rId3",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image",
+          "target": "../media/image4.png"
+        },
+        {
+          "id": "rId2",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image",
+          "target": "../media/image3.png"
+        },
+        {
+          "id": "rId1",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/slideLayout",
+          "target": "../slideLayouts/slideLayout2.xml"
+        },
+        {
+          "id": "rId5",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image",
+          "target": "../media/image6.png"
+        },
+        {
+          "id": "rId4",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image",
+          "target": "../media/image5.png"
+        }
+      ]
+    },
+    {
+      "slide": 5,
+      "text": "BETOX Trapped Electron\nDetrapping\nModeling\nEmission\nrate\n모델링\n결과식\n(Jin, TED 2025)\nBETOX\n의\nO/N/O/N/O 5-layer\n구조\nPoisson solution\nJin, TED 2025\n,\n,",
+      "relationships": [
+        {
+          "id": "rId8",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image",
+          "target": "../media/image14.png"
+        },
+        {
+          "id": "rId3",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image",
+          "target": "../media/image8.png"
+        },
+        {
+          "id": "rId7",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image",
+          "target": "../media/image13.png"
+        },
+        {
+          "id": "rId2",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image",
+          "target": "../media/image7.png"
+        },
+        {
+          "id": "rId1",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/slideLayout",
+          "target": "../slideLayouts/slideLayout2.xml"
+        },
+        {
+          "id": "rId6",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image",
+          "target": "../media/image12.png"
+        },
+        {
+          "id": "rId5",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image",
+          "target": "../media/image10.png"
+        },
+        {
+          "id": "rId4",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image",
+          "target": "../media/image9.png"
+        },
+        {
+          "id": "rId9",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image",
+          "target": "../media/image15.png"
+        }
+      ]
+    },
+    {
+      "slide": 6,
+      "text": "CTN Trapped Electron\nDetrapping\nBETOX\ndetrapping\n연구를 통해\nlocal trap-to-band emission rate\n모델링 구축\n실제\nretention loss\n예측을 위해서는\nCTN\ntrapped\nelectrons\n의\ntrap-to-band\ndetrapping\nemission\n모델링 구축이 필요함\n기존모델\n(Amoroso, TED 2011)\n은\nCTN charge\n를\nuniform distribution\n으로 가정하는 한계가 있음\n본 연구에서는\narbitrary radial charge distribution\n에 대한 모델링으로 확장\nJin, EDL 2026",
+      "relationships": [
+        {
+          "id": "rId1",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/slideLayout",
+          "target": "../slideLayouts/slideLayout2.xml"
+        }
+      ]
+    },
+    {
+      "slide": 7,
+      "text": "Visualization of\nCharge Node Analysis\nQ\nΔQ\n0\nΔQ\n1\nΔQ\nN\n=\n+\n+\n+\n...\n=\n+\n+\n+\n...\nr\n0\nr\n1\nr\nN\n...\nCTN charge\nΔQ\ni\n=\nπ\nr\ni\n2\n(n\nt,i+1\n-n\nt,i\n)\nn\nt,0\n= 0\nn\nt,N+1\n= 0\nwhere,\ni\n=1-N\nΔQ\n0\nΔQ\n1\nΔQ\n2\nΔQ\n3\nΔQ\nN-1\nΔQ\nN\nJin, EDL 2026\nCTN\n영역을\nN\n개의\nradial charge cell\n으로 분할\n각각의\nequivalent charge node\nΔQ\ni\n으로 표현할 수 있음",
+      "relationships": [
+        {
+          "id": "rId3",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image",
+          "target": "../media/image17.png"
+        },
+        {
+          "id": "rId7",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image",
+          "target": "../media/image21.png"
+        },
+        {
+          "id": "rId2",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image",
+          "target": "../media/image16.png"
+        },
+        {
+          "id": "rId1",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/slideLayout",
+          "target": "../slideLayouts/slideLayout2.xml"
+        },
+        {
+          "id": "rId6",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image",
+          "target": "../media/image20.png"
+        },
+        {
+          "id": "rId5",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image",
+          "target": "../media/image19.png"
+        },
+        {
+          "id": "rId4",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image",
+          "target": "../media/image18.png"
+        }
+      ]
+    },
+    {
+      "slide": 8,
+      "text": "Detailed Poisson Solution\nN+2 layer\n의 전위 분포\n경계조건 행렬식 정리\n선형방정식\nJin, EDL 2026\n역행렬\n계산\n…?\tx = A\n-1\nb ..?\nΔV\nth\n를 구하는데 있어 모든\ncoefficient\n계산은 불필요\n!",
+      "relationships": [
+        {
+          "id": "rId3",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image",
+          "target": "../media/image22.png"
+        },
+        {
+          "id": "rId2",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image",
+          "target": "../media/image11.png"
+        },
+        {
+          "id": "rId1",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/slideLayout",
+          "target": "../slideLayouts/slideLayout2.xml"
+        },
+        {
+          "id": "rId5",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image",
+          "target": "../media/image24.png"
+        },
+        {
+          "id": "rId4",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image",
+          "target": "../media/image23.png"
+        }
+      ]
+    },
+    {
+      "slide": 9,
+      "text": "Q-\nΔV\nth\nOptimized Calculation\nΔV\nth\n: channel\n에서의 전기장의 세기가 중요\nCramer’s rule\n에 따르면\n,\nJin, EDL 2026\nK\nTOX\n값을\n일치시키는게\nΔV\nth\n값 구하는 핵심 과정\n!",
+      "relationships": [
+        {
+          "id": "rId3",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image",
+          "target": "../media/image26.png"
+        },
+        {
+          "id": "rId2",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image",
+          "target": "../media/image25.png"
+        },
+        {
+          "id": "rId1",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/slideLayout",
+          "target": "../slideLayouts/slideLayout2.xml"
+        },
+        {
+          "id": "rId5",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image",
+          "target": "../media/image28.png"
+        },
+        {
+          "id": "rId4",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image",
+          "target": "../media/image27.png"
+        }
+      ]
+    },
+    {
+      "slide": 10,
+      "text": "Q-\nΔV\nth\nOptimized Calculation\nJin, EDL 2026\n결론\n:\n임의로 주어진\nCTN\n내의\ndiscretized\n분포에 대한\nΔV\nth\n계산식\n초기 입력 조건\n:\n,",
+      "relationships": [
+        {
+          "id": "rId3",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image",
+          "target": "../media/image30.png"
+        },
+        {
+          "id": "rId2",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image",
+          "target": "../media/image29.png"
+        },
+        {
+          "id": "rId1",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/slideLayout",
+          "target": "../slideLayouts/slideLayout2.xml"
+        },
+        {
+          "id": "rId6",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image",
+          "target": "../media/image33.png"
+        },
+        {
+          "id": "rId5",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image",
+          "target": "../media/image32.png"
+        },
+        {
+          "id": "rId4",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image",
+          "target": "../media/image31.png"
+        }
+      ]
+    },
+    {
+      "slide": 11,
+      "text": "Time-step-free Physics-based Modeling\n핵심 원리\n: initial trapped charge distribution\n으로 부터\ntarget retention time\n의\nΔV\nth\n를 직접 계산\n1. Initial state\nn\nt0\n(r, E\nt\n)\n2. Emission rates\ne\nch\n, e\nWL\n3. Direct evaluation\nn\nt\n(r, E\nt\n, t)\nJin, EDL 2026\n계산 비용은\nfinal retention time\n자체가 아니라\ntrap bin\n수와\nevaluated time point\n수에 의해 결정\nCTN\nTOX\nBOX\nSi-channel\nWL",
+      "relationships": [
+        {
+          "id": "rId2",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image",
+          "target": "../media/image34.png"
+        },
+        {
+          "id": "rId1",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/slideLayout",
+          "target": "../slideLayouts/slideLayout2.xml"
+        }
+      ]
+    },
+    {
+      "slide": 12,
+      "text": "Time-step-free Physics-based Modeling\nNumerical\n상관관계 실험\ntrap bin\n을\n10-140\n등분하여 비교 테스트\n100\n등분 이상부터 수렴\nCTN slice\n를\n5-50\n등분하여 비교 테스트\n30\n등분 이상부터 수렴\n1. Initial state\nn\nt0\n(r, E\nt\n)\n2. Emission rates\ne\nch\n, e\nWL\n3. Direct evaluation\nn\nt\n(r, E\nt\n, t)\nJin, EDL 2026\n핵심 원리\n: initial trapped charge distribution\n으로 부터\ntarget retention time\n의\nΔV\nth\n를 직접 계산",
+      "relationships": [
+        {
+          "id": "rId3",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image",
+          "target": "../media/image35.emf"
+        },
+        {
+          "id": "rId2",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/oleObject",
+          "target": "../embeddings/oleObject1.bin"
+        },
+        {
+          "id": "rId1",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/slideLayout",
+          "target": "../slideLayouts/slideLayout2.xml"
+        },
+        {
+          "id": "rId5",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image",
+          "target": "../media/image36.emf"
+        },
+        {
+          "id": "rId4",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/oleObject",
+          "target": "../embeddings/oleObject2.bin"
+        }
+      ]
+    },
+    {
+      "slide": 13,
+      "text": "Time-step-free Physics-based Modeling\n1. Initial state\nn\nt0\n(r, E\nt\n)\n2. Emission rates\ne\nch\n, e\nWL\n3. Direct evaluation\nn\nt\n(r, E\nt\n, t)\nJin, EDL 2026\n3.1 eV\n1.0 eV\n3.65 eV\n핵심 원리\n: initial trapped charge distribution\n으로 부터\ntarget retention time\n의\nΔV\nth\n를 직접 계산\n주어진\ninitial band diagram\n을 기준으로\nchannel\n방향과\nword line (WL)\n방향으로의\nemission rate\n을 계산",
+      "relationships": [
+        {
+          "id": "rId8",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image",
+          "target": "../media/image35.png"
+        },
+        {
+          "id": "rId3",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/oleObject",
+          "target": "../embeddings/oleObject3.bin"
+        },
+        {
+          "id": "rId7",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image",
+          "target": "../media/image340.png"
+        },
+        {
+          "id": "rId2",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image",
+          "target": "../media/image37.png"
+        },
+        {
+          "id": "rId1",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/slideLayout",
+          "target": "../slideLayouts/slideLayout2.xml"
+        },
+        {
+          "id": "rId6",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image",
+          "target": "../media/image38.emf"
+        },
+        {
+          "id": "rId5",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/oleObject",
+          "target": "../embeddings/oleObject3.bin"
+        },
+        {
+          "id": "rId4",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image",
+          "target": "../media/image38.emf"
+        }
+      ]
+    },
+    {
+      "slide": 14,
+      "text": "Time-step-free Physics-based Modeling\n1. Initial state\nn\nt0\n(r, E\nt\n)\n2. Emission rates\ne\nch\n, e\nWL\n3. Direct evaluation\nn\nt\n(r, E\nt\n, t)\n초기 전하 분포\nclosed-form evaluation\nDetrapping\nAutonomous ODE\n: Autonomous ODE\nJin, EDL 2026\n핵심 원리\n: initial trapped charge distribution\n으로 부터\ntarget retention time\n의\nΔV\nth\n를 직접 계산\n위 식을 풀면\n,\n시간에 따른 일반해를 구할 수 있음",
+      "relationships": [
+        {
+          "id": "rId3",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image",
+          "target": "../media/image39.png"
+        },
+        {
+          "id": "rId2",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image",
+          "target": "../media/image37.png"
+        },
+        {
+          "id": "rId1",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/slideLayout",
+          "target": "../slideLayouts/slideLayout2.xml"
+        }
+      ]
+    },
+    {
+      "slide": 15,
+      "text": "Validation\nof Time-\nStep\n-\nFree\nEvaluation\nJin, EDL 2026\nTime-step-free evaluation\n의\nvalidity\n를 확인하기 위해\niteration test\n를 수행함\nIterative test\n를 진행한 결과와\niteration\n이 없는 단일계산으로 진행한\ntime-step-free evaluation\n의 차이가\n10\n9\n[s]\n이상의 시간이 지나야\n3%\n가량 차이 발생\n두 결과의 차이가 작아\ntime-step-free approximation\n이 유효함을 확인함\n< 3% difference\nafter 10\n9\ns",
+      "relationships": [
+        {
+          "id": "rId3",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image",
+          "target": "../media/image40.emf"
+        },
+        {
+          "id": "rId2",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/oleObject",
+          "target": "../embeddings/oleObject4.bin"
+        },
+        {
+          "id": "rId1",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/slideLayout",
+          "target": "../slideLayouts/slideLayout2.xml"
+        },
+        {
+          "id": "rId5",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image",
+          "target": "../media/image41.emf"
+        },
+        {
+          "id": "rId4",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/oleObject",
+          "target": "../embeddings/oleObject5.bin"
+        }
+      ]
+    },
+    {
+      "slide": 16,
+      "text": "Cryogenic Retention Condition\n실험 측정 결과\n(\nRefaldi\n, IRPS 2025)\n실험적으로\nDetrapping\neffect\n를 분리하는 기법\nThermal transition\n억제\nDetrapping\neffect\n분리\nModeling validation\n에 적합한\nmeasurement reference\n제공\n(\n단\n,\n단위는\nA.U.)\n극저온 조건이 필요한 이유\n?",
+      "relationships": [
+        {
+          "id": "rId2",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image",
+          "target": "../media/image42.png"
+        },
+        {
+          "id": "rId1",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/slideLayout",
+          "target": "../slideLayouts/slideLayout2.xml"
+        }
+      ]
+    },
+    {
+      "slide": 17,
+      "text": "Cryogenic-like\nTCAD Emulation\n온도\n–\nσ\nn\n수렴성\n테스트\n:\n극저온 환경과\nσ\nn\n→\n0\n사이의 상호\n300 K\n→\n83 K (TCAD\n최저온도\n)\n10\n-16\n→\n10\n-31\n→\n… [cm\n2\n]\nσ\nn\n→\n0\n지속적으로 확장 가능\nCyrogenic\n-like TCAD Emulation Physics deck\nSRH Recombination, Fermi statistics, non-local tunneling, Poole-Frenkel emission, thermionic emission",
+      "relationships": [
+        {
+          "id": "rId3",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image",
+          "target": "../media/image43.emf"
+        },
+        {
+          "id": "rId2",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/oleObject",
+          "target": "../embeddings/oleObject6.bin"
+        },
+        {
+          "id": "rId1",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/slideLayout",
+          "target": "../slideLayouts/slideLayout2.xml"
+        },
+        {
+          "id": "rId5",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image",
+          "target": "../media/image44.emf"
+        },
+        {
+          "id": "rId4",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/oleObject",
+          "target": "../embeddings/oleObject7.bin"
+        }
+      ]
+    },
+    {
+      "slide": 18,
+      "text": "Cryogenic-like\nEmulation\nt\nTOX\n= 3, 3.5, 4, 4.5, 5 [nm]\n측정치\n– TCAD\nO/N/O =\n3\n/6/8 [nm]\n모델\n– TCAD\nt\nTOX\n= 3 ~ 5 [nm]\n변화에 따른 변동 검증\nJin, EDL 2026\n측정치와\nTCAD calibration\n진행\nΔV\nth\n는\nA.U.\n값이지만\n,\nt\nTOX\n값 조절을 하며\ntime scale\n을 기준으로\ncalibration",
+      "relationships": [
+        {
+          "id": "rId3",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image",
+          "target": "../media/image45.emf"
+        },
+        {
+          "id": "rId2",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/oleObject",
+          "target": "../embeddings/oleObject8.bin"
+        },
+        {
+          "id": "rId1",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/slideLayout",
+          "target": "../slideLayouts/slideLayout2.xml"
+        },
+        {
+          "id": "rId5",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image",
+          "target": "../media/image46.emf"
+        },
+        {
+          "id": "rId4",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/oleObject",
+          "target": "../embeddings/oleObject9.bin"
+        }
+      ]
+    },
+    {
+      "slide": 19,
+      "text": "Computational Impact\nProperty\nTransient TCAD\nTime-step-free model\nTemporal\ntreatment\nSequential\ntime stepping\nFinal-time\ndependence\nRuntime grows as\nsimulated retention time increases\nIndependent of final\nphysical time for fixed queries\nAverage\nruntime\n27483 s\n3.926 s\nClosed-form\nevaluation of Eq. (13)\n≈ 7000×\nruntime reduction\nTCAD\n는\nfinal physical time\n까지\ntime step\n별 순차적으로 계산\nTime-step-free model\n은\nclosed-form evaluation\nComputational\nresource\n는\nfinal retention time\n자체가 아니라\ntrap bin\n수와\nevaluated time point\n수에 의해 결정\nJin, EDL 2026",
+      "relationships": [
+        {
+          "id": "rId1",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/slideLayout",
+          "target": "../slideLayouts/slideLayout2.xml"
+        }
+      ]
+    },
+    {
+      "slide": 20,
+      "text": "Limited\nContribution of TAT\n가능 경로 수\n(Route Count)\n개념 활용하여\nTAT\n제외 이유\nfiller\nSi-channel\nTOX\nCTN\nfiller\nSi-channel\nTOX\nCTN\nCTN > Si-channel (\nDetrap\n)\nCTN > TOX > Si-channel (TAT)\n가능 경로 수\n(Route Count)\ndetrap\n통과 넓이\n2π\nr\nTOX\n, centroid\nL\nWL\n가능 경로 수\n(Route Count)\nTAT\n통과 넓이\n#\ntrap\na\ntrap\n2\n통과 넓이 대폭 감소로\n인한 가능 경로 수 감소\ncf\n)\na\ntrap\n~ 1.7Å",
+      "relationships": [
+        {
+          "id": "rId1",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/slideLayout",
+          "target": "../slideLayouts/slideLayout2.xml"
+        }
+      ]
+    },
+    {
+      "slide": 21,
+      "text": "Limited\nContribution of TAT\nCTN\nTOX\nSi-channel\nBETOX total trap density (measurement)\n1k:  4.49\n×\n10\n16\ncm\n-3\n10k: 1.16\n×\n10\n17\ncm\n-3\n50k: 1.89\n×\n10\n17\ncm\n-3\nCTN\ntrap\n[#]\n0.55\n1.42\n2.03\nJin, EDL\n(2026)\nDetrapping\nModel\nJin, TED (2025)\nEffective route count modeling\n⸫ Simulation Result\nendurance\n별로 차이는 있으나\n, CTN\ndetrap\n의 넓은\nemission route\n를 극복할 순 없다\nJin, TED (2025)",
+      "relationships": [
+        {
+          "id": "rId8",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image",
+          "target": "../media/image50.emf"
+        },
+        {
+          "id": "rId3",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image",
+          "target": "../media/image47.emf"
+        },
+        {
+          "id": "rId7",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/oleObject",
+          "target": "../embeddings/oleObject11.bin"
+        },
+        {
+          "id": "rId2",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/oleObject",
+          "target": "../embeddings/oleObject10.bin"
+        },
+        {
+          "id": "rId1",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/slideLayout",
+          "target": "../slideLayouts/slideLayout2.xml"
+        },
+        {
+          "id": "rId6",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image",
+          "target": "../media/image50.png"
+        },
+        {
+          "id": "rId5",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image",
+          "target": "../media/image49.png"
+        },
+        {
+          "id": "rId10",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image",
+          "target": "../media/image51.emf"
+        },
+        {
+          "id": "rId4",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image",
+          "target": "../media/image48.png"
+        },
+        {
+          "id": "rId9",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/oleObject",
+          "target": "../embeddings/oleObject12.bin"
+        }
+      ]
+    },
+    {
+      "slide": 22,
+      "text": "Summary and Future Works\nFuture Works\ncell-to-cell variation\n및\nretention\n산포 적용 가능한 모델링 셋업\nSPICE\n등\ncell\n단위의\nreliability simulation\n과의 연계\nSummary\nBETOX trap-to-band tunneling emission rate\n모델링\n(Jin, TED 2025)\nCTN\n전자 임의 분포에 대한\nΔV\nth\n계산\nframework\n구축\nClosed-form autonomous ODE\n기반\ntime-step-free retention\n모델 제안\nCryogenic-like TCAD\n검증 및\n~7000x\n시뮬레이션 시간 단축 확인\n현 모델 기반으로\ndetrap\n성분과\nTAT\n성분 비교",
+      "relationships": [
+        {
+          "id": "rId1",
+          "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/slideLayout",
+          "target": "../slideLayouts/slideLayout2.xml"
+        }
+      ]
+    }
+  ],
+  "media": [
+    "image1.png",
+    "image10.png",
+    "image11.png",
+    "image12.png",
+    "image13.png",
+    "image14.png",
+    "image15.png",
+    "image16.png",
+    "image17.png",
+    "image18.png",
+    "image19.png",
+    "image2.png",
+    "image20.png",
+    "image21.png",
+    "image22.png",
+    "image23.png",
+    "image24.png",
+    "image25.png",
+    "image26.png",
+    "image27.png",
+    "image28.png",
+    "image29.png",
+    "image3.png",
+    "image30.png",
+    "image31.png",
+    "image32.png",
+    "image33.png",
+    "image34.png",
+    "image340.png",
+    "image35.emf",
+    "image35.png",
+    "image36.emf",
+    "image37.png",
+    "image38.emf",
+    "image39.png",
+    "image4.png",
+    "image40.emf",
+    "image41.emf",
+    "image42.png",
+    "image43.emf",
+    "image44.emf",
+    "image45.emf",
+    "image46.emf",
+    "image47.emf",
+    "image48.png",
+    "image49.png",
+    "image5.png",
+    "image50.emf",
+    "image50.png",
+    "image51.emf",
+    "image6.png",
+    "image7.png",
+    "image8.png",
+    "image9.png"
+  ]
+}

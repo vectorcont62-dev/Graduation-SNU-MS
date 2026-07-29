@@ -1,0 +1,1315 @@
+
+===== PAGE 1 =====
+4884 IEEE TRANSACTIONS ON ELECTRON DEVICES, VOL. 72, NO. 9, SEPTEMBER 2025
+Modeling Attempt-to-Escape Frequency:
+Tunneling Emission of Trapped Electrons in
+Tunneling Oxides of 3-D NAND
+Flash Memory
+Myung Jin and Hyungcheol Shin , Senior Member, IEEE
+Abstract—We propose a novel physical model for the
+attempt-to-escape frequency of trap-to-band electron emis-
+sion, which is broadly applicable to various trap-to-band
+scenarios. The model is verified under detrapping mech-
+anisms in bandgap-engineered tunneling oxide (BETOX),
+enabling accurate prediction of electron emission dynam-
+ics within extremely short timeframes. Extensive compar-
+isons between the proposed model and calibrated TCAD
+simulations demonstrate excellent agreement, validating
+its accuracy and reliability. Additionally, based on cal-
+ibrated physical parameters, the model is adaptable to
+engineering variations such as trap profiles, including intri-
+cate combinations of Gaussian trap distributions, making it
+highly versatile for future device optimization and analysis.
+Index Terms—Attempt-to-escape frequency, bandgap-
+engineered 3-D charge trap NAND flash memory, TCAD
+simulation, trap-to-band tunneling (TBT) emission.
+I. INTRODUCTION
+THE growing demand for advanced memory solutions,
+driven by AI and high-performance computing (HPC),
+has positioned 3-D NAND flash as a key innovation in the
+semiconductor industry [1]. By stacking memory cells verti-
+cally, 3-D NAND enables higher capacity and lower bit cost
+compared to 2-D NAND [2]. Recent advancements in bandgap
+engineering of tunneling oxides through nitride incorporation
+have improved performance by widening the memory win-
+dow [3]. However, this also leads to challenges such as trap Fig. 1. Configuration of the (a) charge distribution by radial coordinate,
+site formation within the tunneling oxide, which can result in (b) 3-D structure, (c) 3-D band diagram of the BETOX 3-D NAND flash
+indicating dominant emission mechanism as TBT, and (d) effect on
+retention failure caused by electron detrapping [4]. reliability by electron detrapping in 3-D NAND flash memory cell ∆Vth
+The development of physical compact models for retention distribution.
+failure in 3-D NAND flash memory has been extensively
+explored through various approaches [4], [5]. These mod-
+els aim at accurate simulations of retention failure in 3-D NAND flash memories, but often rely on simple shockley-
+read-hall (SRH) theory [6], [7], while tunneling emission
+Received 27 May 2025; revised 23 June 2025 and 8 July 2025; needs investigation of carrier traps and reservoirs at different
+accepted 11 July 2025. Date of current version 25 August 2025. The
+regions.
+review of this article was arranged by Editor S.-M. Hong. (Corresponding
+authors: Myung Jin; Hyungcheol Shin.) In this study, we propose a physically accurate model for
+Myung Jin is with the Department of Electrical and Computer the attempt-to-escape frequency for trap-to-band tunneling
+Engineering, Seoul National University, Seoul 08826, South Korea (TBT) emission (ν ) of trapped electrons and apply it
+(e-mail: gsjb1028@snu.ac.kr). TBT
+Hyungcheol Shin is with the Department of Electrical and Computer to electron detrapping within bandgap-engineered tunneling
+Engineering, Seoul National University, Seoul 08826, South Korea, oxide (BETOX) [4], [8]. Furthermore, this study explores the
+and also with Integra Semiconductor, Ltd., Seoul 06970, South Korea
+impact of various trap profile distributions, to better capture
+(e-mail: hcshin@snu.ac.kr).
+Digital Object Identifier 10.1109/TED.2025.3589340 their inherent characteristics.
+1557-9646 © 2025 IEEE. All rights reserved, including rights for text and data mining, and training of artificial intelligence
+and similar technologies. Personal use is permitted, but republication/redistribution requires IEEE permission.
+See https://www.ieee.org/publications/rights/index.html for more information.
+Authorized licensed use limited to: Seoul National University. Downloaded on August 26,2025 at 23:01:11 UTC from IEEE Xplore. Restrictions apply.
+
+===== PAGE 2 =====
+JIN AND SHIN: MODELING ATTEMPT-TO-ESCAPE FREQUENCY: TUNNELING EMISSION OF TRAPPED ELECTRONS 4885
+II. SETUP AND DEVICE PARAMETERS TABLE I
+PARAMETER VALUES FOR THE TCAD SIMULATION
+A. Calibration of the Simulation and Model
+Fig. 1 summarizes the structural, band diagram, and the
+effect of electron detrapping in BETOX 3-D NAND flash
+memory cells. For the simulation constructed throughout this
+study, Synopsys Sentaurus TCAD was used, which can con-
+duct an accurate 3-D semiconductor simulation [9]. After
+constructing the 3-D cylindrical structure and adopting the
+physical parameters as Table I, the program operation by a
+single pulse of duration 1 µs and rising and falling times in
+0.1 µs, then the retention operation was continued by setting
+the voltage of all the current contacts to 0 V. The programming
+of the cells was done after the erase of the whole NAND
+flash string. Over the whole simulation, nonlocal tunneling was
+implied for the physics of the tunneling mechanism within the
+device structure [9].
+Fig. 1(b) shows the programmed cell with trapped electrons
+within the charge trap nitride (CTN) layer and BETOX nitride Fig. 2(a) depicts the uniformly patterned cells. Since the
+(n1) layer. All physical parameters, structural dimensions, trapped electrons within the CTN layer are effectively equiv-
+and V pgm values organized in Table I were calibrated through alent to a negative gate voltage given to the NAND string,
+TCAD simulations based on previous studies [10], [11], the Si-channel becomes depleted. This makes the string an
+[12]. The program operation was employed to all word lines insulated area, forming an extra negative channel potential
+uniformly programmed to achieve identical threshold voltage (V ) to the area of the programmed cell [14]. Fig. 2(b) shows
+ch
+shifts ((cid:49)V ) as the target cell. Note that (cid:49)V value is the that the value of V ≈ −(cid:49)V as observed within the TCAD
+th th ch th
+difference of threshold voltage from the virgin cell ((cid:49)V < simulation. Fig. 2(c) depicts the Poisson equation over cross-
+th,ERS
+0 V). The program voltage (V ) was precisely calibrated sectional view.
+pgm
+using the TCAD simulation parameters listed in Table I. Since it has been reported that retention failure due to
+After the construction of the TCAD simulation, calibra- trapped electron emissions within tunneling oxide could affect
+tion of the model to the TCAD simulation in accordance the reliability of the 3-D NAND flash cell in both short-term
+with the band diagram and electrostatic properties shown in and long-term timescales [4], [8], the time transient of n t_n1
+Figs. 1(a), (c), and 2(c) analytically is needed. The following was analyzed precisely throughout this study.
+Poisson equation is solved under cylindrical structure for the
+model calibration [4], [13]: B. Assumption of Dominant Emission Mechanism
+∂2V (r) 1 ∂V (r)
+  − q
+q
+n
+n ε n
+t_
+1
+n1 if r ∈ n1
+me
+A
+ch
+s
+a
+i
+n
+l
+i
+l
+s
+u
+m
+stra
+d
+t
+u
+ed
+rin
+i
+g
+n
+e
+F
+l
+i
+e
+g
+c
+.
+tr
+1
+o
+(
+n
+c),
+de
+w
+tr
+e
+ap
+a
+p
+s
+i
+s
+n
+u
+g
+me
+fro
+T
+m
+BT
+BE
+as
+TO
+d
+X
+om
+s
+in
+in
+a
+c
+n
+e
+t
++ = − t_CTN if r ∈ CTN (1) electrons in the conduction band are more probable to be
+∂r2 r ∂r ε
+
+0
+CTN
+if r ∈ else
+recaptured to available trap sites because electrons cannot
+excessively accumulate to enable fowler-nordheim (FN) tun-
+where n and n represent the trapped electron density neling or direct tunneling [15], as described in Fig. 2(e).
+t_n1 t_CTN
+of n1 and CTN regions, respectively, which is assumed to have Conduction band diagram of BETOX can be induced,
+a uniform concentration distribution, as shown in Fig. 1(a). as shown in Fig. 2(c) using the Poisson equation solution
+Here, q denotes the absolute value of a single electron charge. in the Appendix. Fig. 2(d) and (e) shows the difference of
+The detailed solution of the Poisson equation in the BETOX electronic statistics between program and retention operation.
+structure is provided in the Appendix. Program operation as Fig. 2(d) generates the FN tunneling
+The trapped electron within the region assumed as uni- current (J FN ) by a high field with intensively accumulated
+form distribution forms a difference in threshold voltage conductive electrons in the conduction band region.
+((cid:49)V ) as in the following equation, where C and C However, during a retention operation, as illustrated in
+th n1 CTN
+are the capacitive constants for n1 and CTN regions, Fig. 2(e), the Fermi level (E F ) is positioned near the average
+respectively: trap depth due to the relaxation nature of a retention operation.
+This energy band configuration prevents excessive electron
+qn qn
+(cid:49)V = t_n1 + t_CTN . (2) accumulation in the conduction band of BETOX n1 layer.
+th
+C C
+n1 CTN Consequently, trapped electrons are more likely to be emitted
+Therefore, the program cell information is stored within the directly to the conduction band of the Si channel rather than
+cell as (cid:49)V by program operation, which injects electrons into being transported through direct tunneling to the channel
+th
+the CTN layer. Note that n plays the main role of forming region. Therefore, the process of trapped electron detrapping
+t_CTN
+the (cid:49)V value, while n is formed due to unintentional from the BETOX region is predominantly governed by TBT
+th t_n1
+electron trapping during the program operation. emission.
+Authorized licensed use limited to: Seoul National University. Downloaded on August 26,2025 at 23:01:11 UTC from IEEE Xplore. Restrictions apply.
+
+===== PAGE 3 =====
+4886 IEEE TRANSACTIONS ON ELECTRON DEVICES, VOL. 72, NO. 9, SEPTEMBER 2025
+Fig. 3. (a) Electron transition mechanism between Si-channel con-
+duction band and trap sites in BETOX structure. (b) Discretized
+representation of continuous trap energy profiles with multibarrier tun-
+neling paths.
+nitride-induced trap states within the BETOX layer. The
+fundamental transition directionality arises from Fermi level
+(E ) alignment disparities—electrons migrate from regions of
+F
+higher Fermi potential (trap region) to lower Fermi potential
+(Si-channel region) under retention bias conditions.
+Fig. 3(b) explicitly illustrates the multibarrier energy land-
+scape governing electron emission from continuously dis-
+tributed trap profiles. To enable computationally tractable
+modeling, spatial uniformity of trap distribution within the
+BETOX layer is assumed, as shown in Fig. 1(a), allowing the
+discretization of the continuous trap profile into finite energy
+and spatial resolutions during numerical simulations.
+The emission kinetics for individual trap levels are governed
+Fig. 2. (a) TCAD simulation setting of cylindrical 3-D NAND flash by first-order ordinary differential equations (ODEs), with the
+memory string. The conduction band profile of (b) lateral slice and
+(c) cross-sectional view. The main tunneling mechanism of electrons in general solution of (3) expressed as
+(d) program operation and (e) retention operation.
+trap spatial trap spatial
+The temporal evolution of trapped electron density can
+n t = X X n t,i,j (t) = X X n t0,i,j exp (cid:0)−e TBT,j t (cid:1) (4)
+i=1 j=1 i=1 j=1
+be modeled by considering various emission mechanisms.
+where index i enumerates the discretized trap energy levels
+However, based on both theoretical analysis and experimental
+and j denotes the spatial partitioning within the BETOX
+observations [4], [8], the TBT mechanism dominates the
+layer. Enhanced simulation fidelity is achieved through refined
+emission process during retention failure caused by electron
+discretization of both energy (i) and spatial ( j) domains
+detrapping mechanisms. Therefore, the emission rate equation
+though this improvement necessitates proportional increases
+can be simplified as
+in computational resource allocation.
+mechanisms
+dn t_n1 = X −e n ≈ −e n (3) This formulation provides a unified framework for pre-
+dt m t_n1 TBT t_n1 dicting time-dependent charge loss in BETOX-based memory
+m
+devices, explicitly coupling quantum mechanical tunneling
+where e m denotes the emission rate of various mechanisms, probabilities with macroscopic device electrostatics. The
+and e TBT is the TBT emission rate. While multiple emis- model’s discretization approach enables systematic investiga-
+sion pathways potentially contribute to retention loss, (3) tion of trap profile engineering effects on retention character-
+reflects our finding that a single dominant mechanism—TBT— istics while maintaining compatibility with industry-standard
+adequately describes the observed electron emission behavior TCAD simulation platforms.
+in the BETOX structure.
+B. Attempt-to-Escape Frequency (ν ) Modeling
+TBT
+III. MODEL DESCRIPTION
+Evaluating the TBT emission rate (e ) as depicted in
+TBT
+A. Band-Trap Electron Transition Model
+Fig. 3, which is defined as
+The tunneling emission mechanism is rigorously modeled
+e = ν × |TC| (5)
+through quantum state transitions between the Si-channel TBT TBT
+conduction band and trap sites, as schematically depicted represents the emission rate as multiplication of the attempts
+in Fig. 3(a). The Si-channel conduction band functions to escape (ν ) with the transmission coefficient (|TC|) of
+TBT
+as an electron reservoir that dynamically interacts with multiple trapezoidal barriers as Fig. 4(b).
+Authorized licensed use limited to: Seoul National University. Downloaded on August 26,2025 at 23:01:11 UTC from IEEE Xplore. Restrictions apply.
+
+===== PAGE 4 =====
+JIN AND SHIN: MODELING ATTEMPT-TO-ESCAPE FREQUENCY: TUNNELING EMISSION OF TRAPPED ELECTRONS 4887
+amorphous Si-N compound bonding length is 1.7 Å; therefore,
+the assumption can lead to the trap volume of the electron trap
+site as V = (1.7 Å)3.
+T
+The Hamiltonian is explicitly defined as
+(
+−|(cid:49)E |, for r ∈ V
+H ˆ ′ (r) = T T (8)
+T 0, otherwise
+where |(cid:49)E | ≡ |E −E | represents the energy depth of the
+T C trap
+trap relative to the conduction band edge E , and r denotes
+C
+the spatial coordinate.
+The matrix element ⟨ f |H ˆ ′ |i⟩ simplifies under the assump-
+T
+tion of localized trap states, yielding
+W(E) = 2 h¯ π (cid:12) (cid:12)⟨ f (cid:12) (cid:12)H ˆ ′ T (cid:12) (cid:12)i⟩ (cid:12) (cid:12) 2ρ(E) = 2 h¯ π |(cid:49)E T |2V T δ(cid:0) E − E trap (cid:1)
+(9)
+where the Dirac delta function δ(E − E ) enforces energy
+trap
+conservation during the trap-to-band transition. This formu-
+Fig. 4. (a) TCAD representation of electron detrapping within the lation directly links the microscopic trap geometry (V T ) and
+device. (b) Multibarrier electron detrapping by the energy band cross- engineering defect profile (|(cid:49)E |) to macroscopic emission
+T
+sectional view. (c) Gaussian fitting of the measured BETOX trap
+kinetics, providing a quantum-mechanically rigorous founda-
+profile [10]. (d) Specification.
+tion for predicting state transition dynamics in BETOX-based
+The |TC| value is calculated using the Wentzel–Kramer– devices.
+The DOS for TBT in the nitride layer incorporates
+Brillouin (WKB) approximation [16], which accounts for the
+anisotropic effective mass components, with distinct con-
+cumulative effect of multiple trapezoidal potential barriers
+tributions from in-plane (m ) and tunneling-direction (m∗)
+between the trap and the conduction band. As depicted in 0 n
+dynamics. Spin degeneracy and quantum phase-space normal-
+Fig. 3(b), the tunneling probability for each individual barrier
+ization are explicitly resolved through the derived formulation
+is expressed in exponential form, and the overall transmission
+c b o il e it f i fi e c s ie o n f t a i l s l o th b e ta b in a e rr d ie b r y s multiplying the transmission proba- D(E) = D ∥tun D ⊥tun (E) = 2 · 4π 1 2 2 h¯ m 2 0 p 2 h¯ m∗ n p E − E C,r .
+|TC| = Y exp − 4 p 2m∗ ox,n · (cid:56)1 H .5 − (cid:56)1 L .5 ! . (6) (10)
+3h¯q F This formulation decomposes the effective mass into
+o1,n1 eq
+tunneling-direction and tunneling-surface components, reflect-
+Here, (cid:56) H and (cid:56) L represent the higher and lower sides of ing the coupling between the constant trap-induced perturba-
+the trapezoidal potential barrier, respectively, and F eq denotes tion and the conduction band of the electron reservoir. Notably,
+the equivalent electric field. F eq value can be calculated with the DOS integration occurs in the energy level of the Si
+the centroid field intensity of each o1 and n1 layers provided channel (electron reservoir), as the trap in the n1 region acts as
+in the Appendix. The WKB approximation is well-suited for a constant perturbation coupled to the reservoir’s conduction
+modeling quantum tunneling in structures where the potential band.
+barrier profile varies gradually, as is the case for the multilay- The (E − E C,r )1/2 term reflects energy-dependent state
+ered insulating regions in BETOX. This approach effectively availability above the conduction band edge, while the h¯−3
+captures the cumulative tunneling probability across the mul- scaling ensures proper quantum-mechanical normalization.
+tiple barriers between the trap and the conduction band. Compared to isotropic models, this anisotropic treatment more
+The modeling of the attempt-to-escape frequency of TBT accurately predicts emission kinetics in BETOX structures,
+emission (ν TBT ) begins when the trap energy level is higher where directional mass variations critically influence tunneling
+than the conduction band energy level of the electron reservoir probabilities.
+(E trap > E C,r ). By utilizing the tunneling capture-emission f r (E) is a Fermi distribution of electrons within the conduc-
+model proposed in [17], the ν can be derived as follows: tion band of reservoir. Using the parameter set as Table I, the
+TBT
+Z condition E trap ≫ E C,r is satisfied, leading to f r (E trap ) ≈ 0,
+ν TBT = W(E) · D(E) · (1 − f r (E))dE. (7) which implies 1 − f r ≈ 1.
+By applying state transition rate W(E) and DOS value
+The transition rate per density of states (DOS) W(E) is D(E) to (7), ν is derived as follows:
+TBT
+derived using Fermi’s golden rule under the influence of a
+s p p re a v ti i a o l u ly s s l t o u c d a y liz s e a d ys p t e h r a t t ur a b m at o i r o p n ho H u a s m c i o l m to p n o ia u n nd H ˆ o ′ T f . si S li i c n o c n e a t n h d e ν TBT = 2 h¯ π |(cid:49)E T |2V T × p 2 π m 2h¯ ∗ n 3 m 0 p E trap − E C,r . (11)
+nitride generates hole and electron trap site by over- and under- Thus, the attempt-to-escape frequency (ν ) has been suc-
+TBT
+coordinate atoms [18], the assumption of the trap volume as cessfully derived, conducting the subsequent emission rate
+average intermolecular volume has been adopted. The average (e ) calculation combining (6) and (11) to (5).
+TBT
+Authorized licensed use limited to: Seoul National University. Downloaded on August 26,2025 at 23:01:11 UTC from IEEE Xplore. Restrictions apply.
+
+===== PAGE 5 =====
+4888 IEEE TRANSACTIONS ON ELECTRON DEVICES, VOL. 72, NO. 9, SEPTEMBER 2025
+Fig. 6. Visualization of (a) ν TBT computation by (7) and (11) in the case
+of ∆Vth = 1 V and to1 = 2 nm and (b) emission rate with time constant
+prediction.
+Although this observation is valid, the difference remains
+relatively minor compared to other variations.
+Fig. 5(b)–(d) shows strong agreement between the proposed
+Fig. 5. (a) Comparison of model over ∆Vth = 0–2 V with various model and TCAD results over varying t from minimum 2-nm
+trap profiles. (b)–(d) Compensation result of TCAD and model with trap o1
+values to maximum 4-nm values across different trap profiles
+profile of 1k, 10k, and 50k P/E cycle cells with to1 variation over 2–4 nm.
+(e) and (f) Comparison and development list of the proposed model from indicated in Fig. 4. It shows that the emission behavior is
+the previous model. highly dependent on t about 100-fold difference by 0.5-nm
+o1
+difference.
+Fig. 4(c) presents the Gaussian fitting of trap energy profiles The proposed model of TBT emission explicitly excludes
+in the BETOX structure, measured experimentally using the temperature dependencies. This is due to the nature of the
+trap spectroscopy by charge injection and sensing (TSCIS) band-trap transition model, which assumes the conservation
+method [10]. The continuous trap distribution derived from of the energy level of electron while the transition occurs.
+this fitting spans the entire bandgap energy range. To enable The temperature has the potential to make a difference in the
+numerical simulation, this profile is further resolved into results by the occurrence of intrinsic effects such as mobility
+discrete components through double-Gaussian decomposi- or Fermi distribution within the Si channel, but cannot affect
+tion, as detailed in Fig. 4(d). The decomposed representation the band-trap transition model.
+separates the trap population into two distinct Gaussian distri- The proposed model follows the stretched exponential
+butions, capturing both shallow and deep trap characteristics decaying nature of 3-D NAND flash memories’ retention
+within the BETOX layer. This discretization process allows the characteristics [8]. Meanwhile, a previous model [4] predicted
+continuous energy spectrum to be partitioned into hundreds the time constant of emission by using the attempt-to-escape
+of discrete trap levels, facilitating computationally efficient frequency as a fitting parameter, but cannot simulate the exact
+finite-element analysis while preserving the essential physical behavior of TBT, which shows a low R-square value shown
+features of the original trap profile. in Fig. 5(e) and (f).
+These findings confirm that the proposed TBT emission
+IV. SIMULATION RESULT AND VALIDATION model accurately simulates electron emission across diverse
+OF THE MODEL trap profiles and device scales while achieving simulation
+The simulation results of the constructed electron emission times below 1 s. This computational efficiency stems from
+model were generated using MATLAB R2024b. By adapting algorithmic optimization of the computational model, which
+the calibrated Poisson solution in retention state condition, replaces nonlinear approaches used in TCAD or prior detrap-
+various comparisons and R-square validation over the results ping simulations [4], [9] with a parallel-solving framework for
+were shown in this section. To validate the model over TCAD, the first-order ODE general solution as (3) and (4).
+some variations of parameters were given and compared. Fig. 6(a) visualizes the ν for the case of (cid:49)V = 1 V
+TBT th
+Fig. 5(a) shows the variations in the electron emission time and t = 2 nm. The ν increases as the trap energy level
+o1 TBT
+transient curves observed in programmed cells, where the becomes deeper, which is consistent with the modeling as
+effects of trap concentration variations are incorporated described in (7) and (11), with approximately square rela-
+using BETOX trap profiles corresponding to 1k, 10k, and tion. On the other hand, the transmission coefficient (|TC|)
+50k program/erase (P/E) cycles, and the (cid:49)V values range decreases as the trap level deepens by an exponential relation.
+th
+from 0 to 2 V. Fig. 5(b)–(d) shows the variations of t This leads to an overall reduction in the emission rate due to
+o1
+from 2 to 4 nm, and Fig. 5(e) and (f) shows the improvement their multiplicative relationship in (5), which is demonstrated
+of current model from previous studies [4]. in Fig. 6(b).
+Fig. 5(a) shows the comparison of models across various Time constant of stretched-exponential decaying nature of
+(cid:49)V values ranging from 0 to 2 V. It is observed that the emission [8] can be approximated by using the relation of
+th
+more intense the electric field applied to the trapped electrons, τ ≈ e−1. The highlighted regions, labeled as 1k, 10k, and
+the shorter the lifetime for electron emission in the model. 50k for each shallow and deep, represent the most dominant
+Authorized licensed use limited to: Seoul National University. Downloaded on August 26,2025 at 23:01:11 UTC from IEEE Xplore. Restrictions apply.
+
+===== PAGE 6 =====
+JIN AND SHIN: MODELING ATTEMPT-TO-ESCAPE FREQUENCY: TUNNELING EMISSION OF TRAPPED ELECTRONS 4889
+trap levels within the trap profile distribution, effectively which denotes the assumption of a uniform field within the
+illustrating this tendency and providing insights into predicting layer with the field intensity at the centroid of the layer.
+time constants for each cycle’s trap profile.
+REFERENCES
+[1] V. Dakic´, M. Kovacˇ, and J. Slovinac, “Evolving high-performance com-
+V. CONCLUSION puting data centers with Kubernetes, performance analysis, and dynamic
+In this study, an accurate TBT emission model of BETOX workload placement based on machine learning scheduling,” Electronics,
+vol. 13, no. 13, p. 2651, Jul. 2024, doi: 10.3390/electronics13132651.
+was developed. By constructing a band-trap transition frame-
+[2] A. Goda, “Recent progress on 3D NAND flash technologies,”
+work, the attempt-to-escape frequency (ν TBT ) for trapped elec- Electronics, vol. 10, no. 24, p. 3156, Dec. 2021, doi: 10.3390/electron-
+trons was derived through physical derivation. The simulation ics10243156.
+[3] N. Choi, H.-J. Kang, J.-H. Bae, B.-G. Park, and J.-H. Lee, “Effect of
+time was minimized by employing the general solution of the
+nitrogen content in tunneling dielectric on cell properties of 3-D NAND
+first-order ODE, thereby avoiding nonlinear iterations required flash cells,” IEEE Electron Device Lett., vol. 40, no. 5, pp. 702–705,
+in conventional approaches. The results demonstrated excellent May 2019, doi: 10.1109/LED.2019.2905299.
+[4] M. Kim and H. Shin, “Analysis and compact modeling of fast detrapping
+agreement with TCAD simulations based on experimentally
+from bandgap-engineered tunneling oxide in 3-D NAND flash mem-
+measured trap profiles and exhibited robustness against varia- ories,” IEEE Trans. Electron Devices, vol. 68, no. 7, pp. 3339–3345,
+tions in (cid:49)V and o1 thickness within BETOX layer. Jul. 2021, doi: 10.1109/TED.2021.3077202.
+th
+[5] J. Park et al., “Decomposition of charge loss mechanisms in 3-D NAND
+flash memory: Impact of cell dimension via high-temperature long-term
+APPENDIX
+retention characteristics,” IEEE Trans. Electron Devices, vol. 71, no. 10,
+By solving the radial Poisson equation [13] under BETOX pp. 6040–6048, Oct. 2024, doi: 10.1109/TED.2024.3449251.
+[6] Y. Wang and M. H. White, “An analytical retention model for
+3-D NAND flash memory, which is in cylindrical structure
+SONOS nonvolatile memory devices in the excess electron state,”
+ − qn t_n1 if r ∈ n1 Solid-State Electron., vol. 49, no. 1, pp. 97–107, Jan. 2005, doi:
+∂2V (r) 1 ∂V (r)
+
+qn
+ε
+n1 [7] P
+1
+.
+0.
+M
+10
+c
+1
+W
+6/
+h
+j.
+o
+s
+r
+s
+t
+e
+e
+.
+r
+2
+,
+0
+S
+0
+.
+4.
+M
+06
+il
+.
+l
+0
+e
+0
+r,
+9.
+and T. Dellin, “Modeling the memory reten-
+∂r2 + r ∂r = − ε t_CTN if r ∈ CTN (12) tion characteristics of silicon-nitride-oxide-silicon nonvolatile transistors
+
+0
+CTN
+if r ∈ else
+i
+p
+n
+p.
+a
+19
+v
+0
+a
+2
+r
+–
+y
+1
+in
+9
+g
+09
+t
+,
+h
+1
+er
+9
+m
+90
+a
+,
+l
+d
+e
+o
+n
+i
+v
+:
+i
+1
+ro
+0
+n
+.1
+m
+0
+e
+6
+n
+3
+t
+/
+,
+1
+”
+.3
+J
+4
+.
+65
+A
+8
+p
+0
+p
+.
+l. Phys., vol. 68, no. 4,
+[8] S. Kim, K. Lee, C. Woo, Y. Hwang, and H. Shin, “Analysis of
+where the boundary condition is as V (r ) = V and
+o1 o1 ch failure mechanisms during the long-term retention operation in 3-D
+V (r ) = V , and the solution is as follows. NAND flash memories,” IEEE Trans. Electron Devices, vol. 67, no. 12,
+BOX BOX G
+pp. 5472–5478, Dec. 2020, doi: 10.1109/TED.2020.3028349.
+Potential Solution: Radial Field Intensity Solution: [9] TCAD Sentaurus Device User Guide Version 2016, Synopsys, Mountain
+ 
+
+V
+V
+V
+V
+V
+o
+n
+C
+o
+B
+1
+2
+1
+T
+O
+(
+(
+(
+N
+X
+r
+r
+r
+(
+)
+)
+)
+(
+r
+r
+=
+=
+=
+)
+)
+=
+=
+V
+V
+ε K
+n
+o
+o
+V
+V
+1
+1
+x
+o
+C
+(
+(
+2
+r
+r
+l
+T
+n
+o
+n
+(
+N
+r
+1
+1
+r
+o
+(
+)
+)
+r S
+2
+r
++
++
+i
+C
+)
+T
++
++
+ε
+N
+ε
+K
+K
+n
+o
+)
+V
+ε
+1
+2
+1
+x
+C
++
+K
+ch
+l
+T
+l
+3
+n
+n
+N
+ε K
+r
+r
+o
+o r
+4
+n
+l
+x
+r
+n
+1
+1
+l
+r
+n
++
+o r 2
+rC
+q
+r
++
+4
+T
+n ε
+N
+t n _
+q
+n 1
+4
+=
+n
+1
+ε t C
+(cid:16)
+_
+V
+C
+r
+T
+G
+T
+2
+N N
+−
+−
+r
+(cid:16)
+o 2
+r
+ε K
+1
+2
+o
+(cid:17)
+4 x
+−r
+ln
+o 2 2
+r
+(cid:17)
+B r OX .
+ 
+
+F
+F
+F
+F
+F
+o
+o
+B
+n
+C
+1
+2
+1
+o
+T
+(
+(
+(
+x
+N
+r
+r
+r
+(
+(
+)
+)
+)
+r
+r
+)
+=
+=
+=
+)
+=
+=
+−
+−
+−
+−
+−
+ε
+ε
+ε
+K
+K
+K o
+o
+n
+ε K
+ε
+2
+1
+x
+x
+1
+o
+C K
+4 x
+r
+r
+1
+1
+r
+T
+1
+3
+r 1
+N
+−
+−
+q 2 n
+q
+ε t
+2 n
+n _
+ε t
+n 1
+C _
+1
+C T
+r
+T N N r
+[
+[
+[
+1
+1
+1
+0
+1
+2
+]
+]
+]
+H
+A
+D
+V
+i n
+T
+t S
+m
+n
+i
+o
+A
+o e
+i .
+.
+. e
+e
+.
+p n
+3
+m
+J
+N
+w
+P
+. s
+4
+o
+V
+-
+,
+O
+o
+a
+D
+,
+,
+2 ”
+e
+a
+d
+r
+0
+C
+S
+p
+r
+n
+y
+o
+I
+r
+1
+N p
+A d
+—
+E
+e
+v
+1
+m
+. A
+c
+a
+E
+, H
+,
+k
+1
+P
+n e
+N
+E
+U
+d
+.
+7
+i m
+a
+o
+D 4
+S
+r
+S
+e
+e
+T
+o
+t
+i
+5
+h A
+t
+:
+t
+r
+r
+–
+I
+i
+fl
+i
+a
+,
+1
+I
+n
+e
+1
+a
+a
+a
+:
+n 0
+,
+s
+J
+l
+7
+l
+s
+s
+.
+u
+.
+.
+U
+“
+h 4
+,
+,
+1 .
+t
+C n
+h
+9
+n
+1
+“
+.
+E
+m
+o
+r
+“
+,
+d
+0
+A o
+2
+l
+M
+m
+e
+9
+A e
+e
+u
+0
+r
+/
+m
+c
+p
+g
+p
+s
+c
+o
+T
+1
+t
+t
+a
+o h
+r
+d
+r
+o
+5
+E
+a
+.
+c
+o
+m
+e
+r
+.
+n
+D
+t
+n
+2 y
+c
+l d
+p
+i
+,
+h
+m
+0
+.
+”
+n i
+2
+r
+D
+a
+2
+n g
+e
+o
+0
+r
+I 5
+g
+h
+e
+g
+d
+E
+1
+,
+v
+e e
+e
+t
+1
+t
+E
+i
+n
+h
+d
+h
+l
+c .
+i
+E
+s s
+2
+e
+o
+e
+n
+e
+e i
+1
+i
+s
+v
+g
+:
+p
+I
+T
+5 ,
+e
+o S
+a
+o
+1 r
+9
+p
+v
+r
+P
+a
+f
+0
+7
+u a
+e
+o
+n
+P
+.
+2
+t
+t n
+r
+1
+l
+r
+i
+s
+a
+. 2
+d o
+a
+1 .
+c t
+.
+e
+p
+n
+i
+0
+5
+u
+E
+o
+r
+-
+9
+8
+r
+s
+a
+n
+l
+e
+v
+/
+,
+t
+e
+s
+x
+T
+a
+e
+c
+s
+n
+p n
+E
+i
+o
+t
+w
+o
+s
+r
+e d
+f
+D o
+t
+r
+.
+i
+e
+i
+i n
+n
+t
+.
+m
+d
+9
+2
+c h
+g
+,
+h
+0 D
+t
+e
+a
+u
+a
+2
+n o
+p
+e
+n
+r
+5
+t f
+p
+v
+s g
+s
+n
+.
+e
+i
+.
+e
+3
+t
+e
+c
+m
+a h
+3
+5
+l
+e
+n
+i
+e
+1
+4 s
+i t
+n
+d
+a r
+,
+4
+1
+g
+a n
+e
+7
+6 v
+p
+s
+a
+r
+c
+–
+0 o
+i a
+l
+u
+m
+3
+3
+y
+l
+s
+.
+fl
+r
+e
+1
+.
+t
+r
+u
+i a
+7
+5
+e
+c
+l
+s
+o
+n
+a
+2
+5
+a h
+f -
+t
+l
+,
+,
+(13)
+model,” IEEE Trans. Electron Devices, vol. 71, no. 1, pp. 554–559,
+where Jan. 2024, doi: 10.1109/TED.2023.3339112.
+K= VG− α VCh − qnt_n1( 2 r α n 2 1 −ro 2 1 )   − rn 2 1 r − o 2 1 ro 2 1 εn 1 1 ln r r n o1 1 + 2ε 1 n1 + εo 1 x ln r r n o2 1 + εC 1 TN ln rC ro T 2 N + εo 1 x ln r r B C O TN X    [13] S A si . e . n S t M . o S . p p e i A r n a e m t l i l o o i n , ro a o s n o f d , g A a C t . e . - L a . l M l L -a a . r c o a u C it n o a d m , “ c p S h a a e g r m n g o i e - n - a t i n r , a a p l A y m t . ic e a m M l o m a r u i o e r d i s , e ,” l A I f E o . r EE t M he T a r c t a r o a n n n s i - , .
+− qnt_CTN(r 2 C 2 α TN −ro 2 2 )   − rC 2 TN ro 2 − 2 ro 2 2 εC 1 TN ln rC ro T 2 N + 2εC 1 TN + εo 1 x ln r r B C O TN X    (14) E 10 le .1 c 1 tr 0 o 9 n /T D ED ev . i 2 c 0 e 1 s, 1.2 v 1 o 5 l. 90 5 1 8 0 , . no. 9, pp. 3116–3123, Sep. 2011, doi:
+K1 = K − 2 1 qnt−n1ro 2 1 , K2 = K + 1 2 qnt−n1(rn 2 1 −ro 2 1 ) (15) [14] M of . 3 K -D im, ch S a . rge K -t i r m ap , a N n A d N H D . fl S a h s i h n, m “ e A mo c r o ie m s, p ” ac I t EE m E ode T l ran fo s. r E IS le P c P -
+K3 = K + 2 1 qnt−n1(rn 2 1 −ro 2 1 )− 2 1 qnt−CTNro 2 2 (16) tron Devices, vol. 67, no. 8, pp. 3095–3101, Aug. 2020, doi:
+K4 = K + 2 1 qnt−n1(rn 2 1 −ro 2 1 )+ 2 1 qnt−CTN(rC 2 TN −ro 2 2 ) (17) [15] N 10 . .1 Y 1 a 0 n 9 g /T , E W D . .2 K 02 . 0 H .3 e 0 n 0 s 0 o 4 n 4 , 8 J . . R. Hauser, and J. J. Wortman, “Mod-
+α = εo 1 x ln r r o S 1 i + εn 1 1 ln r r n o1 1 + εo 1 x ln r r n o2 1 + εC 1 TN ln rC ro T 2 N + εo 1 x ln r r B C O TN X . (18) eling study of ultrathin gate oxides using direct tunneling current
+and capacitance-voltage measurements in MOS devices,” IEEE Trans.
+Based on this solution of the cylindrical Poisson equation, the
+Electron Devices, vol. 46, no. 7, pp. 1464–1471, Jul. 1999, doi:
+reciprocal of capacitive constants C n − 1 1 and C C − T 1 N of (2) is as 10.1109/16.772492.
+follows: [16] D. Griffiths and D. Schroeter, Introduction to Quantum Mechanics,
+3rd ed., Cambridge, U.K.: Cambridge Univ. Press, 2018.
+C n − 1 1 = (cid:16) r n 2 1 − 2 r o 2 1 (cid:17)( − r n 2 1 r − o 2 1 r o 2 1 ε n 1 1 ln r r n o1 1 + 2ε 1 n1 + εo 1 x ln r r n o2 1 + ε C 1 TN ln rC ro T 2 N + εo 1 x ln r r B C O TN X ) [17] F J. . A. Ji L m ó é p n e e z z - - V M il o la li n n u o e s v , a, F “ . Di G re á c m t iz a , nd A t . rap P -a a s l s m is a t , ed P e . las C ti a c rtu t j u o n , nel a i n n d g
+(19) through ultrathin gate oxides,” J. Appl. Phys., vol. 91, no. 8,
+C C − T 1 N = (r C 2 TN 2 −r o 2 2 )( − r C 2 TN r o 2 − 2 r o 2 2 ε C 1 TN ln rC ro T 2 N + 2ε C 1 TN + ε 1 ox ln r r B C O TN X ) . (20) [18] C p an p . d . W 5 T 1 il . 1 h 6 e G – lm r 5 a 1 e s 2 s r, e 4 r , D , A . “ p W O r. v a e 2 ld r 0 - h 0 o 2 a e , n r d , do L u i . : n C 1 d 0 e v . r i 1 c tk 0 o o 6 o v 3 rd i / c 1 i h n .1 , a 4 t D e 6 d . 10 M a 6 t 2 i o l . a m rd s o a v s ich a , s M ou . r W ce al o tl f ,
+By using the radial field intensity solution, the value of F eq electron and hole traps in amorphous silicon nitride (a-Si3N4),” Nanoma-
+for the |TC| value can be found as follows: terials, vol. 13, no. 16, p. 2286, Aug. 2023, doi: 10.3390/nano13162286.
+[19] Y.-N. Xu and W. Y. Ching, “Electronic structure and optical properties of
+F eq,o1 = F o1 (r = r Si + 0.5 · t o1 ) (21) α and β phases of silicon nitride, silicon oxynitride, and with comparison
+to silicon dioxide,” Phys. Rev. B, Condens. Matter, vol. 51, no. 24,
+F eq,n1 = F n1 (r = r o1 + 0.5 · t n1 ) (22) pp. 17379–17389, Jun. 1995, doi: 10.1103/physrevb.51.17379.
+Authorized licensed use limited to: Seoul National University. Downloaded on August 26,2025 at 23:01:11 UTC from IEEE Xplore. Restrictions apply.

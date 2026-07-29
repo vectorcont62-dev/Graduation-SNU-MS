@@ -1,0 +1,92 @@
+{
+  "path": "C:\\Users\\joshs\\Desktop\\local-laptop\\Graduation-SNU-MS\\석사졸업논문\\Jo(조형준)_Investigation_of_Endurance_Characteristics_in_3-D_nand_Flash_Memory_With_Trap_Profile_Analysis.pdf",
+  "sha256": "3a67ba5eb20943b043ade2c7ecb3f09401f39ca781bd54e4e33c277533fd0dc0",
+  "page_count": 6,
+  "metadata": {
+    "Creator": "LaTeX with hyperref",
+    "ModDate": "D:20240120092723-05'00'",
+    "IEEE Article ID": "10411861",
+    "Trapped": "False",
+    "CreationDate": "D:20240120095019+05'30'",
+    "IEEE Issue ID": "4358746",
+    "Producer": "pdfTeX-1.40.24; modified using iText® 7.1.12 ©2000-2020 iText Group NV (AGPL-version); modified using iText® Core 7.2.4 (AGPL version) ©2000-2022 iText Group NV",
+    "Subject": "IEEE Transactions on Electron Devices; ;PP;99;10.1109/TED.2024.3350565",
+    "PTEX.Fullbanner": "This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) kpathsea version 6.3.4",
+    "IEEE Publication ID": "16",
+    "Title": "Investigation of Endurance Characteristics in 3-D nand Flash Memory With Trap Profile Analysis"
+  },
+  "captions": [
+    {
+      "page": 2,
+      "caption": "Fig. 1. (a) TEG of 3-D CTL NAND flash memory measured in the"
+    },
+    {
+      "page": 2,
+      "caption": "Fig. 1(b) shows the waveforms used in the EW cycling test."
+    },
+    {
+      "page": 2,
+      "caption": "Fig. 2 shows the measurement results of BL current and in Fig. 3(b), the U-shaped trap distribution is applied at"
+    },
+    {
+      "page": 3,
+      "caption": "Fig. 2. Measurement results during 50k EW cycling. (a) IBL–VWL curve of the erase state. (b) IBL–VWL curve of the program state. (c) IWL–VWL"
+    },
+    {
+      "page": 3,
+      "caption": "Fig. 5 shows the trap profiles for fresh, 1k, 3k, 5k, 10k,"
+    },
+    {
+      "page": 3,
+      "caption": "Fig. 3. (a) Schematic cross section of the 3-D CTL NAND flash memory density is extracted from the (cid:49)V at each T trap position. The"
+    },
+    {
+      "page": 3,
+      "caption": "Fig. 5(d) and (e), the shallow traps and the deep traps below"
+    },
+    {
+      "page": 3,
+      "caption": "Fig. 4 shows the measurement results of the (cid:49)V as a A. Average Trap Density in BE-TOX Layer"
+    },
+    {
+      "page": 4,
+      "caption": "Fig. 4. Measurement results of ∆Vth as a function of V"
+    },
+    {
+      "page": 4,
+      "caption": "Fig. 5. Trap profiles of the BE-TOX layer. (a) Fresh, (b) 1k, (c) 3k, (d) 5k, (e) 10k, (f) 30k, and (g) 50k EW cycling, respectively."
+    },
+    {
+      "page": 4,
+      "caption": "Fig. 6. (a) Average trap density as a function of trap distance from the"
+    },
+    {
+      "page": 5,
+      "caption": "Fig. 9. TCAD simulation results of electron trapping in the BE-TOX O1"
+    },
+    {
+      "page": 5,
+      "caption": "Fig. 10. (a) Measurement results of ∆Vth as a function of V"
+    },
+    {
+      "page": 5,
+      "caption": "Fig. 4. (b) Trap profiles of the BE-TOX layer in 50k EW cycling extracted"
+    },
+    {
+      "page": 5,
+      "caption": "Fig. 8. Energy band diagram of 3-D NAND flash memory cell assuming"
+    },
+    {
+      "page": 5,
+      "caption": "Fig. 8 depicts the energy band diagram of the 3-D NAND term TSCIS measurement results with the range of t CHRG"
+    },
+    {
+      "page": 5,
+      "caption": "Fig. 7, the number of traps and electrons/holes are presented increases to 50k, trap generation occurs at the O1/N1 interface,"
+    },
+    {
+      "page": 5,
+      "caption": "Fig. 8(b) and (c), the traps generated near the O1/N1 layer Fig. 8(d) shows the energy band diagram of region D where"
+    }
+  ]
+}

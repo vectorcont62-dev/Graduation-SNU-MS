@@ -1,0 +1,636 @@
+
+===== PAGE 1 =====
+IEEE TRANSACTIONS ON ELECTRON DEVICES, VOL. 68, NO. 7, JULY 2021 3339
+Analysis and Compact Modeling of Fast
+Detrapping From Bandgap-Engineered
+Tunneling Oxide in 3-D
+NAND
+Flash Memories
+Minsoo Kim and Hyungcheol Shin, SeniorMember,IEEE
+Abstract—We present the comprehensive analysis and time, creating a retention issue. After the bandgap engineering
+the compact modeling methodology of fast electron detrap- technology is adopted to improve the memory window [8], [9],
+pingfrom thebandgapengineeredtunnelingoxide(BE-TOX)
+the electron detrapping from the bandgap engineered (BE)-
+in 3-D NAND flash memories. To this end, we develop a
+TOX has been reported to be more severe and even occur
+physics-based detrapping model considering the detailed
+electron dynamics in the BE-TOX and various emission within very short time (∼1 s) [6], [7] due to the shallow
+paths of the detrapping mechanism. By the aid of the trap [10]. The state-of-the-art 3-D NAND flash memories
+carrier density rates from the accurately calibrated model, have been adopting triple-level-cell (TLC) and quadruple-
+we find that the major path of the charge loss can be direct
+level-cell (QLC) technologies with much tighter threshold
+tunneling (DT) or trap-to-band tunneling (TBT) depending
+voltage (V ) distributions. Since the detrapping from the
+on the temperature and the nitride layer position in the BE- th
+TOX. In addition, we compare the model result and the fitted BE-TOX deteriorates with program/erase (P/E) cycles [7] and
+stretched exponential function. From those comparisons, shrinks read margins, this mechanism should be studied for
+we correlate several indicators (time constant and curve the reliability enhancement in 3-D NAND flash. Although a lot
+shape) of the retention characteristics with the major paths
+of previous studies have suggested models on the charge loss
+of the charge loss. Finally, our model facilitates the quanti-
+from the CTN [11]–[15], the compact modeling of the electron
+tative separationof the detrappingmechanism into different
+paths. detrapping from the BE-TOX has not been focused on.
+Thus in this article, we propose a physics-based compact
+Index Terms—3-D NAND flash memories, bandgap engi- model of the fast electron detrapping mechanism during short-
+neering, compact modeling, detrapping mechanism, short-
+term retention. Since the detrapping mechanism is one of the
+term retention.
+fastest among the charge loss mechanisms introduced in the
+short-term retention of 3-D NAND flash and is not significantly
+I. INTRODUCTION
+affected by the cell patterns [6], [7], the model can be devel-
+EVEN though 3-D charge-trap NAND flash memories are oped first and independent of other charge loss mechanisms.
+gradually replacing 2-D floating gate NAND flash memo- Starting from the Poisson equations of BE-TOX/CTN/blocking
+ries [1], several issues on the data retention have continuously oxide (BOX) layers in cylindrical coordinates, we obtain the
+emerged [2], [3]. For the analysis of retention characteristics, necessary electrostatic solutions for the model. By means
+many previous studies have attempted to separate the charge of the previous charge loss models [11]–[15] and the 3-D
+loss mechanisms [4]–[7]. Among the mechanisms, electron technology computer-aided design (TCAD) simulation [16]
+detrapping is unique as it occurs at the tunneling oxide (TOX) including the physics in the BE-TOX trap, we develop a
+while others mainly originate from the charge trap nitride compact detrapping model at the BE-TOX which accurately
+(CTN). Even though the TOX layer is not used for the purpose reproduces all the possible paths of electrons and the conse-
+of the storage layer, the electrons are unexpectedly trapped in quent threshold voltage shift (V ). We separate the emission
+th
+this layer during the memory operations and then detrap over paths of the electrons into trap-to-band tunneling (TBT), direct
+tunneling (DT), and thermal emission (TE); and most of the
+Manuscript received January 28, 2021; revised March 21, 2021 and
+charge loss is caused by TBT and DT. Contrary to the reported
+April 21, 2021; accepted April 28, 2021. Date of publication May 14,
+2021; date of current version June 23, 2021. The review of this article detrapping mechanism from the conventional TOX [17] which
+was arranged by Editor S. Alam. (Correspondingauthor:MinsooKim.) is mainly attributed to TE, TE is found to be almost negligible
+The authors are with the Inter-University Semiconductor Research
+for BE-TOX during the short-term retention. The nitride layer
+Center, School of Electrical Engineering and Computer Science,
+Seoul National University, Seoul 151-742, South Korea (e-mail: in the BE-TOX far from the channel gives rise to the delayed
+dhnp2213@snu.ac.kr). detrapping characteristics while the temperature dependence
+Color versions of one or more figures in this article are available at and the total V increase. In that regard, we suggest an
+https://doi.org/10.1109/TED.2021.3077202. th
+Digital Object Identifier 10.1109/TED.2021.3077202 appropriate guideline for designing the BE-TOX.
+0018-9383 © 2021 IEEE. Personal use is permitted, but republication/redistribution requires IEEE permission.
+See https://www.ieee.org/publications/rights/index.html for more information.
+Authorized licensed use limited to: Seoul National University. Downloaded on January 11,2024 at 10:25:15 UTC from IEEE Xplore. Restrictions apply.
+
+===== PAGE 2 =====
+3340 IEEE TRANSACTIONS ON ELECTRON DEVICES, VOL. 68, NO. 7, JULY 2021
+device geometry and the trap physics. To consider the barrier
+lowering due to the E-field, the E-field equations in the
+O1 and the N1 regions are respectively obtained as
+K
+F (r) = − (1)
+O1 ε ox r (cid:2) (cid:3)
+K − qn r2 − r2 /2
+F (r) = − TOX O1 (2)
+N1 ε r
+n
+where the parameter K and its internal constant α are given
+by
+(cid:4) (cid:5)
+1 qn V OL qn V OL
+K = V − TOX N1 − CTN CTN (3)
+α G C C
+TG NG
+1 r 1 r 1 r
+α = ln O1 + ln N1 + ln TOX
+ε r ε r ε r
+ox 0 n O1 ox N1
+1 r 1 r
++ ln CTN + ln BOX . (4)
+ε r ε r
+n TOX ox CTN
+In the above equations, V is the gate bias, and n and
+G TOX
+n are the electron densities (units: cm−3) in the N1 and in
+CTN
+the CTN layers, respectively. n is the sum of the trapped
+TOX
+electron density (n ) and the conduction electron density (n ).
+t c
+VOL and VOL are the volumes (units: cm3) of the
+Fig. 1. (a) Charge distribution and the capacitive couplings (CNG N1 CTN
+and CTG) in BE-TOX/CTN/BOX layers in cylindrical coordinates (r). N1 and CTN layers, respectively. Finally, C
+TG
+and C
+NG
+are the
+(b) Magnified energy band diagram and the directions of the electron cylindrical capacitances (units: F) between the N1 layer and
+dynamics in the detrapping mechanism.
+the gate and between the CTN layer and the gate, respectively.
+Fig. 1(b) shows the energy band diagram of the BE-TOX
+TABLE I
+while the detrapping occurs. From the acceptor-like shallow
+NOTATIONS FOR MODEL PARAMETERS USED IN THIS ARTICLE
+trap of the N1 layer, the trapped electrons are released via TBT
+toward the channel or via Poole–Frenkel (PF) emission toward
+the conduction band. Each emission rate via those components
+is modeled as [11], [13]
+(cid:6)
+1 tN1
+e TBT = υ TBT exp(−α ox,T t O1 ) · exp(−α n,T x)dx
+t
+N1 0
+= υ TBT (cid:7) exp(−α ox,T t O1 ) · 1 − ex α p n ( , − T t α N n 1 ,T t N1 ) (5)
+(cid:4) (cid:5) (cid:4) √ (cid:5)
+3k 2πm k 3/2 β F − E
+e = 2σ B n B T2·exp n n t (6)
+PF n
+m h k T
+n B
+where ν TBT is TBT attempt-to-escape frequency and α ox,T and
+α n,T in (5) are related to the tunneling barriers of the trapped
+electrons throug
+√
+h the O1 and N1 layers, √respectively. They are
+calcul√ated as 4 2m
+ox
+(E
+t
++ E
+C
+− β
+ox
+F
+ox
+)3/2α
+TBT
+/(3h¯q)
+and 2 2m E /h¯, respectively. α is used as a fitting para-
+n t TBT
+meter and calibrates the e dependence on the tunneling
+TBT
+II. COMPACT MODELING distance (t
+O1
+) as modeled in the gate oxide tunneling current
+of Berkeley short-channel IGFET model-common multi-gate
+A. CompactModelDescription
+(BSIM-CMG) model [21]. Since the distribution of the trapped
+Fig. 1(a) shows the charge distribution in BE-TOX/ electrons in the N1 layer is not always uniform in practice
+CTN/BOX layers in cylindrical coordinates (r). By separating and is variable during the retention time, the actual tunneling
+the BE-TOX layer into three layers (O1/N1/O2) among which distance can be different from t . Therefore, α can be
+O1 TBT
+the uniform charge distribution (−qn ) is defined in the seen as a fitting parameter which also corrects those variations.
+TOX
+nitride layer (N1), we solved 1-D Poisson equations for entire In (5), we calculated the average value of e to effectively
+TBT
+five layers by the similar ways (but with more boundary consider the decaying tunneling probability along the thin
+conditions) in [15] and [18]. From the solutions, we obtained N1 layer. Also, contrary to the CTN charge loss model in [13],
+the equations for the electric field (E-field) which depend on we considered the energy barrier lowerings of the O1 and of
+the trapped charge densities and the geometrical parameters. the N1 layers due to the (cid:8)E-fields (F
+ox
+and F
+n
+) ind(cid:8)uced by the
+Table I summarizes the model parameters relevant to the CTN charge as β = q3/(π ) and β = q3/(π ),
+ox ox n n
+Authorized licensed use limited to: Seoul National University. Downloaded on January 11,2024 at 10:25:15 UTC from IEEE Xplore. Restrictions apply.
+
+===== PAGE 3 =====
+KIM AND SHIN: ANALYSIS AND COMPACT MODELING OF FAST DETRAPPING FROM BE-TOX 3341
+Fig. 3. (a) Calibration of the model to the simulation results for TE
+Fig. 2. Trapped electrons contours (a) right after the program (0 s), (tO1 = 2 nm). The extracted value of ν TE is 3.0 × 105 s−1. The oxides
+at (b) 10−4 s, (c) 10−3 s, (d) 10−2 s, and (e) 10−1 s. (f) Radial distributions are located at both edges of BE-TOX to prevent the lateral spreading of
+conduction electrons. (b) Natural logarithms of τ and a linearly fitted line
+of the trapped electrons over the retention time. They are obtained at the
+for different temperatures for TE.
+middle part of the channel.
+respectively. The contributing E-fields F and F are the trapped electrons contours over the retention time. These con-
+ox n
+average values of F (r) and F (r), respectively. Then, tours are extracted from the TCAD simulation which includes
+O1 N1
+the electrons elevated to the conduction band can subsequently the necessary physical models such as PF, eThermionic, DT,
+escape toward the channel by DT or by TE. Each emission rate and eBarrierTunneling with nonlocal model. The values of
+via the components is modeled as [11] other parameters in the simulation were kept the same as those
+of the model. Fig. 2(a) shows the trapped electrons contour
+e DT = υ DT · exp (cid:4) (−α o√x,C t O1 ) (cid:5) (7) right after the program operation and the BE-TOX traps are
+e = υ · exp β ox F ox − E C (8) almost full. Over the retention time, the trapped electrons in
+TE TE
+k T the BE-TOX are emitted as shown in Fig. 2(b)–(e). The radial
+B
+where ν and ν are DT attempt-to-escape frequency and distributions of the trapped electrons over the retention time
+DT TE
+TE attempt-to-escape frequency, respectively. α ox,C in (7) are obtained at the middle part of the channel and shown in
+Fig. 2(f). To accurately consider each physics in the BE-TOX
+is related to the tunneling barrier of the conduction√elec-
+trap, we calibrated our model in the order of TE, DT, and
+trons throug√h the O1 layer and is expressed as 4 2m
+ox
+(E − β F )3/2α /(3h¯q). Similar to α in TBT, TBT. Before the detrapping, we increased the V th by 1 V by
+α i C s also ox used ox as a fit D ti T ng parameter and corre T c B ts T the varia- the program simulation with nonlocal tunneling model [16],
+DT and then obtained the initial parameter values of n and n .
+tions of the electron distribution. Simultaneously, the electrons t CTN
+First, to calibrate TE, we activated the physics of PF and
+on the conduction band can be captured again into the trap by
+eThermionic on the TCAD simulation and set e and e to
+the capture rate of c
+n
+= v
+th
+σ
+n
+(N√t −n
+t
+) [11] where the thermal
+0 in the model. The symbols in Fig. 3(a) show
+D
+th
+T
+e simu
+T
+l
+B
+at
+T
+ion
+velocity (v ) is calculated as 3k T/m . Then, the rates of
+th B n results of the V due to the electron detrapping via TE for
+n and n and the consequent V due to the detrapping are th
+t c th different temperatures (85 ◦C–165 ◦C). In these simulations,
+calculated as follows:
+we located oxides with high energy barrier at both edges of the
+dn t = c n · n c − (e TBT + e PF ) · n t (9) BE-TOX of the cell so that the V th occurs only by TE, not
+dt by the lateral spreading of conduction electrons. As shown,
+dn c = e · n − (e + e + c ) · n (10) the time constants (τs) are significantly larger than those of
+PF t DT TE n c
+dt the common short-term retention. This is because the emitted
+V th = −qn TOX VOL N1 /C TG . (11) electrons from the trap should exceed E again which is
+C
+larger than E . For the model implementation, we extracted the
+Typically, the electrons stored in the CTN layer are known t
+value of ν in (8) by fitting the model, and the value is 3.0 ×
+to escape through the trap-assisted tunneling (TAT) across TE
+105 s−1. The model results are shown as the lines. Fig. 3(b)
+the TOX traps [22], [23]. However, such emission in 3-D
+shows the natural logarithms of τ for different temperatures.
+NAND flash memories with BE-TOX is reported to occur after
+The slope of the linearly fitted ln(τ)s (i.e., activation energy)
+much longer retention time [7], and the detrapping mechanism
+is extracted to be 1.28 eV and this value is comparable to
+generally focuses on the electrons present in the TOX, thus
+E + E . Due to its large time constants and high activation
+TAT is not discussed in this study. t C
+energy, TE component has almost negligible effect in the
+short-term retention.
+B. ModelCalibration
+When applying the bandgap engineering technology,
+From the abovementioned model, we calibrated our model the position of the N1 layer in the BE-TOX can shift depending
+to the results from the 3-D TCAD simulation. The TCAD on the process condition. Before the analysis of detrappings
+simulation is a suitable method for separating the complex with various t , we extracted the initial V after pro-
+O1 th
+components included in the detrapping mechanism without the gram operation for different t . Fig. 4(a) and (b) shows
+O1
+interferences of other charge loss mechanisms. Fig. 2 shows the energy band diagrams (black lines) during the program
+the cross section of the BE-TOX layer with the transition of the operations (V = 16 V) and the distributions of the trapped
+G
+Authorized licensed use limited to: Seoul National University. Downloaded on January 11,2024 at 10:25:15 UTC from IEEE Xplore. Restrictions apply.
+
+===== PAGE 4 =====
+3342 IEEE TRANSACTIONS ON ELECTRON DEVICES, VOL. 68, NO. 7, JULY 2021
+Fig. 4. Energy band diagrams (black lines) during the program oper-
+ations (VG = 16 V) and the distributions of the trapped electrons in Fig. 6. (a) Model calibration to the simulation results with TE, DT, and
+t ( h b e ) tO B 1 E- = TO 3 X nm (re . d (c l ) in Δ e V s) th a b ft y er th t e he tra o p p p e e ra d ti e o l n e s ctr fo o r ns (a i ) n t t O h 1 e B = E- 1 TO n X m a a ft n e d r T 10 B 6 T s a − t 1 2 a 5 nd ◦C α for = dif 0 fe .5 re 3 n 7 t V tO − 1 1 . . T T h h e e r fi e t s tin u g lts p o a f r t a h m e e o t t e h r e s r a te re m ν p T e B ra T tu = re 4 s .2 ar × e
+program operation for different tO1. included for (b D ) T tO1 = 1 nm, (c) tO1 = 2 nm, and (d) tO1 = 3 nm.
+Finally, we included the physics of eBarrierTunneling with
+nonlocal model on the TCAD simulation to activate TBT and
+extracted detrapping characteristics at 25 ◦C for different t
+O1
+as shown in the symbols in Fig. 6(a). Similar to DT modeling
+in Fig. 5, we fitted the model results (lines) to the symbols
+by modulating the parameters ν and α . The extracted
+TBT TBT
+values of the parameters are ν = 4.2 × 106 s−1 and
+TBT
+α = 0.537 V−1. Compared with the DT results in Fig. 5(a),
+TBT
+the τ decreased significantly for the case of t = 1 nm,
+O1
+F a 2 fo n 5 i r g d . ◦ (b C α 5 ) .  D f t o T O ( r 1 a = d ) = i 0 M ff . e 1 2 o r 3 n d e 1 m e n l t V , c t − ( O a c 1 1 l ) i . . b t T O T ra h 1 h t e i e = o r n fi e 2 t s t t o i u n n l m g t t s h , e p o a a f s n r t i a h m d m e u (d o e la ) t t h e t t i e o r O s r n 1 t a e r = e r m e s 3 p u ν n e l D t m s r T a w . t = u it r h e 4 s . T 0 a E × re a 1 n in 0 d c 1 l D 1 u T d s e − a d 1 t d e d T i e f B c f T r e e r i a e s s n e m c d e o s i r l n e ig s τ h e t n f l o y si r t f i t o v h r e e th t c o e as t c O e a 1 s o e t f h o a t O f n 1 t e O = D 1 T = 3 . F n 2 i m g n . . m 6 T , ( h b a i n ) s – d ( in d th d ) e i s c r h e a o t i e w s s s li t t t h t h a l e e t
+detrapping characteristics via TE, DT, and TBT for different
+electrons in the BE-TOX (red lines) after programs for t O1 = temperatures and t O1 , and the model results are well matched
+1 nm and t = 3 nm, respectively. When t is thin as to the TCAD results at the other temperatures.
+O1 O1
+1 nm, the tunneling barrier shape corresponds to the modified
+Fowler–Nordheim (FN) region as shown in Fig. 4(a). In this
+III. RESULTS AND DISCUSSION
+case, the N1 is divided into two regions: one is a region where
+From the detrapping model and the determined set of the
+the electrons are trapped and the other is a region where the
+model parameters in the previous section, we analyzed the
+electrons are tunneling through. Therefore, the electrons are
+rates of each component and the influences of each emission
+mostly trapped at the outer edge of the N1 layer. On the other
+path for various temperatures and N1 layer positions.
+hand, when t is thick as 3 nm, the tunneling barrier shape
+O1
+becomes triangular (FN region) and the trapped electrons
+are extended to the inner side of the N1 layer as shown in A. DependenceonTemperatureandN1LayerPosition
+Fig. 4(b). Fig. 4(c) shows V by the trapped electrons in
+th Fig. 7(a)–(c) shows each rate of the detailed components
+the BE-TOX after program operation for different t O1 . From (e , e , c , e , and e ) in log scale for the case of
+t O1 = 1 nm to t O1 = 2 nm, V th increases due to the increased t TBT = 2 PF nm n at D 2 T 5 ◦C, 6 T 5 E ◦C, and 105 ◦C, respectively.
+amount of electrons in the BE-TOX. After t = 2 nm, V O1
+O1 th For increasing temperature, the rates of PF and TE increase
+slightly decreases since the increase in C is dominant rather
+TG while the rates of TBT and DT are almost the same. e and
+PF
+than the change in the amount of electrons.
+e increase by approximately one order as the temperature
+TE
+Then, we included the physics of DT on the TCAD increases by 40 ◦C. In order to intuitively compare the amounts
+simulation and set e to 0 in the model. The extracted
+TBT of charge loss via each path, we calculated the carrier density
+detrapping characteristics at 25 ◦C for different t O1 are shown rates via each path (units: cm−3s−1) by the product of the rate
+in the symbols in Fig. 5(a). By modulating the parameters ν
+DT coefficient and the carrier density. The density rates via TBT,
+and α , we fitted the model results (lines) to the symbols.
+ν de D t T ermines the overall e irrespective of t , and α DT, and TE are denoted as D TBT , D DT , and D TE , respectively.
+DT DT O1 DT Each of them is calculated as
+determines the τ difference depending on t . The extracted
+O1
+values of the parameters are ν DT = 4.0 × 1011 s−1 and D TBT = e TBT · n t (12)
+α = 0.231 V−1. Fig. 5(b)–(d) shows the detrapping char- D = e · n (13)
+DT DT DT c
+acteristics via TE and DT for different temperatures and t O1 . D = e · n . (14)
+TE TE c
+Since the faster detrapping at the increased temperature is
+caused by the faster PF (not by the increased e ), the model The sum of the three density rates (D + D + D ) is
+DT TBT DT TE
+results are well matched to TCAD results at the other temper- equal to the rate of the total charge loss from the BE-TOX
+atures without modulating additional parameters. (−dn /dt). The calculated density rates are shown in log
+TOX
+Authorized licensed use limited to: Seoul National University. Downloaded on January 11,2024 at 10:25:15 UTC from IEEE Xplore. Restrictions apply.
+
+===== PAGE 5 =====
+KIM AND SHIN: ANALYSIS AND COMPACT MODELING OF FAST DETRAPPING FROM BE-TOX 3343
+Fig. 7. Extracted rates of the detailed components (eTBT, ePF, cn, eDT,
+2 a (d n n ) d m 2 e 5 . T T ◦ E h C ) e , a ( c t e a ( ) l a c 6 ) u 5 l 2 a ◦ 5 t C e ◦ d , C a d , n e ( d n b s ( ) f i ) t 6 y 1 5 r 0 a ◦ 5 t C e ◦ s , C a v . n ia d e ( a c c ) h 1 p 0 a 5 th ◦C (D f T o B r T t , h D e D c T a , s a e nd o D f t T O E 1 ) a = t e F (e D ig ) T . t , O 8 a 1 . n = d (a e 3 ) TE n E m ) x f t o r a a r t c ( 2 t a e 5 ) d t ◦ O r C a 1 , te a = s nd o 1 f ( n f t ) h m e tO a d 1 t e = 2 ta 5 i 3 le ◦C n d m , c ( o b a m ) t p t 1 O o 0 1 n 5 e = ◦ n C t 1 s . T ( n e h m T e B a T c , t a e l 1 c P 0 u F 5 la , ◦ t c e C n d , ,
+density rates via each path (DTBT, DDT, and DTE) are shown in (c), (d),
+(g), and (h) in the same order.
+scale in Fig. 7(d)–(f) for different temperatures of 25 ◦C,
+65 ◦C, and 105 ◦C, respectively. The results show that
+the major path of the charge loss is TBT at 25 ◦C, and the
+influence of DT increases as the temperature increases. On the
+other hand, TE component has negligible influences within the
+temperature range in this study.
+Fig. 8(a) and (b) shows each rate of the detailed components
+for t = 1 nm at 25 ◦C and 105 ◦C, respectively. Since the
+O1
+tunneling length is very short as 1 nm, e is higher than
+TBT
+e at 25 ◦C. When the temperature increases to 105 ◦C, e
+PF PF
+and e increase by approximately two orders. Using the rates
+TE
+in Fig. 8(a) and (b), the density rates are also calculated and
+shown in Fig. 8(c) and (d) for the case of t = 1 nm. Since
+O1
+t e h T e BT ch i a s rg h e ig l h o e s r s t a h t a 2 n 5 e ◦ P C F . a E t v 2 e 5 n ◦ th C o , u T gh BT e is is th h e ig m he a r jo t r ha p n at e h of F N i 1 g. la 9 y . er M t o o d ( e a l ) r t e O s 1 ul = ts ( 1 so n l m id , li ( n b e ) s t ) O o 1 f = ΔV 2 th n b m y , t a h n e d de (c tr ) a t p O p 1 in = g w 3 i n th m s . h E ift a in c g h
+PF TBT curve is fitted with the stretched exponential functions (dashed lines) to
+at 105 ◦C, the actual amount of the electrons which escape extract τ Detrapping and β Detrapping.
+from the conduction band is comparable to the amount of
+the released electrons via TBT, since a large portion of the
+elevated electrons is trapped again when t = 1 nm. When
+O1 exponential function of the detrapping mechanism as [4]
+the position of the N1 shifts toward the CTN as t = 3 nm,
+O1 (cid:9) (cid:10) (cid:4) (cid:5) (cid:11)(cid:12)
+the difference between e and e significantly increases β
+TBT PF t Detrapping
+as shown in Fig. 8(e) and (f). Therefore, TBT no longer V (t) = V · 1 − exp −
+th th,Detrapping τ
+affects the total charge loss and DT from the conduction band Detrapping
+becomes the major path on a wide range of temperatures (15)
+[Fig. 8(g) and (h)]. Within the t range in this study, TE does
+O1
+not affect the total charge loss due to its significantly low where V th,Detrapping is the total V th loss by the detrapping [cor-
+emission rate. responding to Fig. 4(c)], β Detrapping determines the curve shape
+(slope) of the V at the retention time t, and τ is the
+th Detrapping
+time constant of each V curve by the detrapping. Then
+th
+B. CurveShapeandActivationEnergy we extracted the values of τ and β for each
+Detrapping Detrapping
+For further quantitative analysis on the curve shapes and modeling result (solid line) in Fig. 9 by overlapping the fitted
+the activation energies for various t , we adopted a stretched stretched exponential functions as the dashed lines. We used
+O1
+Authorized licensed use limited to: Seoul National University. Downloaded on January 11,2024 at 10:25:15 UTC from IEEE Xplore. Restrictions apply.
+
+===== PAGE 6 =====
+3344 IEEE TRANSACTIONS ON ELECTRON DEVICES, VOL. 68, NO. 7, JULY 2021
+almost negligible and PF component becomes more domi-
+nant as the O1 layer becomes thicker. Since DT component
+decreases for increasing t , the portion of the recaptured
+O1
+electrons increases. For this reason, the value of β
+Detrapping
+decreases for thick O1 layer as described in Fig. 10(d).
+Fig. 11 shows the natural logarithms of τ as func-
+Detrapping
+tions of 1/k T for various t . The slopes of ln(τ )s
+B O1 Detrapping
+(i.e., activation energies) for large t are almost constant
+O1
+while those slopes for small t gradually decrease as the
+O1
+temperature decreases. The reason is that TBT does not depend
+on the temperature and TBT contributes more as t decreases
+O1
+or the temperature decreases. Since the portion of D
+TBT
+among the total charge loss is the lowest when t = 3 nm,
+O1
+the activation energy for the case of t = 3 nm is the largest
+O1
+(∼0.56 eV) among every t .
+O1
+f
+F
+u
+i
+n
+g
+c
+.
+t
+1
+io
+0
+n
+.
+s f
+(
+o
+a
+r
+)
+d
+E
+if
+x
+fe
+tr
+r
+a
+e
+c
+n
+te
+t
+d
+tO
+β
+1.
+De
+(b
+tra
+)
+p
+T
+p
+r
+in
+e
+g
+n
+f
+d
+ro
+o
+m
+f β
+th
+D
+e
+etr
+fi
+a
+t
+p
+t
+p
+e
+in
+d
+g
+s
+i
+t
+s
+re
+c
+t
+o
+ch
+m
+e
+p
+d
+ar
+e
+a
+x
+b
+p
+le
+on
+t
+e
+o
+n
+t
+t
+h
+ia
+e
+l IV. CONCLUSION
+f t o re r n th d i s ck of O ∫ 1 ( ( e a T t B 2 T 5 nt ◦ ) C dt ). /∫ Th (e e P b Fn a t n ) d dt d f i o a r gr t a h m in s O a 1 nd an th d e ∫ d ( e e t P a F il n e t d )d c t o /∫ m ( p c o n n n e C n )d ts t We newly proposed a fast detrapping model in 3-D NAND
+which affect β Detrapping when the O1 layers are (c) thin and (d) thick. flash memories with the possible charge loss paths from the
+shallow trap of the BE-TOX. While the detrapping from
+the TOX has been generally considered and analyzed as a
+single mechanism among the various charge loss mechanisms,
+we separated this mechanism into the detailed paths and inves-
+tigated the retention characteristics dependence on the various
+physical conditions for the first time. The TBT component is
+highly influenced by the position of the N1 in the BE-TOX
+(by about three orders for 2 nm change in t ), and the TE
+O1
+component is found to be almost negligible due to its high
+effective barrier height (E + E ). Especially, the thicker
+t C
+inner O1 layer causes a slower V loss, but has a larger
+th
+activation energy and a larger V . Therefore, our compact
+th
+model not only provides an efficient tool for the evaluation of
+the electron detrapping from the BE-TOX but also provides
+Fig. 11. Extracted ln(τ Detrapping) from the fitted stretched exponential physical insights of this mechanism in terms of the more
+functions for different tO1.
+detailed charge loss paths.
+a unified value of β (<1) for every temperature in the REFERENCES
+Detrapping
+same t by following the limiting conditions in [6].
+O1 [1] H. Kim, S.-J. Ahn, Y. G. Shin, K. Lee, and E. Jung, “Evolution of
+Using the carrier density rates, we analyzed the retention NAND flash memory: From 2D to 3D as a storage market leader,” in
+characteristics (in terms of τ and β ) extracted Proc. IEEE Int. Memory Workshop, Monterey, CA, USA, May 2017,
+Detrapping Detrapping
+pp. 1–4, doi: 10.1109/IMW.2017.7939081.
+in Fig. 9 for varying t . Fig. 10(a) shows the extracted
+O1 [2] E.-S. Choi and S.-K. Park, “Device considerations for high density and
+β Detrapping as a function of t O1 . β Detrapping increases as t O1 highly reliable 3D NAND flash cell in near future,” in IEDM Tech. Dig.,
+decreases, which indicates that the V curve shape becomes Dec. 2012, pp. 9.4.1–9.4.4, doi: 10.1109/IEDM.2012.6479011.
+th
+[3] A. Goda, “3-D NAND technology achievements and future scaling per-
+sharper as the N1 layer shifts toward the channel. First,
+spectives,” IEEE Trans. Electron Devices, vol. 67, no. 4, pp. 1373–1381,
+we compared this trend of β Detrapping with the trend of the Apr. 2020, doi: 10.1109/TED.2020.2968079.
+ratio between the integrated density rates via TBT and PF [4] K. Lee, M. Kang, Y. Hwang, and H. Shin, “Accurate lifetime estimation
+[∫(e n )dt/∫(e n )dt] at 25 ◦C as the black squares in of Sub-20-nm NAND flash memory,” IEEE Trans. Electron Devices,
+TBT t PF t vol. 63, no. 2, pp. 659–667, Feb. 2016, doi: 10.1109/TED.2015.2509004.
+Fig. 10(b). Contrary to TBT which is a 1-step emission [5] D. Oh et al., “TCAD Simulation of data retention characteristics of
+process, PF is followed by the recapture component. This fac- charge trap device for 3-D NAND flash memory,” in Proc. IMW, 2015,
+pp. 1–4, doi: 10.1109/IMW.2015.7150306.
+tor reduces the efficiency of the charge loss and finally leads to
+[6] C. Woo et al., “Modeling of charge loss mechanisms during the short
+the decrease in β Detrapping . Therefore, when the O1 layer is suf- term retention operation in 3-D NAND flash memories,” in VLSI Symp.
+ficiently thin so that TBT is dominant, the value of β Tech. Dig., 2019, pp. 214–215, doi: 10.23919/VLSIT.2019.8776579.
+Detrapping
+[7] C. Woo et al., “Modeling of charge failure mechanisms during the
+is close to 1 and gradually decreases as PF is involved as
+short term retention depending on program/erase cycle counts in 3-D
+described in Fig. 10(c). Then, we compared the trend of NAND flash memories,” in Proc. IEEE IRPS., Apr. 2020, pp. 1–6, doi:
+β with the trend of the ratio between the integrated 10.1109/IRPS45951.2020.9129306.
+Detrapping
+density rates via PF and recapture [∫(e n )dt/∫(c n )dt] at [8] H.-T. Lue et al., “BE-SONOS: A bandgap engineered SONOS with
+PF t n C excellent performance and reliability,” in IEDM Tech. Dig., Oct. 2005,
+25 ◦C as the red circles in Fig. 10(b). TBT component is pp. 547–550, doi: 10.1109/IEDM.2005.1609404.
+Authorized licensed use limited to: Seoul National University. Downloaded on January 11,2024 at 10:25:15 UTC from IEEE Xplore. Restrictions apply.
+
+===== PAGE 7 =====
+KIM AND SHIN: ANALYSIS AND COMPACT MODELING OF FAST DETRAPPING FROM BE-TOX 3345
+[9] N. Choi, H.-J. Kang, J.-H. Bae, B.-G. Park, and J.-H. Lee, “Effect of [16] TCAD Sentaurus Device User Guide, Version 2015, Synopsys, Mountain
+nitrogen content in tunneling dielectric on cell properties of 3-D NAND View, CA, USA, Jun. 2015.
+flash cells,” IEEE Electron Device Lett., vol. 40, no. 5, pp. 702–705, [17] K. Lee et al., “Activation energies (Ea) of failure mechanisms in
+May 2019, doi: 10.1109/LED.2019.2905299. advanced NAND flash cells for different generation and cycling,” IEEE
+[10] J. Wu, D. Han, W. Yang, S. Chen, X. Jiang, and J. Chen, “Comprehensive Trans. Electron Devices, vol. 60, no. 3, pp. 1099–1107, Mar. 2013, doi:
+investigations on charge diffusion physics in SiN-based 3D NAND flash 10.1109/TED.2013.2241065.
+memory through systematical Ab Initio calculations,” in IEDM Tech. [18] S. M. Amoroso, C. Monzio Compagnoni, A. Mauri, A. Maconi,
+Dig., Dec. 2007, pp. 4–5, doi: 10.1109/IEDM.2017.8268327. A. S. Spinelli, and A. L. Lacaita, “Semi-analytical model for the tran-
+[11] S.-H. Gu, C.-W. Hsu, T. Wang, W.-P. Lu, Y.-H.-J. Ku, and C.-Y. Lu, sient operation of gate-all-around charge-trap memories,” IEEE Trans.
+“Numerical simulation of bottom oxide thickness effect on charge Electron Devices, vol. 58, no. 9, pp. 3116–3123, Sep. 2011, doi:
+retention in SONOS flash memory cells,” IEEE Trans. Electron Devices, 10.1109/TED.2011.2159010.
+vol. 54, no. 1, pp. 90–97, Jan. 2007, doi: 10.1109/TED.2006.887219. [19] M. Kim and H. Shin, “Investigation and SPICE compact model of spacer
+[12] K. Bernert, C. Oestreich, J. Bollmann, and T. Mikolajick, “The influ- region for static characteristics of 3-D NAND flash memories,” IEEE
+ence of bottom oxide thickness on the extraction of the trap energy Trans. Electron Devices, vol. 67, no. 10, pp. 4158–4165, Oct. 2020, doi:
+distribution in SONOS (silicon-oxide-nitride-oxide-silicon) structures,” 10.1109/TED.2020.3014066.
+Appl. Phys. A, Solids Surf., vol. 100, no. 1, pp. 249–255, Apr. 2010, [20] A. Padovani et al., “A comprehensive understanding of the erase of
+doi: 10.1007/s00339-010-5694-0. TANOS memories through charge separation experiments and simula-
+[13] Y. Yang and M. H. White, “Charge retention of scaled SONOS tions,” IEEE Trans. Electron Devices, vol. 58, no. 9, pp. 3147–3155,
+nonvolatile memory devices at elevated temperatures,” Solid-State Sep. 2011, doi: 10.1109/TED.2011.2159722.
+Electron., vol. 44, no. 6, pp. 949–958, Jan. 2000, doi: 10.1016/ [21] (Jan. 2016). BSIM-CMG 110.0.0 Technical Manual. [Online]. Available:
+S0038-1101(00)00012-5. https://www.bsim.berkeley.edu/models/bsimcmg/
+[14] A. Arreghini, N. Akil, F. Driussi, D. Esseni, L. Selmi, and [22] A. Modelli, F. Gilardoni, D. Ielmini, and A. S. Spinelli, “A new
+M. J. van Duuren, “Long term charge retention dynamics of SONOS conduction mechanism for the anomalous cells in thin oxide Flash
+cells,” Solid-State Electron., vol. 52, no. 9, pp. 1460–1466, Sep. 2008, EEPROMs,” in Proc. IEEE IRPS., Apr. 2001, pp. 1–8, doi: 10.1109/
+doi: 10.1016/j.sse.2008.04.016. RELPHY.2001.922883.
+[15] M. Kim, S. Kim, and H. Shin, “A compact model for ISPP [23] D. Ielmini, A. S. Spinelli, A. L. Lacaita, and A. Modelli, “A statistical
+of 3-D charge-trap NAND flash memories,” IEEE Trans. Elec- model for SILC in flash memories,” IEEE Trans. Electron Devices,
+tron Devices, vol. 67, no. 8, pp. 3095–3101, Aug. 2020, doi: vol. 49, no. 11, pp. 1955–1961, Nov. 2002, doi: 10.1109/TED.2002.
+10.1109/TED.2020.3000448. 804730.
+Authorized licensed use limited to: Seoul National University. Downloaded on January 11,2024 at 10:25:15 UTC from IEEE Xplore. Restrictions apply.

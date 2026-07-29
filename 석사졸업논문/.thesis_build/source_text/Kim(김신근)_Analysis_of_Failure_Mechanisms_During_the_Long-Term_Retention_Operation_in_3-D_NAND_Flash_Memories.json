@@ -1,0 +1,66 @@
+{
+  "path": "C:\\Users\\joshs\\Desktop\\local-laptop\\Graduation-SNU-MS\\석사졸업논문\\Kim(김신근)_Analysis_of_Failure_Mechanisms_During_the_Long-Term_Retention_Operation_in_3-D_NAND_Flash_Memories.pdf",
+  "sha256": "59f3a30a1b7860d7680fc9b3026c0584692a40652d145107444e98dc9548a0b7",
+  "page_count": 7,
+  "metadata": {
+    "IEEE Issue ID": "9269285",
+    "Creator": "Aspose Ltd.",
+    "Producer": "Aspose.Pdf for .NET 8.3.0; modified using iText® 7.1.1 ©2000-2018 iText Group NV (AGPL-version)",
+    "IEEE Article ID": "9229191",
+    "Title": "Analysis of Failure Mechanisms During the Long-Term Retention Operation in 3-D NAND Flash Memories",
+    "IEEE Publication ID": "16",
+    "Subject": "IEEE Transactions on Electron Devices;2020;67;12;10.1109/TED.2020.3028349",
+    "ModDate": "D:20201123212443-05'00'",
+    "CreationDate": "D:20201118185218+05'30'"
+  },
+  "captions": [
+    {
+      "page": 2,
+      "caption": "Fig. 1. Schematic energy band diagram of 3-D NAND flash memory in"
+    },
+    {
+      "page": 2,
+      "caption": "Fig. 1 schematically describes the charge loss components"
+    },
+    {
+      "page": 3,
+      "caption": "Fig. 2. Separated results of failure mechanisms from 3 k P/E cycled measurement data (P= 0.1) for a PV7 state of a 3-D NAND main chip, according"
+    },
+    {
+      "page": 3,
+      "caption": "Fig. 3. Schematic cross section of simulation structure and device tunneling occurs only through a single trap in the tunnel"
+    },
+    {
+      "page": 3,
+      "caption": "Fig. 4(a) shows electrons detrapping from tunnel oxide over it"
+    },
+    {
+      "page": 4,
+      "caption": "Fig. 5 shows the separation results expressed as the sum"
+    },
+    {
+      "page": 4,
+      "caption": "Fig. 4. TCAD simulation environment for the four failure mechanisms CR of each mechanism changes depending on the number"
+    },
+    {
+      "page": 5,
+      "caption": "Fig. 7. Final Vth (mechanism) parameter tendency of each mechanism"
+    },
+    {
+      "page": 5,
+      "caption": "Fig. 7(a) shows a tendency for the final V th(mechanism) value"
+    },
+    {
+      "page": 5,
+      "caption": "Fig. 5. Separated results of each failure mechanism according of each mechanism with increasing the number of P/E cycles at"
+    },
+    {
+      "page": 5,
+      "caption": "Fig. 6. Value of β mechanism(k) parameter for each mechanism. (a) 0.5 k to increase N , this trend occurs because the N recovery is"
+    },
+    {
+      "page": 6,
+      "caption": "Fig. 8. τ(mechanism) parameter tendency of each mechanism with"
+    }
+  ]
+}

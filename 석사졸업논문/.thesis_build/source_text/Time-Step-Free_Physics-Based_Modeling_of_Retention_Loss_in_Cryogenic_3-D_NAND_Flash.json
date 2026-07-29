@@ -1,0 +1,32 @@
+{
+  "path": "C:\\Users\\joshs\\Desktop\\local-laptop\\Graduation-SNU-MS\\석사졸업논문\\Time-Step-Free_Physics-Based_Modeling_of_Retention_Loss_in_Cryogenic_3-D_NAND_Flash.pdf",
+  "sha256": "82356c82f9b37962c9bdaf97812088fd6edf42360a4bd55ea4e2ef7d1ee10f0c",
+  "page_count": 4,
+  "metadata": {
+    "Creator": "LaTeX with hyperref",
+    "ModDate": "D:20260703182613-04'00'",
+    "IEEE Article ID": "11595641",
+    "Trapped": "False",
+    "CreationDate": "D:20260626134452+09'00'",
+    "IEEE Issue ID": "4357973",
+    "Producer": "MiKTeX pdfTeX-1.40.27; modified using iText® Core 7.2.4 (AGPL version) ©2000-2022 iText Group NV",
+    "Subject": "IEEE Electron Device Letters; ;PP;99;10.1109/LED.2026.3710382",
+    "PTEX.Fullbanner": "This is MiKTeX-pdfTeX 4.21.0 (1.40.27)",
+    "IEEE Publication ID": "55",
+    "Title": "Time-Step-Free Physics-Based Modeling of Retention Loss in Cryogenic 3-D NAND Flash"
+  },
+  "captions": [
+    {
+      "page": 2,
+      "caption": "Fig. 1. (a) shows a radial slice of 3-D NAND flash memory, (b)"
+    },
+    {
+      "page": 2,
+      "caption": "Fig. 2(a)."
+    },
+    {
+      "page": 3,
+      "caption": "Fig. 3. (a) The TCAD simulation calibration with the measurement th 42"
+    }
+  ]
+}

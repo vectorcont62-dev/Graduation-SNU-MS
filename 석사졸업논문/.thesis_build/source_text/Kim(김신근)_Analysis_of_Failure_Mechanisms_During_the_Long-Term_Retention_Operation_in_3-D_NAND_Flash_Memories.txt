@@ -1,0 +1,546 @@
+
+===== PAGE 1 =====
+5472 IEEE TRANSACTIONS ON ELECTRON DEVICES, VOL. 67, NO. 12, DECEMBER 2020
+Analysis of Failure Mechanisms During
+the Long-Term Retention Operation in
+3-D Flash Memories
+NAND
+Shinkeun Kim , Kyunghwan Lee, Changbeom Woo , Yuchul Hwang, Member,IEEE,
+and Hyungcheol Shin, SeniorMember,IEEE
+Abstract—Our previous study successfully separated loss in the 2-D planar structure. Various failure mechanisms
+the failure mechanisms that cause charge loss during can cause the charge loss that occurs during the retention
+long-term retention operation of 2-D NAND flash memories operation. It is difficult to accurately analyze the tendencies
+using the limiting conditions established by prior litera-
+of charge loss, because these mechanisms were mixed to
+ture and experiments. Based on these previous research,
+we investigated the failure mechanisms during long-term induce charge loss simultaneously [9], [10]. Our previous work
+retention(∼1000h) of 3-D NAND flashmemories. Eachmecha- used a charge loss function using the stretched exponential
+nism was separatedfrom the totalchargelossmeasurement function to solve these difficulties and separate these failure
+data. Program and erase (P/E) cycles deteriorate tunnel
+mechanisms from each other [11]–[15]. The limiting condi-
+oxide quality and increase the contribution rate (CR) of
+tions of each failure mechanism have since been established
+the failure mechanisms associated with tunnel oxide. Our
+analysis uncovered the dependence that specific parame- through several studies and various experiments. These coex-
+ters related to tunnel oxide have on P/E cycles. It was con- isting mechanisms can now be separated using the charge loss
+firmed that the chargeloss functiondescribesthe real-world function under the newly established limiting conditions.
+behavior of charge loss mechanisms well. Considering the
+In studies of planar structure, we reported that detrapping
+conditions of how lateral charge loss mechanism occurs by
+[10], [17]–[19], trap-assisted tunneling (TAT) [10], [20]–[23],
+3-D NAND flashmemories’ structuralfeatures,the constraints
+set in previous research was updated, and the validity of interface trap (N it ) recovery [10], [24]–[26] mechanisms gen-
+these constraints was confirmed by analysis using a TCAD erally cause charge loss during long-term retention opera-
+simulation. tions. Vertical structures cause charge migration in the lateral
+direction (LM) during retention operations because the target
+Index Terms—3-D NAND flash, cycling dependence,
+detrapping, failure mechanism, interface trap recovery, cell shares its CTL with adjacent cells [28]–[31]. Therefore,
+lateral migration (LM), long-term retention, stretched in 3-D NAND flash memories, there are four dominant failure
+exponential function, trap-assisted tunneling (TAT). mechanisms: three mechanisms have been reported in studies
+I. INTRODUCTION of planar structure memory, and one new mechanism in unique
+to vertical structure memory.
+WHILE the innovation to the 3-D vertical structure has
+In this article, we analyze the charge loss characteristics dur-
+been implemented to reduce the bits cost [1]–[5],
+ing long-term retention operations of 3-D NAND flash mem-
+the charge loss during the retention time was still a trouble-
+ories by analyzing the four failure mechanisms in Section II.
+some problem for the reliability of 3-D NAND flash mem-
+Analysis and separation of the failure mechanism were car-
+ories [6]–[8]. In particular, the move from the 2-D planar
+ried out under new limiting conditions of 3-D NAND flash
+structure to a 3-D vertical structure requires a change in the
+memories using the same charge loss function exploited in
+materials and fabrication process of the charge trap layer
+previous research. This new limiting condition for 3-D NAND
+(CTL), which caused a new failure mechanism to appear in
+flash memories is presented by adding the LM parameter
+addition to the failure mechanisms that causes the charge
+to the 2-D planar constraints reported in a previous article
+Manuscript received August 10, 2020; revised September 14, 2020; [16]. In Section III, the updated limiting conditions on each
+accepted September 28, 2020. Date of publication October 19, 2020; failure mechanism’s parameters are verified using a TCAD
+date of current version November 24, 2020. The review of this article
+simulation. We set up the simulation environment for the four
+was arranged by Editor P.-Y. Du. (Correspondingauthor:ShinkeunKim.)
+Shinkeun Kim, Changbeom Woo, and Hyungcheol Shin are with the mechanisms and compared the individual results from the
+Inter-University Semiconductor Research Center, Seoul National Uni- charge loss function with the simulation results to confirm the
+versity, Seoul 08826, South Korea, and also with the School of Electrical
+new constraint’s validity. In Section IV, the retention character-
+Engineering and Computer Science, Seoul National University, Seoul
+08826, South Korea (e-mail: skeunk@snu.ac.kr). istics over the long term are analyzed according to the number
+KyunghwanLeeiswith the Semiconductor Researchand Development of program and erase (P/E) cycles. The failure mechanisms are
+Center, Flash TD Team, Samsung Electronics, Hwaseong 18448, South
+separated into various P/E cycles’ need considering the tunnel
+Korea.
+Yuchul Hwang is with the Memory Division, Quality Assurance Team, oxide degradation caused by these P/E cycles. By analyzing
+Samsung Electronics, Hwaseong 18448, South Korea. each mechanism’s parameter trends, we investigate long-term
+Color versions of one or more of the figures in this article are available
+retention characteristics through the degradation caused by P/E
+online at https://ieeexplore.ieee.org.
+Digital Object Identifier 10.1109/TED.2020.3028349 cycles.
+0018-9383 © 2020 IEEE. Personal use is permitted, but republication/redistribution requires IEEE permission.
+See https://www.ieee.org/publications/rights/index.html for more information.
+Authorized licensed use limited to: Seoul National University. Downloaded on November 17,2023 at 07:39:43 UTC from IEEE Xplore. Restrictions apply.
+
+===== PAGE 2 =====
+KIM etal.: ANALYSIS OF FAILURE MECHANISMS DURING THE LONG-TERM RETENTION OPERATION 5473
+TABLE I
+SUMMARY OF LIMITING CONDITION FOR THE SEPARATION
+OF FAILURE MECHANISMS
+Fig. 1. Schematic energy band diagram of 3-D NAND flash memory in
+have relatively little effect on long-term retention operation.
+programed target cells during long-term retention operation.
+Thus, we think that the only difference in the long-term
+II. SEPARATION OF FAILURE MECHANISM IN retention characteristics between 2-D and 3-D would come
+3-D NAND FLASH MEMORY from a charge loss mechanism in the horizontal direction.
+It was expected that detrapping and N recovery would
+In this section, we used the charge loss function used it
+contribute less to the total charge loss than TAT and LM.
+in previous studies [11]–[16] to separate failure mechanisms
+Considering each mechanism’s charge source, the amount of
+from main chip measurements at a certain probability level
+electrons stored in the CTL is much more considerable than
+(P) = 0.1 for 3-D NAND flash memories. V th caused by the other trap sites. Therefore, the final V of each mechanism
+charge loss can be expressed as the sum of each of the four th
+can be determined, as shown in Table I, which considers the
+mechanisms’ functions. In this study, in addition to the three
+expected more enormous contributions of LM and TAT and
+r m et e e c n h t a io n n ism ch s ar r a e c p t o e r r t i e st d ics fo a r re 2- a D nal p y l z a e n d ar ba N s A e N d D o , n th th e e l s o e n p g a - r t a e t r e m d the results of research on 2-D NAND [16]. τ LM is expected to
+be larger than that from detrapping and smaller than that from
+results that take into account the charge loss by LM. We also
+TAT. Although LM is caused by the migration of electrons
+update the limiting conditions for the 3-D vertical structure.
+within the CTL, it is not affected by barriers in the material,
+Fig. 1 schematically describes the charge loss components
+so it seems to occur relatively quickly compared with TAT,
+of a programmed target cell during long-term retention opera-
+which needs traps to cross the barrier. Also, τ seems more
+tion. In this work, detrapping, TAT, N recovery, and LM are LM
+it considerable than that from detrapping because there are many
+considered significant failure mechanisms that cause charge
+more electrons trapped in the CTL than electrons trapped in the
+loss during long-term retention operations. V th,total during
+tunnel oxide. Fig. 2 shows the 3.0 k P/E cycled measurement
+long-term retention operation is the sum of each charge loss
+data at P = 0.1 and the separated results corresponding to
+function and can be separated as in [11]–[16]
+different temperatures (T). The symbol represents the results
+(cid:2)4
+measured at the main chip, and the solid color lines over
+V
+th,Total
+= V
+th,mechanism(k) time represent the value of V th,total by each mechanism.
+k=1 (cid:3) (cid:3) (cid:4) (cid:5) (cid:6)(cid:6) The black solid line shows the total charge loss’s best fit
+β
+× 1 − exp − t R mechanism(k) (1) as the sum of each mechanism’s functions. As temperature
+τ mechanism(k) increases, V th,total caused by the charge loss increases, and
+the contribution rates (CRs) of each failure mechanism change
+where t R , V th,mechanism(k), τ mechanism(k), and β mechanism(k) are with temperature and time.
+the retention time, final value of V for each mechanism,
+th
+time-constant, and shape parameter of charge loss function III. VALIDATION OF PARAMETER CONSTRAINTS
+for each mechanism, respectively. The parameters of each In this section, the updated limiting conditions from
+mechanism’s function were determined by following the lim- Section II have been validated through the Synopsys Sentaurus
+iting conditions shown in Table I. In this article, the limiting TCAD simulation tool. This verification was performed by
+conditions to separate the failure mechanisms were established comparing the TCAD simulation results with the charge loss
+by referring to the parameter extraction method used for function for a mechanism separation using limiting conditions.
+2-D planar devices [16] from our group. In a 3-D vertical The device structure and parameters are shown in Fig. 3.
+structure, the amount of charge loss that occurs during reten- The spacer length (L ) and the gate length of the target cell
+s
+tion operation was reported to be greater than that of a 2-D (L ) used one of the values within the range shown in
+WL
+planar structure [11]–[16]. 2-D and 3-D NAND are known Table II. Table II shows the model parameters used in each
+to differ significantly in their fabrication process, and their mechanism and the parameters used in common. According
+resulting characteristics are also known to differ significantly. to the mechanisms, the trap energy level (E ), trap density
+T
+However, from the perspective of their retention characteris- (N ), and capture cross section (σ) were changed to compare
+T
+tics, most phenomena are founded to impact on short-term the separation results by the charge loss model with TCAD
+retention operation remarkably [8]. They are considered to simulation.
+Authorized licensed use limited to: Seoul National University. Downloaded on November 17,2023 at 07:39:43 UTC from IEEE Xplore. Restrictions apply.
+
+===== PAGE 3 =====
+5474 IEEE TRANSACTIONS ON ELECTRON DEVICES, VOL. 67, NO. 12, DECEMBER 2020
+Fig. 2. Separated results of failure mechanisms from 3 k P/E cycled measurement data (P= 0.1) for a PV7 state of a 3-D NAND main chip, according
+to various temperature (T) values. (a) T= 40 ◦C. (b) T= 55 ◦C. (c) T= 70 ◦C. (d) T= 85 ◦C. (e) T= 100 ◦C. (f) T= 125 ◦C.
+TABLE II
+MODEL PARAMETERS USED IN THIS SIMULATION
+Fig. 3. Schematic cross section of simulation structure and device tunneling occurs only through a single trap in the tunnel
+parameters range. The device parameters are as follows: LWL is the oxide; all other components that contribute to tunneling were
+target cell gate length range, Ls is the spacer length range, tsi is
+removed. The number of electrons trapped in the CTL was
+the channel thickness, rf is the filler-oxide radius. O/N/O indicate the
+thickness of tunnel oxide, CTL, and blocking oxide, respectively, and determined regarding V th(TAT), like in the case of detrapping.
+ND(B), NDBL, and NDSL are the donor doping concentration of the bit line, This mechanism was simulated using the nonlocal tunneling
+source line, and channel, respectively.
+model to describe the tunneling from the CTL and a single
+A. DetrappingSimulation trap. Fig. 4(d) shows that the simulation results and the charge
+loss function results well matched at all temperatures.
+The detrapping mechanism describes electrons being inad-
+vertently trapped in tunnel oxide during the program.
+C. N RecoverySimulation
+Fig. 4(a) shows electrons detrapping from tunnel oxide over it
+time in the 3-D NAND flash structure. The trap density (N t ) The hydrogen atoms recovered N it generated by the P/E
+was set by referring to the value of V th(Detrapping) extracted in cycle during long-term retention operation. This phenomenon
+Section II. This analysis was performed by trapping electrons is considered a failure mechanism in the same way as the
+through program operations in the tunnel oxide. The electrons other mechanisms because it reduces V th,total . The multistate
+trapped in the tunnel oxide were detrapped based on the configuration (MSC)-hydrogen transport degradation model
+Poole–Frenkel (PF) and nonlocal tunneling model included in built within TCAD was used for simulation of this mechanism.
+the TCAD simulation. As shown in Fig. 4(b), the simulation The values of the initial Si-H bond density (N ), forward and
+0
+results are well matched at all temperatures with the charge reverse reaction rate constants (k and k ), and activation
+F0 R0
+loss function results for detrapping in Section II. energy in diffusion (E ) parameters were used to compare
+ADH
+the separation results for N recovery mechanism, as shown in
+it
+B. TATSimulation
+Table II. Fig. 4(e) shows decreased hydrogen atoms’ density
+The electrons trapped in the CTL could more easily tunnel due to their combination with interface traps during retention
+toward the channel with the help of a single trap in the operation. In the same way as previous results, Fig. 4(f) shows
+tunnel oxide. As shown in Fig. 4(c), this mechanism was that the V th(Nitrecovery) trend by simulation well-matched
+implemented through TCAD simulation. In this case, the with the charge loss function results.
+Authorized licensed use limited to: Seoul National University. Downloaded on November 17,2023 at 07:39:43 UTC from IEEE Xplore. Restrictions apply.
+
+===== PAGE 4 =====
+KIM etal.: ANALYSIS OF FAILURE MECHANISMS DURING THE LONG-TERM RETENTION OPERATION 5475
+Each simulation focused on only one mechanism at a
+time; assuming each mechanism occurs independently, we can
+confirm that the simulation results well-matched with the
+charge loss function results for each mechanism.
+IV. ANALYSIS OF P/E CYCLE DEPENDENCE ON
+RETENTION CHARACTERISTICS
+Based on the limiting conditions validated by TCAD sim-
+ulation in Section III, each failure mechanism was separated
+from the measurement data for various P/E cycle times in
+addition to the 3.0 k results previously discussed in Section I.
+The tendencies of the parameters in the charge loss function
+for each mechanism, according to temperatures (T = 40 ◦C,
+55 ◦C, 70 ◦C, 85 ◦C, 100 ◦C, and 125 ◦C) and several cycles
+(0.5 k, 1.0 k, 3.0 k, and 5.0 k), were analyzed to investigate
+the effect of the P/E cycles on the retention characteristics
+of 3-D NAND. As the P/E cycle stress is applied, the trap
+is generated on the tunnel oxide and tunnel oxide/channel
+interface, and as the number of P/E cycles increases, more
+traps are generated. The failure mechanisms associated with
+these increased traps contribute more to the charge loss during
+the retention operation. In particular, we focused on the
+tunnel oxide-related mechanisms that were expected to be
+significantly affected by the P/E cycle.
+Fig. 5 shows the separation results expressed as the sum
+of the functions for each mechanism using the parameters
+determined according to the limiting conditions from the
+results measured from the 3-D NAND main chip (P = 0.1) for
+two temperatures (at 40 ◦C and 125 ◦C) over 0.5, 1.0, and 5.0 k
+P/E cycled. As the number of P/E cycles increases, we can
+see that V th,total caused by the charge loss increases, and the
+change caused by increasing the cycle time is more remarkable
+at high temperatures (HTs). As with the 3.0 k results in Fig. 2,
+as the temperature increased, the value of V th,total increased,
+and the CR of each mechanism changed. Besides, the number
+of P/E cycles significantly affects the composition of each
+mechanism. When comparing Fig. 5(d)–(f), it is clear that the
+Fig. 4. TCAD simulation environment for the four failure mechanisms CR of each mechanism changes depending on the number
+and a comparison of the TCAD simulation results with the charge of P/E cycles. Regardless of the number of P/E cycles, LM
+loss function results at various temperatures. (a) Detrapping simulation.
+contributes the most to the charge loss during the long-term
+(b) Comparison of two detrapping results. (c) TAT simulation. (d) Com-
+parison of two TAT results. (e) Nit recovery simulation. (f) Comparison of retention. However, CR LM tends to decrease compared with
+two Nit recovery results. (g) LM simulation. (h) Comparison of two LM other mechanisms. V th,total increases despite little change in
+results.
+LM as the number of P/E cycles increases because the failure
+mechanisms affected by tunnel oxide degradation increase the
+D. LMSimulation
+amount contributing to the charge loss. Among these mecha-
+In this article, only the lateral direction was considered nisms, detrapping and N recovery show the most remarkable
+it
+for the direction of charge migration in the CTL. Previous changes, contributing more and more quickly to the charge
+research in our groups has reported vertical charge redistrib- loss as the number of P/E cycles increases. As the number of
+ution (VR) in the CTL [8]. However, since VR has already P/E cycles increases, the charge loss caused by TAT is also
+occurred and becomes saturated by the short-term operation, increasing. By analyzing the charge loss function parameters
+this phenomenon does not affect its long-term characteristics. used for mechanism separation according to the number of
+The simulation of this mechanism was performed and did P/E cycles, we can investigate the characteristics of the failure
+not include any vertical component. This simulation took into mechanisms that were expected to be affected by tunnel oxide
+account the movement of electrons inside the CTL using the degradation.
+PF model. Fig. 4(g) shows that the electrons trapped in the Fig. 6 shows the characteristics of β mechanism(k) according
+CTL move in a lateral direction during the retention operation. to temperature and P/E cycles. Fig. 6(a) and (c) shows
+V th(LM) from the TCAD simulation is in good agreement with that β mechanism(k) has a little dependence on temperature,
+the charge loss function results, as shown in Fig. 4(h). as shown in previous studies [11]–[16] and Table I.
+Authorized licensed use limited to: Seoul National University. Downloaded on November 17,2023 at 07:39:43 UTC from IEEE Xplore. Restrictions apply.
+
+===== PAGE 5 =====
+5476 IEEE TRANSACTIONS ON ELECTRON DEVICES, VOL. 67, NO. 12, DECEMBER 2020
+Fig. 7. Final Vth (mechanism) parameter tendency of each mechanism
+withincreasingthenumberofP/E cycles(from0.5to5.0k).(a)T= 40◦C.
+(b) T= 125 ◦C.
+stored in the FG spread quickly within the FG, and the
+potential is the same. Whereas in the case of the CTL in
+3-D NAND, the electrons clustered in the CTL center spread
+toward spacers. LM is carried out until the electric field caused
+by the difference between the center and edge of the CTL is
+weak. On the other hand, TAT continues to be caused by a
+vertical field caused by charges stored in CTL, even if the
+lateral electric field is resolved. The reason why β is a little
+LM
+smaller than β because the moving path of LM is longer
+TAT
+than the vertical direction path of TAT.
+Fig. 7(a) shows a tendency for the final V th(mechanism) value
+Fig. 5. Separated results of each failure mechanism according of each mechanism with increasing the number of P/E cycles at
+to P/E cycle number from data measured (P = 0.1) from PV7 of a relatively low temperature (LT) of 40 ◦C. Fig. 7(b) shows the
+the 3-D NAND main chip with various T values. (a) 0.5 k P/E cycled case at an HT of 125 ◦C. It seems that increasing the number
+in T = 40 ◦C. (b) 1.0 k P/E cycled in T = 40 ◦C. (c) 5.0 k P/E cycled
+in T= 40 ◦C. (d) 0.5 k P/E cycled in T= 125 ◦C. (e) 1.0 k P/E cycled in of P/E cycles generates traps in the tunnel oxide bulk, which
+T= 125 ◦C. (f) 5.0 k P/E cycled in T= 125 ◦C. increases the source of the detrapping mechanism. However,
+this increased source of detrapping is relatively less affected
+by temperature [31]. Therefore, the V th(detrapping) increases
+with the number of P/E cycles, while there is little change in
+temperature. As in the detrapping case, TAT was also affected
+by the degradation of the tunnel oxide. In particular, the num-
+ber of traps that could assist tunneling increases. V th(TAT) also
+increases with the number of P/E cycles. In addition, V th(TAT)
+increases with temperature because the charge loss source
+increases with temperature, unlike detrapping [31]. In the
+case of N recovery, the final V value was not significantly
+it th
+affected by the number of P/E cycles at LT, but the effect of
+P/E cycling was increased at the higher temperature. Although
+the tunnel oxide/channel interface is degraded by the P/E cycle
+Fig. 6. Value of β mechanism(k) parameter for each mechanism. (a) 0.5 k to increase N , this trend occurs because the N recovery is
+P/E cycled in T= 40 ◦C. (b) 3.0 k P/E cycled in T= 40 ◦C. (c) 0.5 k P/E it it
+cycled in T= 125 ◦C. (d) 3.0 k P/E cycled in T= 125 ◦C. greatly affected by temperature during the retention operation.
+Therefore, N recovery is relatively less influential in the low
+it
+Also, Fig. 6(c) and (d) shows that there is also minimal cycled case and contributes to high cycled cases. The three
+dependence on P/E cycles. mechanisms, not including LM, were directly affected by the
+In conclusion, β mechanism(k) shows the same value at the degradation of tunnel oxide, whereas LM appears to be less
+number of P/E cycles according to the increasing temperature. affected by the number of P/E cycles because LM only occurs
+β mechanism(k) in the charge loss function is a parameter that inside the CTL. Therefore, V th(LM) has little change in the
+is related to the varying contribution of each mechanism, number of P/E cycles in Fig. 7. As the temperature increases,
+so there is no change with temperature [16]. As with tem- the CTLs trapped charges can move more easily, so V th(LM)
+perature, the number of P/E cycles does not affect each increases with temperatures.
+mechanism’s variation. For long-term retention operation, it Fig. 8(a) and (b) shows the value τ mechanism(k) at LT and
+can be concluded that there was little impact on the variety of HT, respectively. τ mechanism(k) decreases as the temperature
+mechanisms caused by either temperature or number of P/E increases by the limiting conditions introduced in Table I.
+cycles. In the case of the floating gate (FG), the electrons Also, τ mechanism(k) is affected by the number of P/E cycles,
+Authorized licensed use limited to: Seoul National University. Downloaded on November 17,2023 at 07:39:43 UTC from IEEE Xplore. Restrictions apply.
+
+===== PAGE 6 =====
+KIM etal.: ANALYSIS OF FAILURE MECHANISMS DURING THE LONG-TERM RETENTION OPERATION 5477
+limiting conditions well reflected each failure mechanism’s
+physical characteristics. The failure mechanisms contributing
+to charge loss during long-term retention operations were
+successfully separated at various temperatures through the val-
+idated constraints. Also, the separated results according to the
+number of P/E cycles were used to analyze how the degrada-
+tion caused by P/E repetition during long-term retention could
+affect each failure mechanism. The three mechanisms related
+to tunnel oxide were found to give an increased contribution to
+charge loss and advance the time these contributions occurred
+by analyzing the separating process parameters.
+Fig. 8. τ(mechanism) parameter tendency of each mechanism with
+increasing the number of P/E cycles (from 0.5 to 5.0 k). (a) T= 40 ◦C. REFERENCES
+(b) T= 125 ◦C.
+[1] E.-S. Choi and S.-K. Park, “Device considerations for high density and
+highly reliable 3D NAND flash cell in near future,” in IEDM Tech. Dig.,
+decreasing overall, but significantly less than the effect of Dec. 2012, p. 9, doi: 10.1109/IEDM.2012.6479011.
+temperature. Fig. 8 allows us to infer the activation energy [2] M. Ishiduki et al., “Optimal device structure for pipe-shaped BiCS
+(E ) of each mechanism. E of detrapping is expected to flash memory for ultra high density storage device with excellent
+a a performance and reliability,” in IEDM Tech. Dig., Dec. 2009, p. 27,
+be the largest because of the greatest τ mechanism(k) change doi: 10.1109/IEDM.2009.5424261.
+according to temperature. Both TAT and LM are the trap- [3] J. Jang et al., “Vertical cell array using TCAT (Terabit Cell Array
+Transistor) technology for ultra high density NAND flash memory,” in
+to-trap movement mechanisms, but compared with E , E of
+a a IEEE Symp. VLSI Tech. Dig., Jun. 2009, pp. 192–193.
+LM is much larger than that of TAT. That is because TAT is [4] H. Tanaka et al., “Bit cost scalable technology with punch and
+more dependent on tunneling due to the large energy barrier plug process for ultra high density flash memory,” in Proc. IEEE
+Symp. VLSI Technol., Jun. 2007, pp. 14–15, doi: 10.1109/VLSIT.
+on the tunnel oxide, resulting in a greater vertical electric field,
+2007.4339708.
+which results in lower temperature dependence and larger [5] Y. Fukuzumi et al., “Optimal integration and characteristics of
+τ mechanism(k). After all, the trap density is much lower than the vertical array devices for ultra-high density, bit-cost scalable
+flash memory,” in IEDM Tech. Dig., Dec. 2007, pp. 449–452,
+CTL layer. On the other hand, in the case of LM, the distance
+doi: 10.1109/IEDM.2007.4418970.
+between traps is shorter because of the abundance of traps in [6] B. Choi et al., “Comprehensive evaluation of early retention (fast charge
+the CTL, and thermal dependence is much higher because it loss within a few seconds) characteristics in tube-type 3-D NAND flash
+memory,” in Proc. IEEE Symp. VLSI Technol., Jun. 2016, pp. 1–2,
+is a hopping mechanism that is transferred to the next trap site
+doi: 10.1109/VLSIT.2016.7573385.
+by horizontal electric field after receiving the thermal energy. [7] H.-J. Kang et al., “Comprehensive analysis of retention characteristics
+Considering the results in Fig. 8(a) and (b), the detrapping was in 3-D NAND flash memory cells with tube-type poly-Si channel
+structure,” in Proc. Symp. VLSI Technol. (VLSI Technol.), Jun. 2015,
+most affected by temperature compared with the other mech-
+pp. T182–T183, doi: 10.1109/VLSIT.2015.7223670.
+anisms [16]–[19]. That is because detrapping is influenced [8] C. Woo et al., “Modeling of charge loss mechanisms during
+by thermal emissions and direct tunneling due to thin tunnel the short term retention operation in 3-D NAND flash memo-
+ries,” in Proc. Symp. VLSI Technol., Jun. 2019, pp. T214–T215,
+oxide at the same time, but the probability that detrapping is
+doi: 10.23919/VLSIT.2019.8776579.
+still determined by temperature. The number of trap sites is [9] B. Govoreanu and J. van Houdt, “On the roll-off of the activation energy
+thought to increase according to tunnel oxide degradation in plot in high-temperature flash memory retention tests and its impact on
+the reliability assessment,” IEEE Electron Device Lett., vol. 29, no. 2,
+the TAT case. This increase in the trap site can be thought of
+pp. 177–179, Feb. 2008, doi: 10.1109/LED.2007.914089.
+as increasing the path through which TAT occurs. Considering [10] Failure Mechanisms and Models for Semiconductor Devices, JEDEC
+these characteristics, it follows that the dependence of τ Standard TEP122C, Mar. 2006.
+TAT
+[11] K. Lee, D. Kang, S. Seo, D.-H. Li, J. Kim, and H. Shin, “Analysis of
+on the number of P/E cycles is more extensive than other
+mechanisms. On the other hand, LM has relatively little τ LM n
+fa
+a
+i
+n
+lu
+d
+re
+fla
+m
+sh
+ec
+c
+h
+e
+a
+l
+n
+ls
+i
+,
+s
+”
+m
+I
+s
+EE
+an
+E
+d
+E
+e
+l
+x
+e
+t
+c
+r
+t
+a
+r
+c
+o
+t
+n
+io
+D
+n
+e
+o
+v
+f
+ic
+a
+e
+ct
+L
+iv
+e
+a
+tt
+t
+.
+i
+,
+on
+vo
+e
+l.
+ne
+3
+r
+4
+g
+,
+ie
+n
+s
+o.
+(E
+1,
+a)
+pp
+in
+. 4
+2
+8
+1
+–
+-n
+5
+m
+0,
+change by the P/E cycle, because the CTL already has many Jan. 2013, doi: 10.1109/LED.2012.2222013.
+[12] K. Lee, D. Kang, H. Shin, S. Kwon, S. Kim, and Y. Hwang, “Analysis of
+trap sites since the initial state. Similarly, in the case of N
+it failure mechanisms in erased state of sub 20-nm NAND Flash memory,”
+recovery, it can be seen that there is little dependence on the in Proc. 44th Eur. Solid State Device Res. Conf. (ESSDERC), Sep. 2014,
+number of P/E cycles for τ . As discussed in Section I, pp. 58–61, doi: 10.1109/ESSDERC.2014.6948757.
+Nit_recovery
+[13] D. Kang et al., “Generation dependence of retention character-
+N recovery is a high-speed mechanism, so even as the number
+it istics in extremely scaled NAND flash memory,” IEEE Elec-
+of P/E cycles increases, the absolute amount that contributes to tron Device Lett., vol. 34, no. 9, pp. 1139–1141, Sep. 2013,
+the total charge loss may increase, but when this occurs is not doi: 10.1109/LED.2013.2271351.
+[14] D. Kang et al., “Probability level dependence of failure mecha-
+earlier.
+nisms in sub-20 nm NAND flash memory,” IEEE Electron Device
+Lett., vol. 35, no. 3, pp. 348–350, Mar. 2014, doi: 10.1109/LED.
+V. CONCLUSION
+2014.2301164.
+In this article, the failure mechanisms were separated from [15] D. Kang, K. Lee, S. Kwon, S. Kim, Y. Hwang, and H. Shin, “Analysis
+of read disturbance mechanism in retention of sub-20 nm NAND
+measurement data to investigate the characteristics of the
+flash memory,” Jpn. J. Appl. Phys., vol. 54, no. 4S, Apr. 2015,
+long-term retention of 3-D NAND flash memory. The limiting Art. no. 04DD03, doi: 10.7567/JJAP.54.0D4DD03.
+conditions were newly constructed to account for the lateral [16] K. Lee, M. Kang, Y. Hwang, and H. Shin, “Accurate lifetime esti-
+mation of sub-20-nm NAND flash memory,” IEEE Trans. Electron
+migration mechanism caused by a 2-D planar to 3-D vertical
+Devices, vol. 63, no. 2, pp. 659–667, Feb. 2016, doi: 10.1109/TED.
+structure. TCAD simulation was used to verify that the revised 2015.2509004.
+Authorized licensed use limited to: Seoul National University. Downloaded on November 17,2023 at 07:39:43 UTC from IEEE Xplore. Restrictions apply.
+
+===== PAGE 7 =====
+5478 IEEE TRANSACTIONS ON ELECTRON DEVICES, VOL. 67, NO. 12, DECEMBER 2020
+[17] C. M. Compagnoni et al., “Investigation of the threshold voltage [25] C.-C. Lu, K.-S. Chang-Liao, F.-H. Tsai, C.-C. Li, and T.-K. Wang,
+instability after distributed cycling in nanoscale NAND flash memory “Detection of stress-induced interface trap generation on high-k gated
+arrays,” in Proc. IEEE Int. Rel. Phys. Symp., May 2010, pp. 604–610, nMOSFETs in real time by stress-and-sense charge pumping technique,”
+doi: 10.1109/IRPS.2010.5488762. IEEE Trans. Electron Devices, vol. 62, no. 5, pp. 1405–1410, May 2015,
+[18] Z. Xia et al., “Comprehensive modeling of NAND flash memory doi: 10.1109/TED.2015.2409477.
+reliability: Endurance and data retention,” in Proc. IEEE Int. Rel. Phys. [26] S. Mahapatra et al., “A comparative study of different physics-
+Symp. (IRPS), Apr. 2012, p. MY-5, doi: 10.1109/IRPS.2012.6241922. based NBTI models,” IEEE Trans. Electron Devices, vol. 60, no. 3,
+[19] G. Verma and N. Mielke, “Reliability performance of ETOX based flash pp. 901–916, Mar. 2013, doi: 10.1109/TED.2013.2238237.
+memories,” in Proc. 26th Annu. Proc. Rel. Phys. Symp., Apr. 1988, [27] A. E. Islam, H. Kufluoglu, D. Varghese, S. Mahapatra, and
+pp. 158–166, doi: 10.1109/RELPHY.1988.23444. M. A. Alam, “Recent issues in negative-bias temperature instability:
+[20] D. Ielmini, A. S. Spinelli, A. L. Lacaita, and A. Modelli, Initial degradation, field dependence of interface trap generation, hole
+“A statistical model for SILC in flash memories,” IEEE Trans. trapping effects, and relaxation,” IEEE Trans. Electron Devices, vol. 54,
+Electron Devices, vol. 49, no. 11, pp. 1955–1961, Nov. 2002, no. 9, pp. 2143–2154, Sep. 2007, doi: 10.1109/TED.2007.902883.
+doi: 10.1109/TED.2002.804730. [28] C. Kang et al., “Effects of lateral charge spreading on the reliability
+[21] R. Degraeve et al., “Analytical percolation model for predict- of TANOS (TaN/AlO/SiN/Oxide/Si) NAND flash memory,” in Proc.
+ing anomalous charge loss in flash memories,” IEEE Trans. 45th Annu. IEEE Int. Rel. Phys. Symp., Apr. 2007, pp. 167–170,
+Electron Devices, vol. 51, no. 9, pp. 1392–1400, Sep. 2004, doi: 10.1109/RELPHY.2007.369887.
+doi: 10.1109/TED.2004.833583. [29] C.-P. Chen, H.-T. Lue, C.-C. Hsieh, K.-P. Chang, K.-Y. Hsieh, and
+[22] L. Larcher, “Statistical simulation of leakage currents in mos and flash C.-Y. Lu, “Study of fast initial charge loss and it’s impact on
+memory devices with a new multiphonon trap-assisted tunneling model,” the programmed states vt distribution of charge-trapping NAND
+IEEE Trans. Electron Devices, vol. 50, no. 5, pp. 1246–1253, May 2003, flash,” in IEDM Tech. Dig., Dec. 2010, p. 5, doi: 10.1109/IEDM.
+doi: 10.1109/TED.2003.813236. 2010.5703304.
+[23] A. Padovani, L. Larcher, G. Bersuker, and P. Pavan, “Charge trans- [30] A. Maconi et al., “Impact of lateral charge migration on the reten-
+port and degradation in HfO2 and HfOx dielectrics,” IEEE Elec- tion performance of planar and 3D SONOS devices,” in Proc. Eur.
+tron Device Lett., vol. 34, no. 5, pp. 680–682, May 2013, doi: Solid-State Device Res. Conf. (ESSDERC), Sep. 2011, pp. 195–198,
+10.1109/LED.2013.2251602. doi: 10.1109/ESSDERC.2011.6044201.
+[24] J.-D. Lee, J.-H. Choi, D. Park, and K. Kim, “Effects of interface [31] K. Lee and H. Shin, “Investigation of retention characteristics for trap-
+trap generation and annihilation on the data retention characteristics of assisted tunneling mechanism in sub 20-nm NAND flash memory,” IEEE
+flash memory cells,” IEEE Trans. Device Mater. Rel., vol. 4, no. 1, Trans. Device Mater. Rel., vol. 17, no. 4, pp. 758–762, Dec. 2017,
+pp. 110–117, Mar. 2004, doi: 10.1109/TDMR.2004.824360. doi: 10.1109/TDMR.2017.2772046.
+Authorized licensed use limited to: Seoul National University. Downloaded on November 17,2023 at 07:39:43 UTC from IEEE Xplore. Restrictions apply.

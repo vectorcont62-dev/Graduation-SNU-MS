@@ -1,0 +1,76 @@
+{
+  "path": "C:\\Users\\joshs\\Desktop\\local-laptop\\Graduation-SNU-MS\\석사졸업논문\\Modeling_Attempt-to-Escape_Frequency_Tunneling_Emission_of_Trapped_Electrons_in_Tunneling_Oxides_of_3-D_NAND_Flash_Memory.pdf",
+  "sha256": "256a3bd2740baa44e79b475f616a03082991cd30fdaae1237a6894a4c46c65c2",
+  "page_count": 6,
+  "metadata": {
+    "Creator": "LaTeX with hyperref",
+    "ModDate": "D:20250825182604-04'00'",
+    "IEEE Article ID": "11142504",
+    "Trapped": "False",
+    "CreationDate": "D:20250820120933+05'30'",
+    "IEEE Issue ID": "11142484",
+    "Producer": "pdfTeX-1.40.24; modified using iText® Core 7.2.4 (AGPL version) ©2000-2022 iText Group NV",
+    "Subject": "IEEE Transactions on Electron Devices;2025;72;9;10.1109/TED.2025.3589340",
+    "PTEX.Fullbanner": "This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) kpathsea version 6.3.4",
+    "IEEE Publication ID": "16",
+    "Title": "Modeling Attempt-to-Escape Frequency: Tunneling Emission of Trapped Electrons in Tunneling Oxides of 3-D NAND Flash Memory"
+  },
+  "captions": [
+    {
+      "page": 2,
+      "caption": "Fig. 1 summarizes the structural, band diagram, and the"
+    },
+    {
+      "page": 2,
+      "caption": "Fig. 1(b) shows the programmed cell with trapped electrons"
+    },
+    {
+      "page": 3,
+      "caption": "Fig. 3. (a) Electron transition mechanism between Si-channel con-"
+    },
+    {
+      "page": 3,
+      "caption": "Fig. 3(b) explicitly illustrates the multibarrier energy land-"
+    },
+    {
+      "page": 3,
+      "caption": "Fig. 2. (a) TCAD simulation setting of cylindrical 3-D NAND flash by first-order ordinary differential equations (ODEs), with the"
+    },
+    {
+      "page": 3,
+      "caption": "Fig. 3, which is defined as"
+    },
+    {
+      "page": 4,
+      "caption": "Fig. 4. (a) TCAD representation of electron detrapping within the lation directly links the microscopic trap geometry (V T ) and"
+    },
+    {
+      "page": 4,
+      "caption": "Fig. 3(b), the tunneling probability for each individual barrier"
+    },
+    {
+      "page": 5,
+      "caption": "Fig. 6. Visualization of (a) ν TBT computation by (7) and (11) in the case"
+    },
+    {
+      "page": 5,
+      "caption": "Fig. 5(b)–(d) shows strong agreement between the proposed"
+    },
+    {
+      "page": 5,
+      "caption": "Fig. 5. (a) Comparison of model over ∆Vth = 0–2 V with various model and TCAD results over varying t from minimum 2-nm"
+    },
+    {
+      "page": 5,
+      "caption": "Fig. 4(c) presents the Gaussian fitting of trap energy profiles The proposed model of TBT emission explicitly excludes"
+    },
+    {
+      "page": 5,
+      "caption": "Fig. 5(a) shows the variations in the electron emission time and t = 2 nm. The ν increases as the trap energy level"
+    },
+    {
+      "page": 5,
+      "caption": "Fig. 5(a) shows the comparison of models across various Time constant of stretched-exponential decaying nature of"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "path": "C:\\Users\\joshs\\Desktop\\local-laptop\\Graduation-SNU-MS\\석사졸업논문\\Jo(조형준)_Compact_Modeling_of_Trap-Assisted_Tunneling_Current_in_3-D_NAND_Flash_Memory.pdf",
+  "sha256": "5f038adcd31f14400a2bde015c2605b680aaa8474bfa746e1211422e6a2aae33",
+  "page_count": 5,
+  "metadata": {
+    "Creator": "LaTeX with hyperref",
+    "ModDate": "D:20250328182529-04'00'",
+    "IEEE Article ID": "10892304",
+    "Trapped": "False",
+    "CreationDate": "D:20250325234152+05'30'",
+    "IEEE Issue ID": "10945874",
+    "Producer": "pdfTeX-1.40.24; modified using iText® Core 7.2.4 (AGPL version) ©2000-2022 iText Group NV",
+    "Subject": "IEEE Transactions on Electron Devices;2025;72;4;10.1109/TED.2025.3541603",
+    "PTEX.Fullbanner": "This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) kpathsea version 6.3.4",
+    "IEEE Publication ID": "16",
+    "Title": "Compact Modeling of Trap-Assisted Tunneling Current in 3-D NAND Flash Memory"
+  },
+  "captions": [
+    {
+      "page": 1,
+      "caption": "Fig. 1(a) shows the TEG of a 3-D CTL NAND flash memory,"
+    },
+    {
+      "page": 2,
+      "caption": "Fig. 1. (a) TEG of 3-D CTL NAND flash memory measured in the"
+    },
+    {
+      "page": 2,
+      "caption": "Fig. 3. (a) Cross section of the 3-D CTL NAND flash memory employed"
+    },
+    {
+      "page": 2,
+      "caption": "Fig. 2. Measurement results of WL current in the TEG after each EW"
+    },
+    {
+      "page": 2,
+      "caption": "Fig. 4. Conduction band in region D after the positive sweep of the WL"
+    },
+    {
+      "page": 4,
+      "caption": "Fig. 8. TTT mechanism with modified barrier and tunneling length when"
+    },
+    {
+      "page": 4,
+      "caption": "Fig. 6. Average trap density as a function of the conduction band edge"
+    },
+    {
+      "page": 4,
+      "caption": "Fig. 9. (a) Compact model results in region D based on WL voltage and"
+    },
+    {
+      "page": 4,
+      "caption": "Fig. 7. Emission rate of TB CH and TTT. When calculating BT N1 and TTT, the trap densities for each"
+    },
+    {
+      "page": 5,
+      "caption": "Fig. 10. (a) Compact model results in region A based on WL voltage"
+    }
+  ]
+}

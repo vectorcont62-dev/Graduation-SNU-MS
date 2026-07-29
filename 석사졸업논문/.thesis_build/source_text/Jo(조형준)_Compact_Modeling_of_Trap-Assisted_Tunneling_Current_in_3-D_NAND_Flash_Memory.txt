@@ -1,0 +1,364 @@
+
+===== PAGE 1 =====
+IEEE TRANSACTIONS ON ELECTRON DEVICES, VOL. 72, NO. 4, APRIL 2025 1745
+Compact Modeling of Trap-Assisted Tunneling
+Current in 3-D Flash Memory
+NAND
+Hyungjun Jo and Hyungcheol Shin, Senior Member, IEEE
+Abstract—In this research, a compact model is proposed phenomenon using stretched exponential functions (SEFs) [6],
+for trap-assisted tunneling (TAT) currents in 3-D NAND flash [7] or trap-to-band tunneling (TB) model [8]. However, SEF is
+memory during erase/write (EW) cycling. Using the trap
+an empirical model, and the TB mechanism differs physically
+spectroscopy by charge injection and sensing (TSCIS)
+from the tunneling that occurs from CTL traps to BE-TOX
+technique, the average trap density and trap energy level
+are extracted and applied in the TAT model. The compact traps. Therefore, it is necessary to apply a compact model
+model integrates band-to-trap tunneling (BT), trap-to-band that physically aligns with the phenomenon in TAT.
+tunneling (TB), and trap-to-trap tunneling (TTT) mecha- In this research, TAT current was modeled via band-to-trap
+nisms. In BT and TTT, tunneling to trap occurs only
+tunneling (BT), TB, and trap-to-trap tunneling (TTT) models.
+when the trap energy level is aligned with or below the
+The average trap density and trap energy level of the bulk traps
+injection level. Modified tunneling equations are used to
+address misaligned trap energy levels in TTT. The compact in the BE-TOX layer during erase/write (EW) cycling were
+model demonstrates good agreement with measurement extracted in our previous study [9] using the trap spectroscopy
+data across various word-line (WL) voltages and cycling by charge injection and sensing (TSCIS) technique [10] and
+conditions.
+were applied to the model. The WL current of the test-element
+Index Terms—3-D NAND flash memory, bandgap- group (TEG) was measured during the EW cycling stress
+engineered tunneling oxide (BE-TOX) degradation, conditions. When the absolute value of the WL voltage (|V |)
+WL
+compact modeling, endurance, erase/write (EW) cycling,
+is in a low range, the TAT phenomenon becomes dominant.
+trap-assisted tunneling (TAT), trap spectroscopy by charge
+Therefore, in the measured WL current, the current observed
+injection and sensing (TSCIS).
+in the low |V | regime was defined and analyzed as TAT
+WL
+current. The tunneling mechanism was analyzed with energy
+I. INTRODUCTION
+band diagram extracted through technology computer-aided
+NAND flash memory, a type of nonvolatile memory,
+design (TCAD) simulation.
+is widely used in various electronic devices. Due to
+challenges related to device scaling and reliability issues, the
+II. EXPERIMENTAL SETUP AND RESULTS
+structure of NAND flash memory has evolved from a 2-D
+Fig. 1(a) shows the TEG of a 3-D CTL NAND flash memory,
+planar to a 3-D vertical architecture [1], [2], [3]. 3-D NAND
+in which approximately 1 000 000 strings are connected in
+flash memory consists of a poly-Si channel, a charge trapping
+parallel. Each string in the TEG consists of a bitline (BL),
+layer (CTL), and a bandgap-engineered tunneling oxide (BE-
+a drain select line (DSL), WLs, dummy WLs, a source select
+TOX) designed to enhance erase efficiency [4]. A significant
+line (SSL), and a source line (SL). The WL current is a
+challenge in 3-D NAND flash memory is addressing reliability
+tunneling current, and for accurate measurements, four WLs
+and endurance issues that impact data errors and cell char-
+are tied to one pad, defined as the selected WL. The endurance
+acteristics. Among reliability concerns, trap-assisted tunneling
+test is performed at room temperature using the WL located
+(TAT) is a critical phenomenon in long-term retention [5], [6],
+in the middle of the string. EW cycling is carried out up to
+[7], [8].
+50k cycles, and the WL current is measured after 1, 3, 5, 10,
+Previous studies on the long-term retention in 3-D
+30, and 50k cycles. Fig. 1(b) shows the waveform used for the
+NAND flash memory have analyzed and modeled the TAT
+EW cycling test. In the erase operation, a gate-induced drain
+Received 15 January 2025; accepted 6 February 2025. Date of pub- leakage (GIDL) erase mechanism is employed, and a small
+lication 19 February 2025; date of current version 28 March 2025. The positive voltage is applied to the unselected and dummy WLs
+review of this article was arranged by Editor P. Y. Du. (Corresponding
+to minimize cycling stress in these WLs. In this test, only a
+author: Hyungcheol Shin.)
+Hyungjun Jo is with the Inter-University Semiconductor Research Cen- single pulse is applied for both erase and program operations.
+ter, Department of Electrical and Computer Engineering, Seoul National Both the erase voltage (V ) and program voltage (V )
+ERASE PGM
+University, Seoul 08826, South Korea (e-mail: robotjo@snu.ac.kr).
+are 20 V.
+Hyungcheol Shin is with the Inter-University Semiconductor Research
+Center, Department of Electrical and Computer Engineering, Seoul Fig. 2 presents the WL current measurement results.
+National University, Seoul 08826, South Korea, and also with Fig. 2(a) shows the WL current during a positive sweep of
+Integra Semiconductor Ltd., Seoul 06970, South Korea (e-mail:
+the WL voltage in the erase state, after each EW cycling
+hcshin@snu.ac.kr).
+Digital Object Identifier 10.1109/TED.2025.3541603 is completed. Fig. 2(b) shows the WL current when the WL
+1557-9646 © 2025 IEEE. All rights reserved, including rights for text and data mining, and training of artificial intelligence
+and similar technologies. Personal use is permitted, but republication/redistribution requires IEEE permission.
+See https://www.ieee.org/publications/rights/index.html for more information.
+Authorized licensed use limited to: Seoul National University. Downloaded on July 22,2026 at 14:53:25 UTC from IEEE Xplore. Restrictions apply.
+
+===== PAGE 2 =====
+1746 IEEE TRANSACTIONS ON ELECTRON DEVICES, VOL. 72, NO. 4, APRIL 2025
+Fig. 1. (a) TEG of 3-D CTL NAND flash memory measured in the
+experiment. (b) Waveforms for EW cycling stress.
+Fig. 3. (a) Cross section of the 3-D CTL NAND flash memory employed
+in the TCAD simulation. (b) U-shaped trap distribution in the poly-Si
+channel GB, along with interface traps at the poly-Si/filler oxide and poly-
+Si/BE-TOX interfaces. (c) Fitting results of the virgin BL current between
+experimental data and TCAD simulation results.
+Fig. 2. Measurement results of WL current in the TEG after each EW
+cycling. (a) WL currents in the low |VWL | range during a positive WL
+voltage sweep in the erase state. (b) WL currents in the low |VWL | range
+during a negative WL voltage sweep following the positive sweep.
+voltage is swept in the negative direction following the positive
+sweep. As noted above, because the TAT phenomenon is
+dominant at low |V |, only the WL current for the low |V |
+WL WL
+range is shown in Fig. 2. Results at higher |V | range are
+WL
+analyzed in detail in [9].
+Fig. 4. Conduction band in region D after the positive sweep of the WL
+voltage, extracted through TCAD simulation.
+III. COMPACT MODELING
+For modeling and analysis of the TAT mechanism, the
+conduction band is necessary. In Fig. 3(a), the structure of a
+single string in the 3-D CTL NAND flash memory is illustrated
+as applied in the TCAD simulation. The structural parameters
+of the device are configured to match those of the TEG device
+used in the measurements. The BE-TOX layer is composed
+of an oxide/nitride/oxide (O1/N1/O2) stack, and the energy
+bandgaps of each region are also set to the same values as
+in the measured device. For the poly-Si channel, the grain
+boundary (GB) traps are assumed to be located in the middle
+of each WL and spacer region, following the U-shaped trap
+distribution shown in Fig. 3(b). A uniform trap distribution
+is additionally assumed for the channel/BE-TOX and chan- Fig. 5. Conduction band in region A after the erase operation, extracted
+nel/filler interface traps. Consequently, as shown in Fig. 3(c), through TCAD simulation.
+excellent agreement is observed between the measured BL
+current and the TCAD simulation results, confirming that the Fig. 4 shows the conduction band in region D, when a low
+conduction band of this device can be successfully extracted. |V | is applied to the WL after the positive sweep of the
+WL
+As shown in Figs. 4 and 5, the conduction band in regions D WL voltage measurement. After the positive sweep of the
+and A is extracted and analyzed at low |V |, where the TAT WL voltage, electrons become trapped in the CTL, similar
+WL
+mechanism is dominant. to the program state. The number of trapped electrons is
+Authorized licensed use limited to: Seoul National University. Downloaded on July 22,2026 at 14:53:25 UTC from IEEE Xplore. Restrictions apply.
+
+===== PAGE 3 =====
+JO AND SHIN: COMPACT MODELING OF TAT CURRENT IN 3-D NAND FLASH MEMORY 1747
+determined from the threshold voltage (V ) and then applied the energy barrier takes on a trapezoidal shape. Therefore,
+t
+in TCAD simulation. In the CTL, electrons captured in the to achieve more accurate physical modeling, the attenuation
+shallow trap level are emitted into the conduction band via coefficients α CTL,TTT , α CTL,T , and α N1,T are used as shown
+Poole–Frenkel (PF) emission and move laterally [11], making in (4)–(6), based on the WKB approximation. Additionally,
+them irrelevant to the WL current. Therefore, only deep trap the energy barrier lowering phenomenon due to the electric
+level is considered in the CTL for the TAT model. When field induced by the CTL charge is considered by β [13].
+OX
+electrons captured in the deep trap level of the CTL, emission Electrons trapped in the N1 layer through TTT are emitted to
+to the conduction band via PF is difficult, resulting in TTT the channel through TB (TB ). The TB model is shown in
+CH
+from CTL traps to BE-TOX layer traps predominant. Since Appendix.
+most of the traps in the BE-TOX layer exist in the N1 layer, Fig. 5 shows the conduction band of region A, when a low
+it is assumed that the traps exist only in the N1 layer. The positive voltage is applied to the WL after erase operation.
+TTT model is given as follows [12]: In this situation, trapped holes corresponding to V are applied
+t
+in the CTL. During this time, BT occurs from the conduction
+e TTT = 2π2α N1 ℏ3(cid:0) N it,N1 − n it,N1 (cid:1) band of the channel to the traps in the N1 layer. The BT model
+· (cid:16) 1 (cid:17) exp (cid:0)−α CTL,TTT (cid:1) is given as follows [8], [12]:
+m2 OX t O2 1 + 2α CT 1 LtO2 e BT,N1 = vth σ n (cid:0) N t,N1 − n t,N1 (cid:1)
+·
+t C
+1
+TL
+Z
+0
+tCTL exp (cid:0)−α CTL,T (cid:1) dx
+t N
+1
+1
+Z
+0
+tN1 exp (cid:0)−α N1,T (cid:1) dx ·
+√
+exp (cid:0)−α O1,BT (cid:1)
+t N
+1
+1
+Z
+0
+tN1 exp (cid:0)−α N1,T (cid:1) dx (8)
+(1) 4 2m
+α = OX α′
+where ℏ is the reduced plank constant and m and t are
+O1,BT 3ℏqF
+O1
+O1,BT
+the effective mass and thickness of each layer, respectively. × h(cid:0)(cid:49)E C,CH (cid:1)3/2 − (cid:0)(cid:49)E C,CH − qF O1 t O1 (cid:1)3/2 i (9)
+N it,N1 and n it,N1 represent the densities of trap sites and
+where vth is the thermal velocity, σ is the capture cross
+trapped electrons, respectively, which are obtained by con- n
+verting volume density to interface density. α N1 and α CTL are section, and α O ′ 1,BT is a fitting parameter. Electrons trapped
+the energy barrier related constants, and α CTL,TTT , α CTL,T , and in the N1 layer through BT exhibit different emission mech-
+α N1,T are the attenuation coefficients, which associated with anisms depending on E t,N1 . For the shallow trap level,
+the tunneling barriers in each layer, and are given as follows: TB occurs, where electrons move to the conduction band of
+the CTL (TB ). For the deep trap level, TTT occurs, where
+q CTL
+2 2m N (cid:0) E t,CTL + (cid:49)E C,O2 − (cid:49)E C,O1 (cid:1) electrons directly move to traps in the CTL. In the TB and TTT
+α = (2) models in region A, the trap densities, energy barrier-related
+N1 ℏ
+q constants, and attenuation coefficients should be adjusted.
+2 2m N (cid:0) E t,CTL+ (cid:49)E C,O2 (cid:1)
+α = (3)
+CTL ℏ IV. MODELING RESULTS AND DISCUSSION
+α = 4 p 2m∗ OX α′ A. Trap-Level Dependency
+CTL,TTT 3ℏqF
+O2
+CTL,TTT
+During the EW cycling tests, the anode hole injection (AHI)
+ (cid:16)
+(cid:49)E C,O2 + E t,CTL − β OX
+√
+F O2
+(cid:17)3/2 
+phenomenon induces degradation of bulk traps in the BE-TOX
+ (cid:16) √  layer [14], [15]. In our previous study [9], these bulk traps
+×   − (cid:49)E C,O2 + E t,CTL − β OX F O2   were characterized using the TSCIS method. Fig. 6 shows
+ (cid:17)3/2  the average trap density of bulk trap in the BE-TOX layer
+−qF t
+O2 O2 as a function of trap energy level under various EW cycling
+(4) conditions. As the number of EW cycles increases, the bulk
+α CTL,T = 3 4 ℏ p q 2 F m∗ N h(cid:0) E t,CTL (cid:1)3/2 − (cid:0) E t,CTL − qF CTL x (cid:1)3/2 i t e r n a e p rg d y en le s v it e y ls i . n B cr o e t a h se t s h , e a d n e d ns a i d ty dit a i n o d na t l h t e ra e p n s er a g p y pe le a v r e a l t o d f e b e u p l e k r
+CTL traps significantly influence the TAT phenomenon.
+(5)
+In region D, after the positive sweep of the WL voltage
+α N1,T = √ 4 3 p ℏq 2 F m N ∗ N 1 h(cid:0) E t,N1 (cid:1)3/2 − (cid:0) E t,N1 − qF N1 x (cid:1)3/2 i (6) m th e e a N su 1 re la m y e e n r t a , n a d s C ig T n L ifi . c T a h n e t n T u B m C b H e p r r o o f ba e b le il c i t t r i o es ns of ar t e he tr e a l p e p c e tr d on in s
+β = q3/(πϵ ) (7) trapped in the N1 layer vary depending on the trap energy
+OX OX
+levels. Fig. 7 shows the emission rates of TB and TTT as
+CH
+where E t,CTL and E t,N1 are the trap energy level of CTL a function of E t,N1 . At the deep trap level of the N1 layer,
+and N1 layer, respectively, F and ϵ are the average electric TB is calculated to be smaller than TTT because electrons
+CH
+field and permittivity of each layer, respectively, and α C ′ TL,TTT are difficult to emit. In this situation, since N it,N1 −n it,N1 = 0,
+is a fitting parameter, respectively. In [12], the attenuation TTT does not occur. Therefore, emissions due to TTT are
+coefficients were used in the form of α · t, based on the calculated for the shallow trap level of the N1 layer.
+assumption of a rectangular energy barrier without an applied Fig. 8 shows the conduction band when E t,N1 is shallow
+electric field. However, when an electric field is applied, trap. In this case, E t,N1 can be higher than E t,CTL . When E t,N1
+Authorized licensed use limited to: Seoul National University. Downloaded on July 22,2026 at 14:53:25 UTC from IEEE Xplore. Restrictions apply.
+
+===== PAGE 4 =====
+1748 IEEE TRANSACTIONS ON ELECTRON DEVICES, VOL. 72, NO. 4, APRIL 2025
+Fig. 8. TTT mechanism with modified barrier and tunneling length when
+Et,N1 (shallow trap) is higher than E t,CTL (deep trap).
+Fig. 6. Average trap density as a function of the conduction band edge
+in the BE-TOX layer extracted from the trap profile in [9].
+Fig. 9. (a) Compact model results in region D based on WL voltage and
+EW cycling. (b) Compact model results when the WL voltage is at X.
+t O2 , ensuring that E t,N1 in region A is always aligned with or
+below the conduction band edge of the channel.
+Fig. 7. Emission rate of TB CH and TTT. When calculating BT N1 and TTT, the trap densities for each
+trap energy level in the N1 layer are determined from the
+is higher than E t,CTL , thermal energy is required, significantly values shown in Fig. 6.
+reducing the tunneling probability [16]. In addition, according
+to the inelastic process, tunneling to trap occurs only when the B. Compact Model Results
+trap energy level is aligned with or below the injection energy
+The WL current is calculated using the following equation:
+level [17], [18], [19], [20]. Therefore, instead of tunneling to
+t m he od h i i fi g e h d er b t a r r a r p ie l r ev a e n l d , t t h u e nn e e le li c n tr g on le s n i g n th th t e o C a T n L al t i u g n n n e e d l t t h ra r p ou l g e h ve a l I WL,neg = q · (cid:0) e T − B 1 ,CH + e T − T 1 T (cid:1)−1 · n t,CTL · Vol CTL
+in the N1 layer. The equations for the modified barrier and ≈ q · e TTT,shallow · n t,CTL · Vol CTL (13)
+tunneling length are as follows [21]: I WL,pos = q · (cid:0) e B − T 1 ,N1 + e T − B 1 ,CTL or e T − T 1 T (cid:1)−1 · n c,CB · Vol CTL
+α ≈ q · e BT,N1 ·n c,CB · Vol CTL (14)
+CTL,T√TT,M
+= 4 2m OX α′ where n t,CTL is calculated from V t after a positive sweep of
+3ℏqF CTL,TTT the WL voltage, and n c,CB is the number of electrons in the
+O2
+ (cid:16) √ (cid:17)3/2  conduction band of the channel, which is extracted through
+E t,CTN + (cid:49)E C,O2 − β O2 F O2 TCAD simulation. In (14), TTT and TB CTL are calculated to be
+    − (cid:16) E t,CTN + (cid:49)E C,O2 − β O2 √ F O2 − qF O2 t O2 (cid:17)3/2     t w w h o en or ca fi l v c e ul o a r ti d n e g rs th o e f m TA a T gn c it u u r d r e en l t ar i g n er re t g h i a o n n B A T , N t 1 h . e T t h u e n r n e e f l o i r n e g ,
+×      + ϵ ϵ O N X r m m O N X    (cid:0) − E (cid:0) t E ,C t T ,C N T + N (cid:49) + − (cid:49) E q C E F ,N C 1 ,N t − 1 − q (cid:1) F q 3 O / F 2 2 O t O 2 t 2 O (cid:1) 2 3/2         a d n o d m Fi i g c n . a a p 9 n t t u s . h re ow m s e t c h h e a fi n t i t s i m ng i r n esu th lt e s i N n 1 reg la i y o e n r D t , hr in o d u i g c h ati B ng T N g 1 oo i d s
+N1 TTT agreement between the measurements and the model. It is also
+(10) confirmed that the model closely matches the measurements
+t N1,M = t N1 − t TTT (11) at a specific WL voltage denoted as the X point.
+t O2,M = t O2 + t TTT . (12) Fig. 10 presents the fitting results in region A. When calcu-
+lating the TAT current in region A, the trap density is evaluated
+In region A, after erase operation, a significant number of across all trap levels in the BE-TOX N1 layer shown in Fig. 6,
+holes are trapped in the CTL. Additionally, t is thicker than resulting in slight discrepancies from the results in region D.
+O1
+Authorized licensed use limited to: Seoul National University. Downloaded on July 22,2026 at 14:53:25 UTC from IEEE Xplore. Restrictions apply.
+
+===== PAGE 5 =====
+JO AND SHIN: COMPACT MODELING OF TAT CURRENT IN 3-D NAND FLASH MEMORY 1749
+[5] K. Lee and H. Shin, “Investigation of retention characteristics for trap-
+assisted tunneling mechanism in sub 20-nm NAND flash memory,” IEEE
+Trans. Device Mater. Rel., vol. 17, no. 4, pp. 758–762, Dec. 2017, doi:
+10.1109/TDMR.2017.2772046.
+[6] S. Kim, K. Lee, C. Woo, Y. Hwang, and H. Shin, “Analy-
+sis of failure mechanisms during the long-term retention operation
+in 3-D NAND flash memories,” IEEE Trans. Electron Devices,
+vol. 67, no. 12, pp. 5472–5478, Dec. 2020, doi: 10.1109/TED.2020.
+3028349.
+[7] Y. Fan, Z. Wang, S. Yang, K. Han, and Y. He, “Investigation of retention
+characteristics in a triple-level charge trap 3D NAND flash memory,” in
+Proc. IEEE Int. Rel. Phys. Symp. (IRPS), Dallas, TX, USA, Mar. 2022,
+pp. P31-1–P31-4, doi: 10.1109/IRPS48227.2022.9764506.
+Fig. 10. (a) Compact model results in region A based on WL voltage
+[8] J. Park et al., “Decomposition of vertical and lateral charge loss in
+and EW cycling. (b) Compact model results when the WL voltage is at X.
+long-term retention of 3-D NAND flash memory,” in Proc. IEEE Int.
+Rel. Phys. Symp. (IRPS), Monterey, CA, USA, Mar. 2023, pp. 1–4, doi:
+Nevertheless, the overall trends between the measured data 10.1109/IRPS48203.2023.10117868.
+[9] H. Jo, J. Kim, Y. Cho, H. Shim, J. Sim, and H. Shin, “Inves-
+and the model agree well.
+tigation of endurance characteristics in 3-D NAND flash mem-
+ory with trap profile analysis,” IEEE Trans. Electron Devices,
+vol. 71, no. 3, pp. 1852–1857, Mar. 2024, doi: 10.1109/TED.2024.
+V. CONCLUSION
+3350565.
+In this research, the TAT currents of 3-D NAND flash mem- [10] R. Degraeve et al., “Trap spectroscopy by charge injection and sens-
+ory were modeled using the trap profiles extracted through ing (TSCIS): A quantitative electrical technique for studying defects
+in dielectric stacks,” in IEDM Tech. Dig., Dec. 2008, pp. 1–4, doi:
+the TSCIS technique during EW cycling. A compact model
+10.1109/IEDM.2008.4796812.
+was developed integrating the equations for TB, BT, and TTT. [11] H.-N. Yoo et al., “Effect of lateral charge diffusion on retention
+In region A, when the trap energy level is aligned with or characteristics of 3D NAND flash cells,” IEEE Electron Device Lett.,
+vol. 42, no. 8, pp. 1148–1151, Aug. 2021, doi: 10.1109/LED.2021.
+below the injection level, BT is dominant, resulting in good
+3088851.
+agreement between the model and measurement data. In region [12] Y. Wang and M. H. White, “An analytical retention model for SONOS
+D, modified barrier and tunneling length were applied to nonvolatile memory devices in the excess electron state,” Solid-State
+Electron., vol. 49, no. 1, pp. 97–107, Jan. 2005.
+account for the dependency of TTT on trap energy levels.
+[13] M. Kim and H. Shin, “Analysis and compact modeling of fast detrapping
+Consequently, the model also showed good agreement with from bandgap-engineered tunneling oxide in 3-D NAND flash mem-
+the measurement data. ories,” IEEE Trans. Electron Devices, vol. 68, no. 7, pp. 3339–3345,
+Jul. 2021.
+[14] T. Samadder, N. Choudhury, S. Kumar, D. Kochar, N. Parihar, and
+APPENDIX S. Mahapatra, “A physical model for bulk gate insulator trap generation
+during bias-temperature stress in differently processed p-channel FETs,”
+The TB model is given as follows [8], [12], [13]:
+IEEE Trans. Electron Devices, vol. 68, no. 2, pp. 485–490, Feb. 2021,
+e TB = ν TB exp (cid:0)−α O1,TB (cid:1) 1 Z tN1 exp (cid:0)−α N1,T (cid:1) dx (15) [15] S do . i K : u 1 m 0. a 1 r 1 , 0 R 9 . /T A E n D an .2 d 0 k 2 ri 0 s . h 3 n 0 a 4 n 5 , 9 N 60 . . Parihar, and S. Mahapatra, “A stochas-
+t tic framework for the time kinetics of interface and bulk oxide
+√ N1 0
+traps for BTI, SILC, and TDDB in MOSFETs,” IEEE Trans. Elec-
+4 2m
+α = OX α′ tron Devices, vol. 67, no. 11, pp. 4741–4748, Nov. 2020, doi:
+O1,TB 3ℏqF O1,TB 10.1109/TED.2020.3020533.
+O1
+ (cid:16) √ (cid:17)3/2  [16] K. Lee et al., “Activation energies (Ea) of failure mechanisms in
+×  E t,N1 + (cid:49)E C,O1 − β O1 F O1  (16) T ad ra v n an s. ce E d le N ct A ro N n D D fl ev a i s c h es c , el v l o s l f . o 6 r 0 d , i n ff o e . re 3 n , t p g p e . n 1 e 0 ra 9 t 9 io – n 1 s 10 a 7 n , d M cy a c r. li 2 n 0 g 1 ,” 3 I , E d E o E i:
+−(cid:0) E t,N1 + (cid:49)E C,O1 − qF O1 t O1 (cid:1)3/2 10.1109/TED.2013.2241065.
+[17] S. Takagi, N. Yasuda, and A. Toriumi, “A new I–V model for stress-
+where ν is attempt to esca pe frequency and α′ is a induced leakage current including inelastic tunneling,” IEEE Trans.
+TB TB,CTL
+Electron Devices, vol. 46, no. 2, pp. 348–354, Feb. 1999.
+fitting parameter.
+[18] D. Ielmini, A. S. Spinelli, M. A. Rigamonti, and A. L. Lacaita,
+“Modeling of SILC based on electron and hole tunneling. I. Transient
+REFERENCES effects,” IEEE Trans. Electron Devices, vol. 47, no. 6, pp. 1258–1265,
+Jun. 2000, doi: 10.1109/16.842971.
+[1] H. Aochi, “BiCS flash as a future 3D non-volatile memory technology [19] E. Vianello et al., “Experimental and simulation analysis of pro-
+for ultra high density storage devices,” in Proc. Int. Memory Workshop, gram/retention transients in silicon nitride-based NVM cells,” IEEE
+May 2009, pp. 1–2, doi: 10.1109/IMW.2009.5090581. Trans. Electron Devices, vol. 56, no. 9, pp. 1980–1990, Sep. 2009, doi:
+[2] H. Kim, S.-J. Ahn, Y. G. Shin, K. Lee, and E. Jung, “Evolution of 10.1109/TED.2009.2026113.
+NAND flash memory: From 2D to 3D as a storage market leader,” in [20] Z.-Y. Lun, Y. Li, K. Zhao, G. Du, X.-Y. Liu, and Y. Wang, “Modeling of
+Proc. IEEE Int. Memory Workshop (IMW), May 2017, pp. 1–4, doi: trap-assisted tunneling on performance of charge trapping memory with
+10.1109/IMW.2017.7939081. consideration of trap position and energy level,” Chin. Phys. B, vol. 25,
+[3] K. Parat and A. Goda, “Scaling trends in NAND flash,” in IEDM Tech. no. 8, Aug. 2016, Art. no. 088502, doi: 10.1088/1674-1056/25/8/088502.
+Dig., Dec. 2018, pp. 2.1.1–2.1.4, doi: 10.1109/IEDM.2018.8614694. [21] H.-T. Lue et al., “Understanding barrier engineered charge-trapping
+[4] H.-T. Lue et al., “BE-SONOS: A bandgap engineered SONOS with NAND flash devices with and without high-K dielectric,” in
+excellent performance and reliability,” in IEDM Tech. Dig., Dec. 2005, Proc. IEEE Int. Rel. Phys. Symp., Apr. 2009, pp. 874–882, doi:
+pp. 547–550, doi: 10.1109/IEDM.2005.1609404. 10.1109/IRPS.2009.5173370.
+Authorized licensed use limited to: Seoul National University. Downloaded on July 22,2026 at 14:53:25 UTC from IEEE Xplore. Restrictions apply.

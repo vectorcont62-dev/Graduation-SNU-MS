@@ -1,0 +1,70 @@
+{
+  "path": "C:\\Users\\joshs\\Desktop\\local-laptop\\Graduation-SNU-MS\\석사졸업논문\\Kim(김민수)_Analysis_and_Compact_Modeling_of_Fast_Detrapping_From_Bandgap-Engineered_Tunneling_Oxide_in_3-D_NAND_Flash_Memories.pdf",
+  "sha256": "807a43ceab904887a0be0be9894f85bb5848a05801778fcee893fd23491d0489",
+  "page_count": 7,
+  "metadata": {
+    "Creator": "Aspose Ltd.",
+    "ModDate": "D:20210622162832-04'00'",
+    "IEEE Article ID": "9431724",
+    "CreationDate": "D:20210617224722+05'30'",
+    "IEEE Issue ID": "9462946",
+    "Producer": "Aspose.Pdf for .NET 8.3.0; modified using iText® 7.1.1 ©2000-2018 iText Group NV (AGPL-version)",
+    "Subject": "IEEE Transactions on Electron Devices;2021;68;7;10.1109/TED.2021.3077202",
+    "IEEE Publication ID": "16",
+    "Title": "Analysis and Compact Modeling of Fast Detrapping From Bandgap-Engineered Tunneling Oxide in 3-D NAND Flash Memories"
+  },
+  "captions": [
+    {
+      "page": 2,
+      "caption": "Fig. 1. (a) Charge distribution and the capacitive couplings (CNG N1 CTN"
+    },
+    {
+      "page": 2,
+      "caption": "Fig. 1(b) shows the energy band diagram of the BE-TOX"
+    },
+    {
+      "page": 2,
+      "caption": "Fig. 1(a) shows the charge distribution in BE-TOX/ electrons in the N1 layer is not always uniform in practice"
+    },
+    {
+      "page": 3,
+      "caption": "Fig. 3. (a) Calibration of the model to the simulation results for TE"
+    },
+    {
+      "page": 3,
+      "caption": "Fig. 2. Trapped electrons contours (a) right after the program (0 s), (tO1 = 2 nm). The extracted value of ν TE is 3.0 × 105 s−1. The oxides"
+    },
+    {
+      "page": 3,
+      "caption": "Fig. 2(f). To accurately consider each physics in the BE-TOX"
+    },
+    {
+      "page": 4,
+      "caption": "Fig. 4. Energy band diagrams (black lines) during the program oper-"
+    },
+    {
+      "page": 4,
+      "caption": "Fig. 4(b). Fig. 4(c) shows \u0002V by the trapped electrons in"
+    },
+    {
+      "page": 5,
+      "caption": "Fig. 7. Extracted rates of the detailed components (eTBT, ePF, cn, eDT,"
+    },
+    {
+      "page": 5,
+      "caption": "Fig. 8(a) and (b) shows each rate of the detailed components"
+    },
+    {
+      "page": 6,
+      "caption": "Fig. 11 shows the natural logarithms of τ as func-"
+    },
+    {
+      "page": 6,
+      "caption": "Fig. 11. Extracted ln(τ Detrapping) from the fitted stretched exponential physical insights of this mechanism in terms of the more"
+    },
+    {
+      "page": 6,
+      "caption": "Fig. 10(b). Contrary to TBT which is a 1-step emission [5] D. Oh et al., “TCAD Simulation of data retention characteristics of"
+    }
+  ]
+}

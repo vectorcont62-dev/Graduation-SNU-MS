@@ -1,0 +1,175 @@
+{
+  "input": "C:\\Users\\joshs\\Desktop\\local-laptop\\Graduation-SNU-MS\\\uc11d\uc0ac\uc878\uc5c5\ub17c\ubb38\\\uc11d\uc0ac\ud559\uc704\ub17c\ubb38_\uc774\ucc2c_\ucd08\uc548.docx",
+  "fonts_by_char_count": {
+    "HY\uc2e0\uba85\uc870": 41929,
+    "Century": 422,
+    "Arial": 68,
+    "Cambria Math": 38,
+    "Times New Roman": 15,
+    "\uad74\ub9bc": 6
+  },
+  "direct_run_formatting_runs": 3397,
+  "direct_paragraph_formatting_paragraphs": 544,
+  "heading_like_paragraphs_not_heading_style": [
+    {
+      "para_index": 1,
+      "text": "\uacf5\ud559\uc11d\uc0ac \ud559\uc704\ub17c\ubb38",
+      "style": "Normal (Web)"
+    },
+    {
+      "para_index": 3,
+      "text": "3\ucc28\uc6d0 \ub0b8\ub4dc \ud50c\ub798\uc2dc \uba54\ubaa8\ub9ac\uc758",
+      "style": "Normal"
+    },
+    {
+      "para_index": 4,
+      "text": "\uc218\uc9c1\uc804\ud558\uc7ac\ubd84\ud3ec \ud2b9\uc131 \ubd84\uc11d",
+      "style": "Normal"
+    },
+    {
+      "para_index": 5,
+      "text": "\ubc0f \ubaa8\ub378\ub9c1",
+      "style": "Normal"
+    },
+    {
+      "para_index": 7,
+      "text": "Analysis and modeling of ",
+      "style": "Normal"
+    },
+    {
+      "para_index": 8,
+      "text": "Vertical Redistribution ",
+      "style": "Normal"
+    },
+    {
+      "para_index": 9,
+      "text": "in 3D NAND Flash memory",
+      "style": "Normal"
+    },
+    {
+      "para_index": 12,
+      "text": " 2026 \ub144 8 \uc6d4",
+      "style": "Normal"
+    },
+    {
+      "para_index": 15,
+      "text": "\uc11c\uc6b8\ub300\ud559\uad50 \ub300\ud559\uc6d0",
+      "style": "Normal"
+    },
+    {
+      "para_index": 16,
+      "text": "\uc804\uae30\u00b7\uc815\ubcf4\uacf5\ud559\ubd80",
+      "style": "Normal"
+    },
+    {
+      "para_index": 17,
+      "text": "\uc774 \ucc2c",
+      "style": "Normal"
+    },
+    {
+      "para_index": 18,
+      "text": "3\ucc28\uc6d0 \ub0b8\ub4dc \ud50c\ub798\uc2dc \uba54\ubaa8\ub9ac\uc758",
+      "style": "Normal"
+    },
+    {
+      "para_index": 19,
+      "text": "\uc218\uc9c1\uc804\ud558\uc7ac\ubd84\ud3ec \ud2b9\uc131 \ubd84\uc11d",
+      "style": "Normal"
+    },
+    {
+      "para_index": 20,
+      "text": "\ubc0f \ubaa8\ub378\ub9c1",
+      "style": "Normal"
+    },
+    {
+      "para_index": 22,
+      "text": "Analysis and modeling of ",
+      "style": "Normal"
+    },
+    {
+      "para_index": 23,
+      "text": "Vertical Redistribution ",
+      "style": "Normal"
+    },
+    {
+      "para_index": 24,
+      "text": "in 3D NAND Flash memory",
+      "style": "Normal"
+    },
+    {
+      "para_index": 26,
+      "text": "\uc9c0\ub3c4 \uad50\uc218  \uc2e0 \ud615 \ucca0",
+      "style": "Normal"
+    },
+    {
+      "para_index": 28,
+      "text": "\uc774 \ub17c\ubb38\uc744 \uacf5\ud559\uc11d\uc0ac \ud559\uc704\ub17c\ubb38\uc73c\ub85c \uc81c\ucd9c\ud568",
+      "style": "Normal"
+    },
+    {
+      "para_index": 29,
+      "text": "2026 \ub144  8 \uc6d4",
+      "style": "Normal"
+    }
+  ],
+  "examples": {
+    "direct_paragraph_formatting": [
+      {
+        "para_index": 1,
+        "text": "\uacf5\ud559\uc11d\uc0ac \ud559\uc704\ub17c\ubb38",
+        "style": "Normal (Web)"
+      },
+      {
+        "para_index": 7,
+        "text": "Analysis and modeling of ",
+        "style": "Normal"
+      },
+      {
+        "para_index": 8,
+        "text": "Vertical Redistribution ",
+        "style": "Normal"
+      },
+      {
+        "para_index": 9,
+        "text": "in 3D NAND Flash memory",
+        "style": "Normal"
+      },
+      {
+        "para_index": 22,
+        "text": "Analysis and modeling of ",
+        "style": "Normal"
+      }
+    ],
+    "direct_run_formatting": [
+      {
+        "para_index": 1,
+        "run_text": "\uacf5",
+        "style": "Normal (Web)"
+      },
+      {
+        "para_index": 1,
+        "run_text": "\ud559",
+        "style": "Normal (Web)"
+      },
+      {
+        "para_index": 1,
+        "run_text": "\uc11d",
+        "style": "Normal (Web)"
+      },
+      {
+        "para_index": 1,
+        "run_text": "\uc0ac",
+        "style": "Normal (Web)"
+      },
+      {
+        "para_index": 1,
+        "run_text": " ",
+        "style": "Normal (Web)"
+      }
+    ]
+  },
+  "notes": [
+    "Direct formatting is not always wrong, but it often causes inconsistent output when templates change.",
+    "Heading-like paragraphs not using Heading styles can break TOC and accessibility."
+  ]
+}

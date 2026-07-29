@@ -1,0 +1,553 @@
+
+===== PAGE 1 =====
+This article has been accepted for publication in IEEE Electron Device Letters. This is the author's version which has not been fully edited and
+content may change prior to final publication. Citation information: DOI 10.1109/LED.2026.3710382
+GENERIC COLORIZED JOURNAL, VOL. XX, NO. XX, XXXX 20XX 1
+Time-Step-Free Physics-Based Modeling of
+Retention Loss in Cryogenic 3-D NAND Flash
+Myung Jin, Haechan Choi, and Hyungcheol Shin, Senior Member, IEEE
+Abstract—We propose a time-step-free physics-based gate stack, incorporating quantized multiple layers within the
+1 43
+2 model for retention loss in cryogenic 3-D NAND flash charge trap nitride (CTN) layer. After obtaining the detailed 44
+memory. By solving the first-order autonomous detrap-
+3 Poisson solution for these discretized layers, the threshold
+ping equation in closed form, the proposed model directly 45
+4 voltage shift (∆V ) is calculated using a determinant based
+evaluates ∆V (t) from the initially programmed trapped th 46
+5 th
+6 charge distribution without transient time stepping. For a method. Finally, based on previous studies of detrapping- 47
+fixed number of targeted retention times, the computational induced emission rates [4], an autonomous equation governing
+7 48
+8 cost is independent of the final physical retention time, retention loss behavior is proposed. 49
+enabling efficient short- and long-term retention predic-
+9
+tion. The model is benchmarked against TCAD simulations
+10
+calibrated only to the time scale of reported cryogenic A. Detailed Poisson Solution
+11 50
+retention data and configured to isolate detrapping loss by
+12 An electrical potential distribution obtained from the cylin-
+suppressing thermally activated transitions during reten- 51
+13
+drical Poisson equation for discretized layers in the ONO
+14 tion. It reproduces the TCAD predicted retention transient 52
+15 and tunneling oxide thickness dependence for 3-5 nm while structure can be expressed as follows [4], [5]. 53
+16 reducing the average runtime from >25000 s to <4 s. 
+V (r ) = V
+1 1 7 8 OD
+In
+E
+d
+,
+e
+d
+x
+etr
+T
+a
+e
+p
+r
+p
+m
+in
+s
+g
+—
+, 3
+ti
+-
+m
+D
+e
+N
+-s
+A
+te
+N
+p
+D
+-fr
+fl
+e
+a
+e
+sh
+m
+m
+o
+e
+d
+m
+el
+o
+in
+ry
+g
+,
+,
+re
+a
+t
+u
+en
+to
+ti
+n
+o
+o
+n
+m
+l
+o
+o
+u
+ss
+s
+
+V
+S
+T
+i
+OX
+S
+(
+i
+r) = V
+ch
+ch + K ϵT T O O X X ln r r Si
+2
+1
+0
+9 modeling
+I. INTRODUCTION
+
+V
+V
+V
+B
+C
+O
+TN
+X
+,
+(
+(
+i
+r
+r
+(
+)
+r)
+=
+=
+V
+)
+V
+C
+=
+C
+T
+T
+N
+V
+N
+,N
+,i
+(
+−
+r
+1
+N
+(r
+)
+i
++
+−1 )
+K ϵB
++
+B O O X X
+ϵC K
+l
+T
+n
+i N
+r
+l
+r N
+n ri r −1 (1)
+THE rapid increase in data storage demand, driven by BOX BOX G
+21
+22 emerging computing technologies such as artificial in- where i = 1–N denotes the index of each discretized slice 54
+23 telligence (AI) and high-performance computing (HPC), has of the CTN layer in the radial direction, and N is the total 55
+24 raised significant concerns about the reliability of 3-D NAND number of radial partitions. 56
+25 flash memories, particularly regarding retention loss [1]. Solving x vector can calculate the total N + 2 potential 57
+26 As storage capacity per cell increases, ensuring long-term parameters. 58
+stability of each bit’s threshold voltage distribution over time
+27 (cid:2) (cid:3)⊤
+28 scales from days to years becomes increasingly critical. More- x = K TOX K 1 · · · K N K BOX (2)
+over, prior works have shown that trapped charge detrapping
+29
+can still occur at cryogenic temperatures [2], [3], supporting
+30 Ax = b (3)
+models that treat detrapping as temperature independent [4].
+31
+In this study, a time-step-free physics-based model is de- Matrix A and vector b are constructed by enforcing a total
+32 59
+veloped for retention loss based on tunneling emission mech- of N +1 transverse electric field continuity conditions (ϵ E =
+33 1 1 60
+anisms in 3-D NAND flash memory. The proposed simula- ϵ E ) together with an additional boundary condition defined
+34 2 2 61
+tion framework uses the initially programmed trapped charge by reference potential.
+35 62
+distribution as input and enables highly efficient computation
+36  
+1 −1 0 · · · 0 0
+by using closed-form solution of the autonomous detrapping
+37
+equation, eliminating sequential transient time stepping.  0 1 −1 · · · 0 0 
+38 A =    . . . ... . . .    (4)
+39 II. MODELING   0 0 0 · · · 1 −1  
+40 This section presents the modeling framework for time- 2π 2π 2π · · · 2π 2π
+step-free simulation of retention loss. First, a cylindrical Pois- CTOX C1 C2 CN CBOX
+41
+42 son solution is derived for the oxide–nitride–oxide (O/N/O) b = (cid:2)∆Q0 ∆Q1 · · · ∆QN ∆V (cid:3)⊤ (5)
+2π 2π 2π
+(Corresponding Author: Myung Jin; Hyungcheol Shin.)
+Myung Jin and Haechan Choi are with the Department of Electrical
+and Computer Engineering, Seoul National University, Seoul 08826, ∆Q i = πr i 2 (n t,i − n t,i−1 ) (6)
+South Korea (e-mail: gsjb1028@snu.ac.kr).
+Hyungcheol Shin is with the Department of Electrical and Computer
+E al n s g o in w e i e th rin In g t , e S g e ra ou S l e N m at ic io o n n a d l u U c n to iv r, er L s t i d ty . , , S S e e o o u u l l 0 0 8 6 8 9 2 7 6 0 , , S S o o u u th th K K or o e r a e , a a ( n e d - ∆V = (V G − V ch ) − (cid:88) N 4 q ϵ n t,i (cid:0) r i 2 − r i 2 −1 (cid:1) (7)
+mail: hcshin@snu.ac.kr). CTN
+i=1
+Authorized licensed use limited to: Seoul National University. Downloaded on July 08,2026 at 05:36:20 UTC from IEEE Xplore. Restrictions apply.
+© 2026 IEEE. All rights reserved, including rights for text and data mining and training of artificial intelligence and similar technologies. Personal use is permitted,
+but republication/redistribution requires IEEE permission. See https://www.ieee.org/publications/rights/index.html for more information.
+
+===== PAGE 2 =====
+This article has been accepted for publication in IEEE Electron Device Letters. This is the author's version which has not been fully edited and
+content may change prior to final publication. Citation information: DOI 10.1109/LED.2026.3710382
+2 GENERIC COLORIZED JOURNAL, VOL. XX, NO. XX, XXXX 20XX
+Fig. 1. (a) shows a radial slice of 3-D NAND flash memory, (b)
+shows TCAD-extracted post-program trapped charge distribution, (c)
+shows capacitance and node charge representation, and (d) shows the
+visualization of ∆Qi for each node. Fig. 2. (a) The band diagram with barrier notations where detrapping of
+trapped electron occurs, (b) the TCAD-aligned modeled radial trapped-
+charge profile [6], [7] used as the initial condition of the time-step-free
+C , C , and C in (4) denote the capacitances of model, and (c) TCAD parameter deck and used trap profile within the
+1 TOX i BOX
+simulation [6]–[9].
+each cylindrical layer, as illustrated in Fig. 1(c). ∆Q in (5)
+2 i
+represents the charge component associated with the cylin-
+3
+4 drical (cid:80) shell at radius r i , which can be superpositioned as C. Time-step-free Detrapping Modeling 23
+Q = ∆Q as demonstrated on Fig. 1(d). Furthermore, (5)
+5 i With the given initial conditions, an autonomous equation
+indicates that b(∆Q , V −V ) varies with the trapped charge 24
+6 i G ch is established for each cell, divided by radial position (r) and
+distribution and the applied voltage conditions. 25
+7 trap depth (E ).
+t 26
+B. Q - ∆V Relation d
+8 th n (r, E , t) = −(e + e )n (r, E , t) (12)
+dt t t ch WL t t
+For the ∆V calculation, the gate voltage difference re-
+9 th
+Then, the detrapping relation can be expressed as the
+quired to maintain equal channel field conditions must be 27
+10
+following closed-form solution of the autonomous ODE for
+determined [4], [5]. 28
+11
+each radial/energy discretized element.
+K 1 29
+F (r ) = TOX (8)
+TOX Si ϵ TOX r Si n t (r, E t , t) = n t0 (r, E t ) exp(−(e ch + e WL )t) (13)
+12 To achieve equal channel field conditions, the same K TOX The emission rate for trapped electron can be computed as 30
+13 value under the given conditions must be established. By following equations based on a previous study [4]. 31
+Cramer’s rule, the K parameter can be solved through
+14 TOX
+e = ν × |TC| (14)
+determinant calculation.
+15 √
+(cid:2) (cid:3) 32
+K TOX = det A d b( e ∆ t Q A i,∆Vth) (9) ν = 2 ℏ π |E t |2 V trap · m 0 π2ℏ 2 3 m∗ (cid:112) E − E trap (15)
+1
+1
+6
+7 A
+wh
+r
+e
+e
+r
+p
+e
+la
+n
+c
+o
+e
+t
+d
+ati
+w
+o
+i
+n
+th
+A
+v
+b
+e
+(
+c
+∆
+to
+Q
+r
+i,
+b
+∆
+(
+V
+∆
+th)
+Q
+s
+i
+t
+,
+a
+∆
+nd
+V
+s
+th
+f
+)
+o
+.
+r 1st column of matrix
+|TC| =
+(cid:89)
+exp
+(cid:32)
+−
+4 √
+3ℏ
+2m
+q
+∗ Φ1
+H
+.5
+F
+− Φ1
+L
+.5 (cid:33)
+(16)
+33
+Therefore, ∆V can be solved easily by using the property
+18 th
+19 of multilinearity. for both channel and wordline directions as demonstrated in 34
+Fig. 2(a).
+35
+(cid:2) (cid:3) (cid:2) (cid:3)
+det A b(0,∆Vth) = −∆V th = det A b(∆Qi,0) (10) This autonomous detrapping equation (13) is the key rela- 36
+tion that enables a simulation to directly compute the result
+37
+∴ ∆V = − det (cid:2) A (cid:3) (11) at a specific time once initially programmed trapped charge 38
+th b(∆Qi,0) distribution is specified. Therefore, for a fixed spatial/energy
+39
+The threshold voltage difference can be calculated with discretization and a fixed number of evaluated retention times,
+20 40
+single determinant computation with initially programmed the computational cost is governed by the number of trap bins
+21 41
+trapped charge distribution is given as Fig. 2(b). rather than by the final physical retention time.
+22 42
+Authorized licensed use limited to: Seoul National University. Downloaded on July 08,2026 at 05:36:20 UTC from IEEE Xplore. Restrictions apply.
+© 2026 IEEE. All rights reserved, including rights for text and data mining and training of artificial intelligence and similar technologies. Personal use is permitted,
+but republication/redistribution requires IEEE permission. See https://www.ieee.org/publications/rights/index.html for more information.
+
+===== PAGE 3 =====
+This article has been accepted for publication in IEEE Electron Device Letters. This is the author's version which has not been fully edited and
+content may change prior to final publication. Citation information: DOI 10.1109/LED.2026.3710382
+JIN et al.: TIME-STEP-FREE PHYSICS-BASED MODELING OF RETENTION LOSS IN CRYOGENIC 3-D NAND FLASH 3
+rather than a direct 4.2 K TCAD simulation.
+26
+The TCAD benchmark was built using Synopsys Sentaurus
+27
+TCAD. The retention deck includes thermionic emission,
+28
+Poole–Frenkel emission, and nonlocal tunneling, providing
+29
+a TCAD reference with thermal and tunneling detrapping
+30
+mechanisms [10]. The present implementation focuses on
+31
+isolated radial detrapping under cryogenic-emulation condi-
+32
+tions, without separately resolving explicit lateral charge mi-
+33
+gration. The TCAD deck shown in Fig. 2(c) was calibrated
+34
+by matching the retention time scale of the measurement in
+35
+previous study [2]. Since ∆V is reported in arbitrary units,
+th 36
+the calibration was done by matching time scale only. Thus,
+37
+the present validation is limited to the calibrated cryogenic
+38
+emulation TCAD benchmark and does not establish the ab-
+39
+solute experimental cryogenic ∆V magnitude or full device
+th 40
+physics at 4.2 K. Program operation was performed by single
+41
+1 µs pulse and calibrated to obtain ∆V = 1.8 V. To properly
+Fig. 3. (a) The TCAD simulation calibration with the measurement th 42
+from previous study [2]. (b) A detail detrapping curve variation over time focus on the detrapping effect from the CTN layer, bandgap- 43
+with t TOX from 3 nm to 5 nm. (c) Comparison between time-step-free engineered processes were neglected and program operation 44
+simulation and the iterative refresh test for assessing the fixed emission
+was performed with fresh cell.
+rate approximation. 45
+Convergence tests over 10-140 trap energy bins and 5-50
+46
+radial CTN slices showed negligible changes beyond 100 bins
+47
+TABLE I
+and 30 slices, which were therefore used in the model calcu-
+COMPARISON BETWEEN A TCAD AND TIME-STEP-FREE MODEL 48
+lation. The variation of the t showed the most dominancy
+TOX 49
+Property TCAD Time-step-free model in detrapping time transient curve. In Fig. 3(b), t from
+TOX 50
+Temporal treatment sequential time stepping closed-form 3 nm to 5 nm for both TCAD simulation and the model 51
+evaluation of eq (13) were performed, showing good agreement with each other. To
+Dependence on 52
+Runtime increases with Runtime independent verify the time-step-free formulation, an iterative refresh test
+final physical time the final retention time 53
+of final physical time
+was performed as shown in Fig. 3(c). In the proposed closed-
+Run Time (s) 54
+(average of Fig. 3(b)) >25000 <4 form calculation, e ch and e WL are evaluated from the initially 55
+programmed state and kept fixed. In the refresh calculation, the
+56
+trapped-charge distribution is sequentially updated after each
+57
+retention interval. Both approaches show nearly identical ∆V
+1 III. SIMULATION AND RESULT th 58
+behavior over the entire retention range, with only about 3%
+59
+According to [2], cryogenic conditions enable the detrap- difference from time exceeding 109 s. Therefore, the time-step-
+2 60
+ping component to be separated from thermally activated free simulation was chosen as the main method of this study
+3 61
+retention-loss components. However, direct TCAD simulation since the iterative refresh test simply multiplies the simulation
+4 62
+at approximately 4.2 K did not converge reliably in our setup. time by the total number of iterations.
+5 63
+Therefore, two convergence tendencies were compared in the Table I shows the comparison between TCAD and the
+6 64
+extreme condition: one obtained by lowering the temperature model. The table shows how much computation time and
+7 65
+from 300 K to the lowest convergent temperature of 83 K, resource efficiency could be improved through the time-step-
+8 66
+and the other obtained by reducing the electron capture cross free model. Since the model’s computation time is independent
+9 67
+section from 10−16 to 10−31 cm2. As σ decreased, the of sequential time stepping, the proposed method can be
+10 n 68
+retention transient approached a limiting curve whose time adopted to both short- and long-term retention prediction for
+11 69
+dependence was consistent with the temperature lowering arbitrary target retention times.
+12 70
+result. Both approaches showed a consistent retention-time
+13
+14 trend in the extreme condition, as reflected in the calibrated IV. CONCLUSION 71
+TCAD curve in Fig. 3(a), indicating that the suppression
+15 This study presents a time-step-free physics-based modeling
+72
+of thermally activated transitions can reproduce the domi-
+16 for retention loss due to detrapping of trapped electrons. The
+73
+nant cryogenic detrapping behavior. Therefore, to emulate
+17 novelty of time-step-free modeling is demonstrated through
+74
+cryogenic conditions during retention operation within the
+18 significant computational optimization, achieving runtime in-
+75
+TCAD framework, the capture cross section was adjusted to
+19 dependent of final physical time. Additionally, the proposed
+76
+an extremely low value (σ → 0) only during retention. This
+20 n model reproduced the calibrated cryogenic-emulation TCAD
+77
+manipulation suppresses thermal electron transitions between
+21 benchmark within an extremely short runtime.
+78
+trapped and conduction states within the CTN layer, while
+22
+maintaining physical consistency in other mechanisms [10].
+23
+Thus, every TCAD simulation result shown in Fig. 3 should
+24
+be interpreted as a calibrated cryogenic-emulation benchmark
+25
+Authorized licensed use limited to: Seoul National University. Downloaded on July 08,2026 at 05:36:20 UTC from IEEE Xplore. Restrictions apply.
+© 2026 IEEE. All rights reserved, including rights for text and data mining and training of artificial intelligence and similar technologies. Personal use is permitted,
+but republication/redistribution requires IEEE permission. See https://www.ieee.org/publications/rights/index.html for more information.
+
+===== PAGE 4 =====
+This article has been accepted for publication in IEEE Electron Device Letters. This is the author's version which has not been fully edited and
+content may change prior to final publication. Citation information: DOI 10.1109/LED.2026.3710382
+4 GENERIC COLORIZED JOURNAL, VOL. XX, NO. XX, XXXX 20XX
+1
+REFERENCES
+2 [1] A. Goda, K. K. Muchherla, and P. Feeley, ”Reliability of 3D NAND
+3 Flash for Future Storage Systems (Invited),” 2023 IEEE International
+4 Reliability Physics Symposium (IRPS), Monterey, CA, USA, 2023, pp.
+5 1-10, doi: 10.1109/IRPS48203.2023.10118280.
+6 [2] D. G. Refaldi, G. Malavena, L. Chiavarone, N. Gagliazzi, A. S. Spinelli,
+7 and C. M. Compagnoni, ”Cryogenic Investigation of Vertical Charge
+8 Loss in 3D NAND Flash Memories,” 2025 IEEE International Reliability
+9 Physics Symposium (IRPS), Monterey, CA, USA, 2025, pp. 1-7, doi:
+10 10.1109/IRPS48204.2025.10983672.
+11 [3] D. G. Refaldi, G. Malavena, L. Chiavarone, A. S. Spinelli, and C. M.
+12 Compagnoni, ”Evidence of Widely Distributed Time Constants in the
+13 Vertical Charge Loss of 3-D Charge-Trap NAND Flash Memories,” in
+14 IEEE Electron Device Letters, vol. 45, no. 10, pp. 1811-1814, Oct. 2024,
+15 doi: 10.1109/LED.2024.3435345.
+16 [4] M. Jin and H. Shin, ”Modeling Attempt-to-Escape Frequency: Tunneling
+17 Emission of Trapped Electrons in Tunneling Oxides of 3-D NAND Flash
+18 Memory,” in IEEE Transactions on Electron Devices, vol. 72, no. 9, pp.
+19 4884-4889, Sept. 2025, doi: 10.1109/TED.2025.3589340.
+20 [5] S. M. Amoroso, C. Monzio Compagnoni, A. Mauri, A. Maconi, A. S.
+21 Spinelli, and A. L. Lacaita, ”Semi-Analytical Model for the Transient
+22 Operation of Gate-All-Around Charge-Trap Memories,” in IEEE Trans-
+23 actions on Electron Devices, vol. 58, no. 9, pp. 3116-3123, Sept. 2011,
+24 doi: 10.1109/TED.2011.2159010.
+25 [6] C. Lee and H. Shin, ”Investigation and modeling of vertical redistribu-
+26 tion in charge-trap-based 3D NAND Flash memory.” Japanese Journal of
+27 Applied Physics 65.1 (2026): 011004, doi: 10.35848/1347-4065/ae3161
+28 [7] H. Choi, J. Yoo, and H. Shin, ”A New Physical Model for Program
+29 Transients of Cylindrical Charge-Trap-Based NAND Flash Memories,”
+30 in IEEE Transactions on Electron Devices, vol. 71, no. 4, pp. 2386-2392,
+31 April 2024, doi: 10.1109/TED.2024.3364587.
+32 [8] D. Verreck, A. Arreghini, F.Schanovsky, G. Rzepa, Z. Stanojevic, F.
+33 Mitterbauer, C. Kernstrock, O. Baumgartner, M. Karner, G. Van den
+34 bosch, and M. Rosmeulen, ”Understanding the ISPP Slope in Charge
+35 Trap Flash Memory and its Impact on 3-D NAND Scaling,” 2021 IEEE
+36 International Electron Devices Meeting (IEDM), San Francisco, CA,
+37 USA, 2021, pp. 1-4, doi: 10.1109/IEDM19574.2021.9720506.
+38 [9] I. Han and H. Shin, ”Machine Learning-Based Investigation of Temper-
+39 ature Effects on Lateral Migration in 3-D nand Flash Memory,” in IEEE
+40 Transactions on Electron Devices, vol. 73, no. 5, pp. 2747-2753, May
+41 2026, doi: 10.1109/TED.2026.3673641.
+42 [10] TCAD Sentaurus Device User Guide Version 2022, Synopsys, Mountain
+43 View, CA, USA, Mar. 2022.
+Authorized licensed use limited to: Seoul National University. Downloaded on July 08,2026 at 05:36:20 UTC from IEEE Xplore. Restrictions apply.
+© 2026 IEEE. All rights reserved, including rights for text and data mining and training of artificial intelligence and similar technologies. Personal use is permitted,
+but republication/redistribution requires IEEE permission. See https://www.ieee.org/publications/rights/index.html for more information.

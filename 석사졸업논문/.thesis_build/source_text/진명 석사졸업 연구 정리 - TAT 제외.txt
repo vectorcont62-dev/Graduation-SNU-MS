@@ -1,0 +1,808 @@
+
+===== SLIDE 1 =====
+Time-Step-Free Physics-based
+Modeling of Retention Loss in
+Cryogenic 3-D NAND Flash
+2026. 07. 29
+석사과정
+진 명
+Department of Electrical and Computer Engineering
+Seoul National University
+
+===== SLIDE 2 =====
+Content
+Introduction: 3-D NAND Flash
+의
+Retention Loss
+BETOX
+Trapped Electron
+Detrapping
+모델링
+CTN discretization
+분석 및
+Q-
+ΔV
+th
+계산
+Time-Step-Free Physics-Based Retention
+모델링
+Cryogenic-like TCAD
+검증 및 계산 효율 분석
+Detrap
+modeling
+에서
+TAT
+를 제외한 이유
+Summary and Future Works
+
+===== SLIDE 3 =====
+Introduction
+3-D NAND Flash memory
+는
+charge-trap stack
+내부에 저장된
+trapped electron
+을 통해 정보를 저장함
+Retention
+시간이 증가하면
+trapped electron
+의
+detrapping
+으로 인해
+V
+th
+감소 발생
+Cylindrical
+구조와
+CTN
+내부
+arbitrary trapped electron distribution
+을 고려하기 위한
+physics-based modeling
+필요
+Jin, TED 2025
+Trapped
+Electrons
+filler
+channel
+BETOX
+CTN
+BOX
+WL
+[MEDIA] ../media/image2.png
+
+===== SLIDE 4 =====
+BETOX Trapped Electron
+Detrapping
+Modeling
+BETOX Region
+(ONO)
+Trap-to-Band Tunneling Emission
+CTN
+Region
+n1
+Si-Channel
+BETOX
+o1
+E
+F
+Program
+(V
+G
+=
+V
+pgm
+)
+J
+FN
+Si-Channel
+n1
+o1
+BETOX
+E
+F
+Retention
+(V
+G
+= 0 V)
+e
+TBT
+e
+DT
+Program
+동작에서는 강한 전기장에 의해
+FN tunneling
+이 발생함
+하지만
+, Retention
+상태에서는
+V
+G
+= 0V
+이므로
+충분한 전자가
+conduction band
+에 축적되지 않아
+direct tunneling
+의 영향이 감소함
+Jin, TED 2025
+BETOX
+내부에
+trapped
+된
+electron
+은
+channel conduction band
+으로
+trap-to-band tunneling  emission
+될 수 있음
+[MEDIA] ../media/image4.png, ../media/image3.png, ../media/image6.png, ../media/image5.png
+
+===== SLIDE 5 =====
+BETOX Trapped Electron
+Detrapping
+Modeling
+Emission
+rate
+모델링
+결과식
+(Jin, TED 2025)
+BETOX
+의
+O/N/O/N/O 5-layer
+구조
+Poisson solution
+Jin, TED 2025
+,
+,
+[MEDIA] ../media/image14.png, ../media/image8.png, ../media/image13.png, ../media/image7.png, ../media/image12.png, ../media/image10.png, ../media/image9.png, ../media/image15.png
+
+===== SLIDE 6 =====
+CTN Trapped Electron
+Detrapping
+BETOX
+detrapping
+연구를 통해
+local trap-to-band emission rate
+모델링 구축
+실제
+retention loss
+예측을 위해서는
+CTN
+trapped
+electrons
+의
+trap-to-band
+detrapping
+emission
+모델링 구축이 필요함
+기존모델
+(Amoroso, TED 2011)
+은
+CTN charge
+를
+uniform distribution
+으로 가정하는 한계가 있음
+본 연구에서는
+arbitrary radial charge distribution
+에 대한 모델링으로 확장
+Jin, EDL 2026
+
+===== SLIDE 7 =====
+Visualization of
+Charge Node Analysis
+Q
+ΔQ
+0
+ΔQ
+1
+ΔQ
+N
+=
++
++
++
+...
+=
++
++
++
+...
+r
+0
+r
+1
+r
+N
+...
+CTN charge
+ΔQ
+i
+=
+π
+r
+i
+2
+(n
+t,i+1
+-n
+t,i
+)
+n
+t,0
+= 0
+n
+t,N+1
+= 0
+where,
+i
+=1-N
+ΔQ
+0
+ΔQ
+1
+ΔQ
+2
+ΔQ
+3
+ΔQ
+N-1
+ΔQ
+N
+Jin, EDL 2026
+CTN
+영역을
+N
+개의
+radial charge cell
+으로 분할
+각각의
+equivalent charge node
+ΔQ
+i
+으로 표현할 수 있음
+[MEDIA] ../media/image17.png, ../media/image21.png, ../media/image16.png, ../media/image20.png, ../media/image19.png, ../media/image18.png
+
+===== SLIDE 8 =====
+Detailed Poisson Solution
+N+2 layer
+의 전위 분포
+경계조건 행렬식 정리
+선형방정식
+Jin, EDL 2026
+역행렬
+계산
+…?	x = A
+-1
+b ..?
+ΔV
+th
+를 구하는데 있어 모든
+coefficient
+계산은 불필요
+!
+[MEDIA] ../media/image22.png, ../media/image11.png, ../media/image24.png, ../media/image23.png
+
+===== SLIDE 9 =====
+Q-
+ΔV
+th
+Optimized Calculation
+ΔV
+th
+: channel
+에서의 전기장의 세기가 중요
+Cramer’s rule
+에 따르면
+,
+Jin, EDL 2026
+K
+TOX
+값을
+일치시키는게
+ΔV
+th
+값 구하는 핵심 과정
+!
+[MEDIA] ../media/image26.png, ../media/image25.png, ../media/image28.png, ../media/image27.png
+
+===== SLIDE 10 =====
+Q-
+ΔV
+th
+Optimized Calculation
+Jin, EDL 2026
+결론
+:
+임의로 주어진
+CTN
+내의
+discretized
+분포에 대한
+ΔV
+th
+계산식
+초기 입력 조건
+:
+,
+[MEDIA] ../media/image30.png, ../media/image29.png, ../media/image33.png, ../media/image32.png, ../media/image31.png
+
+===== SLIDE 11 =====
+Time-step-free Physics-based Modeling
+핵심 원리
+: initial trapped charge distribution
+으로 부터
+target retention time
+의
+ΔV
+th
+를 직접 계산
+1. Initial state
+n
+t0
+(r, E
+t
+)
+2. Emission rates
+e
+ch
+, e
+WL
+3. Direct evaluation
+n
+t
+(r, E
+t
+, t)
+Jin, EDL 2026
+계산 비용은
+final retention time
+자체가 아니라
+trap bin
+수와
+evaluated time point
+수에 의해 결정
+CTN
+TOX
+BOX
+Si-channel
+WL
+[MEDIA] ../media/image34.png
+
+===== SLIDE 12 =====
+Time-step-free Physics-based Modeling
+Numerical
+상관관계 실험
+trap bin
+을
+10-140
+등분하여 비교 테스트
+100
+등분 이상부터 수렴
+CTN slice
+를
+5-50
+등분하여 비교 테스트
+30
+등분 이상부터 수렴
+1. Initial state
+n
+t0
+(r, E
+t
+)
+2. Emission rates
+e
+ch
+, e
+WL
+3. Direct evaluation
+n
+t
+(r, E
+t
+, t)
+Jin, EDL 2026
+핵심 원리
+: initial trapped charge distribution
+으로 부터
+target retention time
+의
+ΔV
+th
+를 직접 계산
+[MEDIA] ../media/image35.emf, ../media/image36.emf
+
+===== SLIDE 13 =====
+Time-step-free Physics-based Modeling
+1. Initial state
+n
+t0
+(r, E
+t
+)
+2. Emission rates
+e
+ch
+, e
+WL
+3. Direct evaluation
+n
+t
+(r, E
+t
+, t)
+Jin, EDL 2026
+3.1 eV
+1.0 eV
+3.65 eV
+핵심 원리
+: initial trapped charge distribution
+으로 부터
+target retention time
+의
+ΔV
+th
+를 직접 계산
+주어진
+initial band diagram
+을 기준으로
+channel
+방향과
+word line (WL)
+방향으로의
+emission rate
+을 계산
+[MEDIA] ../media/image35.png, ../media/image340.png, ../media/image37.png, ../media/image38.emf, ../media/image38.emf
+
+===== SLIDE 14 =====
+Time-step-free Physics-based Modeling
+1. Initial state
+n
+t0
+(r, E
+t
+)
+2. Emission rates
+e
+ch
+, e
+WL
+3. Direct evaluation
+n
+t
+(r, E
+t
+, t)
+초기 전하 분포
+closed-form evaluation
+Detrapping
+Autonomous ODE
+: Autonomous ODE
+Jin, EDL 2026
+핵심 원리
+: initial trapped charge distribution
+으로 부터
+target retention time
+의
+ΔV
+th
+를 직접 계산
+위 식을 풀면
+,
+시간에 따른 일반해를 구할 수 있음
+[MEDIA] ../media/image39.png, ../media/image37.png
+
+===== SLIDE 15 =====
+Validation
+of Time-
+Step
+-
+Free
+Evaluation
+Jin, EDL 2026
+Time-step-free evaluation
+의
+validity
+를 확인하기 위해
+iteration test
+를 수행함
+Iterative test
+를 진행한 결과와
+iteration
+이 없는 단일계산으로 진행한
+time-step-free evaluation
+의 차이가
+10
+9
+[s]
+이상의 시간이 지나야
+3%
+가량 차이 발생
+두 결과의 차이가 작아
+time-step-free approximation
+이 유효함을 확인함
+< 3% difference
+after 10
+9
+s
+[MEDIA] ../media/image40.emf, ../media/image41.emf
+
+===== SLIDE 16 =====
+Cryogenic Retention Condition
+실험 측정 결과
+(
+Refaldi
+, IRPS 2025)
+실험적으로
+Detrapping
+effect
+를 분리하는 기법
+Thermal transition
+억제
+Detrapping
+effect
+분리
+Modeling validation
+에 적합한
+measurement reference
+제공
+(
+단
+,
+단위는
+A.U.)
+극저온 조건이 필요한 이유
+?
+[MEDIA] ../media/image42.png
+
+===== SLIDE 17 =====
+Cryogenic-like
+TCAD Emulation
+온도
+–
+σ
+n
+수렴성
+테스트
+:
+극저온 환경과
+σ
+n
+→
+0
+사이의 상호
+300 K
+→
+83 K (TCAD
+최저온도
+)
+10
+-16
+→
+10
+-31
+→
+… [cm
+2
+]
+σ
+n
+→
+0
+지속적으로 확장 가능
+Cyrogenic
+-like TCAD Emulation Physics deck
+SRH Recombination, Fermi statistics, non-local tunneling, Poole-Frenkel emission, thermionic emission
+[MEDIA] ../media/image43.emf, ../media/image44.emf
+
+===== SLIDE 18 =====
+Cryogenic-like
+Emulation
+t
+TOX
+= 3, 3.5, 4, 4.5, 5 [nm]
+측정치
+– TCAD
+O/N/O =
+3
+/6/8 [nm]
+모델
+– TCAD
+t
+TOX
+= 3 ~ 5 [nm]
+변화에 따른 변동 검증
+Jin, EDL 2026
+측정치와
+TCAD calibration
+진행
+ΔV
+th
+는
+A.U.
+값이지만
+,
+t
+TOX
+값 조절을 하며
+time scale
+을 기준으로
+calibration
+[MEDIA] ../media/image45.emf, ../media/image46.emf
+
+===== SLIDE 19 =====
+Computational Impact
+Property
+Transient TCAD
+Time-step-free model
+Temporal
+treatment
+Sequential
+time stepping
+Final-time
+dependence
+Runtime grows as
+simulated retention time increases
+Independent of final
+physical time for fixed queries
+Average
+runtime
+27483 s
+3.926 s
+Closed-form
+evaluation of Eq. (13)
+≈ 7000×
+runtime reduction
+TCAD
+는
+final physical time
+까지
+time step
+별 순차적으로 계산
+Time-step-free model
+은
+closed-form evaluation
+Computational
+resource
+는
+final retention time
+자체가 아니라
+trap bin
+수와
+evaluated time point
+수에 의해 결정
+Jin, EDL 2026
+
+===== SLIDE 20 =====
+Limited
+Contribution of TAT
+가능 경로 수
+(Route Count)
+개념 활용하여
+TAT
+제외 이유
+filler
+Si-channel
+TOX
+CTN
+filler
+Si-channel
+TOX
+CTN
+CTN > Si-channel (
+Detrap
+)
+CTN > TOX > Si-channel (TAT)
+가능 경로 수
+(Route Count)
+detrap
+통과 넓이
+2π
+r
+TOX
+, centroid
+L
+WL
+가능 경로 수
+(Route Count)
+TAT
+통과 넓이
+#
+trap
+a
+trap
+2
+통과 넓이 대폭 감소로
+인한 가능 경로 수 감소
+cf
+)
+a
+trap
+~ 1.7Å
+
+===== SLIDE 21 =====
+Limited
+Contribution of TAT
+CTN
+TOX
+Si-channel
+BETOX total trap density (measurement)
+1k:  4.49
+×
+10
+16
+cm
+-3
+10k: 1.16
+×
+10
+17
+cm
+-3
+50k: 1.89
+×
+10
+17
+cm
+-3
+CTN
+trap
+[#]
+0.55
+1.42
+2.03
+Jin, EDL
+(2026)
+Detrapping
+Model
+Jin, TED (2025)
+Effective route count modeling
+⸫ Simulation Result
+endurance
+별로 차이는 있으나
+, CTN
+detrap
+의 넓은
+emission route
+를 극복할 순 없다
+Jin, TED (2025)
+[MEDIA] ../media/image50.emf, ../media/image47.emf, ../media/image50.png, ../media/image49.png, ../media/image51.emf, ../media/image48.png
+
+===== SLIDE 22 =====
+Summary and Future Works
+Future Works
+cell-to-cell variation
+및
+retention
+산포 적용 가능한 모델링 셋업
+SPICE
+등
+cell
+단위의
+reliability simulation
+과의 연계
+Summary
+BETOX trap-to-band tunneling emission rate
+모델링
+(Jin, TED 2025)
+CTN
+전자 임의 분포에 대한
+ΔV
+th
+계산
+framework
+구축
+Closed-form autonomous ODE
+기반
+time-step-free retention
+모델 제안
+Cryogenic-like TCAD
+검증 및
+~7000x
+시뮬레이션 시간 단축 확인
+현 모델 기반으로
+detrap
+성분과
+TAT
+성분 비교
